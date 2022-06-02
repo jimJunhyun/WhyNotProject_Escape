@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// 태양 회전 시 오브젝트 밝기 조절 수정
+/// 각도에 따라 밝기 조정이 되야하지만 적용되지 않음
+/// 이유 파악 및 수정 필요
 /// </summary>
 public class SunRotation : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class SunRotation : MonoBehaviour
     void Start()
     {
         thisLight = GetComponent<Light>();
-        StartCoroutine(LightRedInc());
         StartCoroutine(DayPass());
     }
 
@@ -28,17 +28,21 @@ public class SunRotation : MonoBehaviour
         rotateAngle = 360 / (dayMinute * 60);
 
         transform.Rotate(new Vector3(rotateAngle, 0, 0) * Time.deltaTime);
-    }
 
-    IEnumerator LightRedInc()
-    {
-        yield return new WaitForSeconds(dayMinute * 30);
-        if (thisLight.intensity != 0)
-            thisLight.intensity -= rotateAngle / 45 * Time.deltaTime;
-        yield return new WaitForSeconds(dayMinute * 15);
-        if (thisLight.intensity < 1)
-            thisLight.intensity += rotateAngle / 45 * Time.deltaTime;
-        StartCoroutine(LightRedInc());
+        if (transform.eulerAngles.x > -180 && transform.eulerAngles.x < -135)
+        {
+            if (thisLight.intensity != 0)
+            {
+                thisLight.intensity -= rotateAngle / 45 * Time.deltaTime;
+            }
+        }
+        else if (transform.eulerAngles.x > -45 && transform.eulerAngles.x < 0)
+        {
+            if (thisLight.intensity < 1)
+            {
+                thisLight.intensity += rotateAngle / 45 * Time.deltaTime;
+            }
+        }
     }
 
     IEnumerator DayPass()
