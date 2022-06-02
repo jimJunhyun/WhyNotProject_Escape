@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+/// <summary>
+/// 들 수 있는 오브젝트에 붙어있는 스크립트이다.
+/// 들고 떨어뜨리기, 투척하고 배치하기가 가능하다.
+/// </summary>
 [RequireComponent(typeof(GlowObjectCmd))]
 public class Holdable : MonoBehaviour, IInteractable
 {
@@ -14,15 +17,25 @@ public class Holdable : MonoBehaviour, IInteractable
     public void Held()
 	{
 		myRig.velocity = Vector2.zero;
-		transform.position = HoldObject.HoldPos;
+		myRig.useGravity = false;
+		transform.position = HoldManager.Instance.HoldPos;
+		transform.rotation = Quaternion.identity;
+		gameObject.layer = 2;
 	}
     public void Fall()
 	{
-
+		isHeld = false;
+		myRig.useGravity = true;
+		gameObject.layer = 0;
 	}
 	public void Throw() 
 	{
-		
+		Fall();
+		myRig.AddForce(transform.forward * HoldManager.Instance.throwPower, ForceMode.Impulse);
+	}
+	public void Place()
+	{
+
 	}
 	private void Awake()
 	{
@@ -43,10 +56,15 @@ public class Holdable : MonoBehaviour, IInteractable
 				}
 			}
 		}
-		else if (Input.GetMouseButtonUp(0))
+		else if (isHeld && Input.GetMouseButtonUp(0))
 		{
 			info = new RaycastHit();
-			isHeld = false;
+			Fall();
+		}
+		else if(isHeld && Input.GetMouseButtonDown(1))
+		{
+			info = new RaycastHit();
+			Throw();
 		}
 	}
 	private void LateUpdate()
@@ -54,10 +72,6 @@ public class Holdable : MonoBehaviour, IInteractable
 		if (isHeld)
 		{
 			OnHeld.Invoke();
-		}
-		else
-		{
-			Fall();
 		}
 	}
 }
