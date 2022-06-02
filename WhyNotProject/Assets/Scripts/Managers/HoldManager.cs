@@ -30,7 +30,7 @@ public class HoldManager : MonoBehaviour
 		//Debug.Log(HoldPos);
         HoldPos = GetWorldPositionOnPlane(cam.ViewportToScreenPoint(new Vector2(0.5f, 0.5f)), HoldZ); //가운데에 Z거리만큼
     }
-    public Vector3 GetWorldPositionOnPlane(Vector3 screenPosition, float z, float objRadius = 2)
+    public Vector3 GetWorldPositionOnPlane(Vector3 screenPosition, float z, float objRadius = 0.4f)
 	{
 		Ray ray = cam.ScreenPointToRay(screenPosition);
         //Debug.DrawRay(ray.origin, ray.direction);

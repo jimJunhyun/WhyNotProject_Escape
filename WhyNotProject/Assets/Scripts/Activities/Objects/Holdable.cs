@@ -31,7 +31,7 @@ public class Holdable : MonoBehaviour, IInteractable
 	public void Throw() 
 	{
 		Fall();
-		myRig.AddForce(transform.forward * HoldManager.Instance.throwPower, ForceMode.Impulse);
+		myRig.AddForce(screenRay.direction * HoldManager.Instance.throwPower, ForceMode.Impulse);
 	}
 	public void Place()
 	{
