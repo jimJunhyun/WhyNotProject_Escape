@@ -14,7 +14,7 @@ public class Holdable : MonoBehaviour, IInteractable
     public void Held()
 	{
 		myRig.velocity = Vector2.zero;
-		transform.position = new Vector3(HoldObject.HoldPos.x, HoldObject.HoldPos.y, transform.position.z);
+		transform.position = HoldObject.HoldPos;
 	}
     public void Fall()
 	{
@@ -30,7 +30,7 @@ public class Holdable : MonoBehaviour, IInteractable
 		OnHeld = new UnityEvent();
 		OnHeld.AddListener(Held);
 	}
-	private void LateUpdate()
+	private void Update()
 	{
 		if (Input.GetMouseButtonDown(0))
 		{
@@ -39,14 +39,25 @@ public class Holdable : MonoBehaviour, IInteractable
 			{
 				if(info.collider == gameObject.GetComponent<Collider>())
 				{
-					OnHeld.Invoke();
+					isHeld = true;
 				}
 			}
 		}
 		else if (Input.GetMouseButtonUp(0))
 		{
 			info = new RaycastHit();
+			isHeld = false;
 		}
 	}
-	
+	private void LateUpdate()
+	{
+		if (isHeld)
+		{
+			OnHeld.Invoke();
+		}
+		else
+		{
+			Fall();
+		}
+	}
 }
