@@ -13,9 +13,14 @@ public class Holdable : MonoBehaviour, IInteractable
 	Ray screenRay;
     public UnityEvent OnHeld { get; set;}
     public bool isHeld { get; set;}
+	public bool isPlaced { get; set;}
+	[Tooltip("놓여진 이후에도 다시 뽑아서 사용할 수 있는가?")]
+	public bool isReusable = false;
 	Rigidbody myRig;
     public void Held()
 	{
+		isHeld = true;
+		isPlaced = false;
 		myRig.velocity = Vector2.zero;
 		myRig.useGravity = false;
 		transform.position = HoldManager.Instance.HoldPos;
@@ -35,7 +40,16 @@ public class Holdable : MonoBehaviour, IInteractable
 	}
 	public void Place()
 	{
+		isPlaced = true;
+		myRig.useGravity = false;
+		myRig.velocity = Vector2.zero;
 
+		transform.rotation = Quaternion.identity; //물체별로 다른 각도 조절 필요할 듯
+
+		if (!isReusable)
+		{
+			OnHeld.RemoveListener(Held);
+		}
 	}
 	private void Awake()
 	{
