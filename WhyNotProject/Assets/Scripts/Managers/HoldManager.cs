@@ -38,7 +38,7 @@ public class HoldManager : MonoBehaviour
         if(Physics.Raycast(ray, out info, z, ignoreLayer))
 		{
             z = info.distance - objRadius;
-            Debug.Log(info.collider);
+            //Debug.Log(info.collider);
         }
 		return ray.GetPoint(z);
 	}

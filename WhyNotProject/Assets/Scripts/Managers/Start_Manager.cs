@@ -7,12 +7,12 @@ public class Start_Manager : MonoBehaviour
 {
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene("PlayScene");
         }
-        
 
-        
+
+
     }
 }
