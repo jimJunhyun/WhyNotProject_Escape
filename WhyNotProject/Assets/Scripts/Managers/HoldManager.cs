@@ -14,6 +14,8 @@ public class HoldManager : MonoBehaviour
     Camera cam;
     [HideInInspector]
     public Vector3 HoldPos = new Vector3();
+    [HideInInspector]
+    public Holdable currentHolding;
     
     // Start is called before the first frame update
     void Awake()
@@ -30,14 +32,17 @@ public class HoldManager : MonoBehaviour
 		//Debug.Log(HoldPos);
         HoldPos = GetWorldPositionOnPlane(cam.ViewportToScreenPoint(new Vector2(0.5f, 0.5f)), HoldZ); //가운데에 Z거리만큼
     }
-    public Vector3 GetWorldPositionOnPlane(Vector3 screenPosition, float z, float objRadius = 0.4f)
+    public Vector3 GetWorldPositionOnPlane(Vector3 screenPosition, float z)
 	{
 		Ray ray = cam.ScreenPointToRay(screenPosition);
         //Debug.DrawRay(ray.origin, ray.direction);
         RaycastHit info;
         if(Physics.Raycast(ray, out info, z, ignoreLayer))
 		{
-            z = info.distance - objRadius;
+            if(currentHolding != null)
+                z = info.distance - currentHolding.bufferArea;
+            else
+                z = info.distance;
             //Debug.Log(info.collider);
         }
 		return ray.GetPoint(z);

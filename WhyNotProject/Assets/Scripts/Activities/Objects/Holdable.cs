@@ -11,6 +11,7 @@ public class Holdable : MonoBehaviour, IInteractable
 {
 	RaycastHit info;
 	Ray screenRay;
+	public float bufferArea;
     public UnityEvent OnHeld { get; set;}
     public bool isHeld { get; set;}
 	public bool isPlaced { get; set;}
@@ -19,6 +20,7 @@ public class Holdable : MonoBehaviour, IInteractable
 	Rigidbody myRig;
     public void Held()
 	{
+		HoldManager.Instance.currentHolding = this;
 		isHeld = true;
 		isPlaced = false;
 		myRig.velocity = Vector2.zero;
@@ -29,6 +31,7 @@ public class Holdable : MonoBehaviour, IInteractable
 	}
     public void Fall()
 	{
+		HoldManager.Instance.currentHolding = null;
 		isHeld = false;
 		myRig.useGravity = true;
 		gameObject.layer = 0;
@@ -53,6 +56,7 @@ public class Holdable : MonoBehaviour, IInteractable
 	}
 	private void Awake()
 	{
+		bufferArea = transform.localScale.magnitude / 2f;
 		myRig = GetComponent<Rigidbody>();
 		OnHeld = new UnityEvent();
 		OnHeld.AddListener(Held);
