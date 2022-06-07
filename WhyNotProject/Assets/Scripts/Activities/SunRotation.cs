@@ -1,10 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/// <summary>
-/// 각도에 따라 밝기 조정이 되야하지만 적용되지 않음
-/// 이유 파악 및 수정 필요
-/// </summary>
+
 public class SunRotation : MonoBehaviour
 {
     [SerializeField] private float dayMinute;
@@ -29,19 +26,17 @@ public class SunRotation : MonoBehaviour
 
         transform.Rotate(new Vector3(rotateAngle, 0, 0) * Time.deltaTime);
 
-        if (transform.eulerAngles.x > -180 && transform.eulerAngles.x < -135)
+        if (transform.localEulerAngles.x >= 315)
         {
-            if (thisLight.intensity != 0)
-            {
-                thisLight.intensity -= rotateAngle / 45 * Time.deltaTime;
-            }
+            thisLight.intensity = (transform.localEulerAngles.x - 315) / 45;
         }
-        else if (transform.eulerAngles.x > -45 && transform.eulerAngles.x < 0)
+        else if (transform.localEulerAngles.x < 315 && transform.localEulerAngles.x >= 270)
         {
-            if (thisLight.intensity < 1)
-            {
-                thisLight.intensity += rotateAngle / 45 * Time.deltaTime;
-            }
+            thisLight.intensity = 0;
+        }
+        else
+        {
+            thisLight.intensity = 1;
         }
     }
 
