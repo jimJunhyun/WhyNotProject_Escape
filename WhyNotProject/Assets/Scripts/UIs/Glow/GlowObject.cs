@@ -34,13 +34,13 @@ public class GlowObject : MonoBehaviour
 	private void OnMouseEnter()
 	{
 		_targetColor = GlowColor;
-		enabled = true;
+		//enabled = true;
 	}
 
 	private void OnMouseExit()
 	{
 		_targetColor = Color.black;
-		enabled = true;
+		//enabled = true;
 	}
 
 	/// <summary>
@@ -57,7 +57,7 @@ public class GlowObject : MonoBehaviour
 
 		if (_currentColor.Equals(_targetColor))
 		{
-			enabled = false;
+			//enabled = false;
 		}
 	}
 }

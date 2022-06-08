@@ -11,11 +11,14 @@ public class HoldManager : MonoBehaviour
     public float HoldZ;
     public LayerMask ignoreLayer;
     public float throwPower;
+    public Vector3 throwDirection;
+    public float holdLimit;
     Camera cam;
     [HideInInspector]
     public Vector3 HoldPos = new Vector3();
     [HideInInspector]
     public Holdable currentHolding;
+    
     
     // Start is called before the first frame update
     void Awake()
@@ -35,6 +38,7 @@ public class HoldManager : MonoBehaviour
     public Vector3 GetWorldPositionOnPlane(Vector3 screenPosition, float z)
 	{
 		Ray ray = cam.ScreenPointToRay(screenPosition);
+        throwDirection = ray.direction.normalized;
         //Debug.DrawRay(ray.origin, ray.direction);
         RaycastHit info;
         if(Physics.Raycast(ray, out info, z, ignoreLayer))
@@ -43,8 +47,16 @@ public class HoldManager : MonoBehaviour
                 z = info.distance - currentHolding.bufferArea;
             else
                 z = info.distance;
+            
             //Debug.Log(info.collider);
         }
 		return ray.GetPoint(z);
+	}
+    public bool MouseCursorDetect(out RaycastHit hit)
+	{
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        bool isHit = Physics.Raycast(ray, out hit, holdLimit);
+        Debug.DrawLine(ray.origin, hit.point, Color.cyan);
+        return isHit;
 	}
 }
