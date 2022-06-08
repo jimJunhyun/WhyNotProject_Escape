@@ -7,9 +7,12 @@ public class Start_Manager : MonoBehaviour
 {
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("PlayScene");
+            if (Input.anyKeyDown)
+            {
+                SceneManager.LoadScene("PlayScene");
+            }
         }
 
 

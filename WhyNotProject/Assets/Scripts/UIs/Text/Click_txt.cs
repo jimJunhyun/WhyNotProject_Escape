@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class Click_txt : MonoBehaviour
 {
 
-    Text flashingText;
+    TextMeshProUGUI flashingText;
     void Start()
     {
-        flashingText = GetComponent<Text>();
+        flashingText = GetComponent<TextMeshProUGUI>();
         StartCoroutine(BlinkText());
     }
 
@@ -20,7 +21,7 @@ public class Click_txt : MonoBehaviour
         {
             flashingText.text = "";
             yield return new WaitForSeconds(.5f);
-            flashingText.text = "Click to Start";
+            flashingText.text = "Press a key to Start";
             yield return new WaitForSeconds(.5f);
 
         }
