@@ -229,9 +229,8 @@ GameObject:
   - component: {fileID: 237991174}
   - component: {fileID: 237991173}
   - component: {fileID: 237991172}
-  - component: {fileID: 237991170}
-  - component: {fileID: 237991169}
   - component: {fileID: 237991171}
+  - component: {fileID: 237991176}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -239,32 +238,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &237991169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237991168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b104a5fcb8d07e648886a95e6f3bd90f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
-  cameraTrasform: {fileID: 963194228}
---- !u!114 &237991170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237991168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89309fa515a8aa64c91081119ed34f83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!143 &237991171
 CharacterController:
   m_ObjectHideFlags: 0
@@ -347,6 +320,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &237991176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237991168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2c28976739ced47bc0ddf16d492f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 963194228}
+  mouseSensityvity: 4
+  walkSpeed: 2
+  jumpForce: 2
+  gravity: -9.81
+  moveSmoothTime: 0.3
 --- !u!1 &532605810
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +539,6 @@ GameObject:
   - component: {fileID: 963194230}
   - component: {fileID: 963194229}
   - component: {fileID: 963194226}
-  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -646,20 +636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e1cb09022521d41a389281027e52c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &963194231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 919a34c43a4016240b8d173620d59f1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraSensitivity: 5
-  cameraRotationLimit: 75
 --- !u!1 &1023461721
 GameObject:
   m_ObjectHideFlags: 0
