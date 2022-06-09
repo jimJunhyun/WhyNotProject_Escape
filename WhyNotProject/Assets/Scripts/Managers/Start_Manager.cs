@@ -14,8 +14,5 @@ public class Start_Manager : MonoBehaviour
                 SceneManager.LoadScene("PlayScene");
             }
         }
-
-
-
     }
 }
