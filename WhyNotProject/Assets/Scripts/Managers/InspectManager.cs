@@ -6,29 +6,34 @@ using UnityEngine.UI;
 public class InspectManager : MonoBehaviour
 {
     public static InspectManager Instance;
-	public Image InspectPanel;
-	public float inspectDist;
-	public Camera InspectCam;
-	[HideInInspector]
-	public bool isInspecting;
-	public KeyCode InspectKey;
+    Camera inspectCam;
+    public float moveSpeed = 100f;
 
-	private void Awake()
+    public Image panel;
+    public PlayerCameraMove camMove;
+    public PlayerController pc;
+    // Start is called before the first frame update
+    void Awake()
+    {
+        Instance = this;
+        inspectCam = GetComponent<Camera>();
+        panel.enabled = false;
+    }
+
+    public void ActiveInspect()
 	{
-		Instance = this;
-		InspectPanel.enabled = false;
-		isInspecting = false;
+        panel.enabled = true;
+        camMove.enabled = false;
+        pc.enabled = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 	}
-	public void StartInspecting()
+    public void DisableInspect()
 	{
-		Debug.Log("ASDF");
-		isInspecting = true;
-		InspectPanel.enabled = true;
-	}
-	public void EndInspecting()
-	{
-		Debug.Log("FDSA");
-		isInspecting = false;
-		InspectPanel.enabled = false;
-	}
+        panel.enabled = false;
+        camMove.enabled = true;
+        pc.enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 }

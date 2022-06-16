@@ -1,33 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/// <summary>
-/// 들었을 경우 : 
-/// 이동, 회전 등 조작을 정지한다.
-/// 조사중인 물체의 이동을 정지한다.
-/// 
-/// </summary>
-[RequireComponent(typeof(Holdable))]
+
+
+[RequireComponent(typeof(GlowObjectCmd))]
 public class Inspectable : MonoBehaviour
 {
-    Holdable myHold;
+	RaycastHit hit;
+	Collider myCol;
+	int originLayer;
+	Vector3 originPos;
+	Quaternion originRot;
+
+	bool currentInspected = false;
+
 	private void Awake()
 	{
-		myHold = GetComponent<Holdable>();
+		myCol = GetComponent<Collider>();
+		originLayer = gameObject.layer;
+		originPos = transform.position;
+		originRot = transform.rotation;
 	}
+
 	private void Update()
 	{
-		if (InspectManager.Instance.isInspecting && Input.GetKeyDown(InspectManager.Instance.InspectKey))
+		if (Input.GetMouseButtonDown(0) && HoldManager.Instance.MouseCursorDetect(out hit))
 		{
-			InspectManager.Instance.EndInspecting();
+			if(hit.collider == myCol)
+			{
+				gameObject.layer = 6;
+				currentInspected = true;
+			}
 		}
-		if (myHold.isHeld&&!InspectManager.Instance.isInspecting && Input.GetKeyDown(InspectManager.Instance.InspectKey))
+		else if(Input.GetMouseButtonDown(1) && HoldManager.Instance.MouseCursorDetect(out hit))
 		{
-			Vector3 cameraMiddle = InspectManager.Instance.InspectCam.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
-			cameraMiddle.z = InspectManager.Instance.inspectDist;
-			transform.position = InspectManager.Instance.InspectCam.ScreenToWorldPoint(cameraMiddle);
-			InspectManager.Instance.StartInspecting();
+			if(hit.collider == myCol)
+			{
+				currentInspected = false;
+				gameObject.layer = originLayer;
+				transform.position = originPos;
+				transform.rotation = originRot;
+			}
 		}
-		
+		Inspect();
+	}
+	void Inspect()
+	{
+		if (currentInspected)
+		{
+			InspectManager.Instance.ActiveInspect();
+			GetInput();
+		}
+		else
+		{
+			InspectManager.Instance.DisableInspect();
+		}
+	}
+	
+	void GetInput()
+	{
+		float h = Input.GetAxis("Horizontal");
+		float v = Input.GetAxis("Vertical");
+
+		transform.Rotate(new Vector3(v, h, 0) * InspectManager.Instance.moveSpeed * Time.deltaTime, Space.World);
 	}
 }
