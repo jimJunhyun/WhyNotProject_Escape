@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform playerCamera = null;
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float mouseSensityvity = 4.0f;
-    [SerializeField][Range(0.0f, 0.05f)] private float moveSmoothTime = 0.3f;
+    [Range(0.0f, 0.05f)]
+    [SerializeField] private float moveSmoothTime = 0.3f;
     [SerializeField] private float walkSpeed = 2.0f;
     [SerializeField] private float jumpForce = 2.0f;
     [SerializeField] private float standHeight = 2.0f;
@@ -19,6 +20,8 @@ public class PlayerController : MonoBehaviour
     private float cameraPitch = 0.0f;
     private float velocityY = 0.0f;
 
+    private bool testland;
+    private bool crouching;
     private bool canJump = true;
     private bool canCamera = true;
 
@@ -29,22 +32,39 @@ public class PlayerController : MonoBehaviour
 
     private LockedCursorController cursor;
 
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
         cursor = GameObject.Find("LockedCursor").GetComponent<LockedCursorController>();
+        characterController.center = new Vector3(0, 1, 0);
+        playerCamera.transform.position = new Vector3(0, 3.0f, 0);
     }
 
     private void Update()
     {
         UpdateMouseLook();
         UpdateMovement();
+
+        crouching = Input.GetKey(crouchKey);
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
-        Crouching();
+        float desiredHeight = crouching ? crouchHeight : standHeight;
+
+        if (characterController.height != desiredHeight)
+        {
+            Crouch(desiredHeight);
+
+            var camPos = playerCamera.transform.position;
+            camPos.y = transform.position.y + characterController.height / 1.5f;
+
+            playerCamera.transform.position = camPos;
+        }
+        
     }
+
 
     private void UpdateMouseLook()
     {
@@ -73,9 +93,18 @@ public class PlayerController : MonoBehaviour
 
         currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);
 
-        if (characterController.isGrounded == true) velocityY = 0.0f;
+        if (characterController.isGrounded == true)
+        {
+            velocityY = 0.0f;
 
-        if (Physics.Raycast(transform.position, Vector3.down, characterController.bounds.extents.y + 0.1f) || characterController.isGrounded == true)
+            if (testland == true)
+            {
+                testland = false;
+            }
+        }
+
+        if (Physics.Raycast(transform.position + new Vector3(0, characterController.height / 2, 0), Vector3.down, characterController.height / 1.8f) ||
+            characterController.isGrounded == true)
         {
             if (Input.GetKeyDown(jumpKey) && canJump == true)
             {
@@ -83,30 +112,23 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (velocityY <= -2)
+        {
+            testland = true;
+        }
+
         velocityY += gravity * Time.deltaTime;
         
-
         Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * walkSpeed + Vector3.up * velocityY;
 
         characterController.Move(velocity * Time.deltaTime);
     }
 
-    private void Crouching()
+    private void Crouch (float height)
     {
-        if (Input.GetKey(crouchKey))
-        {
-            characterController.height = crouchHeight;
-            canJump = false;
-        }
-        else
-        {
-            characterController.height = standHeight;
-            canJump = true;
-        }
-    }
+        float center = height / 2;
 
-    private void Zoom()
-    {
-
+        characterController.height = Mathf.Lerp(characterController.height, height, 0.2f);
+        characterController.center = Vector3.Lerp(characterController.center, new Vector3(0, center, 0), 0.2f);
     }
 }
