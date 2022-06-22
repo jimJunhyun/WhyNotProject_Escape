@@ -12,12 +12,14 @@ public class InspectManager : MonoBehaviour
     public Image panel;
     public PlayerCameraMove camMove;
     public PlayerController pc;
+    CharacterController cc;
     // Start is called before the first frame update
     void Awake()
     {
         Instance = this;
         inspectCam = GetComponent<Camera>();
         panel.enabled = false;
+        cc = pc.GetComponent<CharacterController>();
     }
 
     public void ActiveInspect()
@@ -25,6 +27,7 @@ public class InspectManager : MonoBehaviour
         panel.enabled = true;
         camMove.enabled = false;
         pc.enabled = false;
+        cc.enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 	}
@@ -33,6 +36,7 @@ public class InspectManager : MonoBehaviour
         panel.enabled = false;
         camMove.enabled = true;
         pc.enabled = true;
+        cc.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
