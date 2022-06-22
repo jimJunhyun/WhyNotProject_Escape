@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class InnerLight : MonoBehaviour
 {
-    private Transform sunRotation;
     private MeshRenderer meshRenderer;
     private Light mainInnerLight;
+    private Transform sunRotation;
 
     private void Start()
     {
