@@ -10,7 +10,6 @@ public class InspectManager : MonoBehaviour
     public float moveSpeed = 100f;
 
     public Image panel;
-    public PlayerCameraMove camMove;
     public PlayerController pc;
     // Start is called before the first frame update
     void Awake()
@@ -23,7 +22,6 @@ public class InspectManager : MonoBehaviour
     public void ActiveInspect()
 	{
         panel.enabled = true;
-        camMove.enabled = false;
         pc.enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -31,7 +29,6 @@ public class InspectManager : MonoBehaviour
     public void DisableInspect()
 	{
         panel.enabled = false;
-        camMove.enabled = true;
         pc.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
