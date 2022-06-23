@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4376028370150818232}
   - component: {fileID: 4376028370150818233}
   - component: {fileID: 4376028370150818234}
+  - component: {fileID: 753738302472065981}
+  - component: {fileID: 5264358270743087294}
   m_Layer: 0
   m_Name: Book
   m_TagString: Untagged
@@ -82,3 +84,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &753738302472065981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4376028370150818235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea54e8e14d6fe448875d8ab4b502d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5264358270743087294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4376028370150818235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlowColor: {r: 0, g: 1, b: 0.12510395, a: 0}
+  LerpFactor: 10

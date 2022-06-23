@@ -38,8 +38,8 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         cursor = GameObject.Find("LockedCursor").GetComponent<LockedCursorController>();
-        characterController.center = new Vector3(0, 1, 0);
-        playerCamera.transform.position = new Vector3(0, 3.0f, 0);
+        characterController.center = new Vector3(0, 0, 0);
+        playerCamera.transform.position = new Vector3(0, 4.0f, 0);
     }
 
     private void Update()
@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
 
     private void Crouch (float height)
     {
-        float center = height / 2;
+        float center = 0;
 
         characterController.height = Mathf.Lerp(characterController.height, height, 0.2f);
         characterController.center = Vector3.Lerp(characterController.center, new Vector3(0, center, 0), 0.2f);

@@ -46,15 +46,16 @@ public class Inspectable : MonoBehaviour
 	}
 	void Inspect()
 	{
-		if (currentInspected)
-		{
-			InspectManager.Instance.ActiveInspect();
-			GetInput();
-		}
-		else
-		{
-			InspectManager.Instance.DisableInspect();
-		}
+			if (currentInspected && !InspectManager.Instance.inspecting)
+			{
+				InspectManager.Instance.ActiveInspect();
+				GetInput();
+			}
+			else if(!currentInspected && InspectManager.Instance.inspecting)
+			{
+				InspectManager.Instance.DisableInspect();
+			}
+		
 	}
 	
 	void GetInput()
