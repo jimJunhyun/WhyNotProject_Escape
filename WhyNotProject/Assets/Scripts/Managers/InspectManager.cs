@@ -11,18 +11,21 @@ public class InspectManager : MonoBehaviour
 
     public Image panel;
     public PlayerController pc;
+    CharacterController cc;
     // Start is called before the first frame update
     void Awake()
     {
         Instance = this;
         inspectCam = GetComponent<Camera>();
         panel.enabled = false;
+        cc = pc.GetComponent<CharacterController>();
     }
 
     public void ActiveInspect()
 	{
         panel.enabled = true;
         pc.enabled = false;
+        cc.enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 	}
@@ -30,6 +33,7 @@ public class InspectManager : MonoBehaviour
 	{
         panel.enabled = false;
         pc.enabled = true;
+        cc.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

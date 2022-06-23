@@ -10,6 +10,7 @@ using UnityEngine.Events;
 public class Holdable : MonoBehaviour, IInteractable
 {
 	RaycastHit info;
+	public string triggerName;
 	public float bufferArea;
     public UnityEvent OnHeld { get; set;}
     public bool isHeld { get; set;}
@@ -22,9 +23,6 @@ public class Holdable : MonoBehaviour, IInteractable
     public void Held()
 	{
 		HoldManager.Instance.currentHolding = this;
-		isHeld = true;
-		isPlaced = false;
-		myRig.velocity = Vector2.zero;
 		myRig.useGravity = false;
 		transform.position = HoldManager.Instance.HoldPos;
 		transform.rotation = Quaternion.identity;
@@ -44,18 +42,17 @@ public class Holdable : MonoBehaviour, IInteractable
 	}
 	public void Place(Vector3 pos)
 	{
+		if (!isReusable)
+		{
+			gameObject.SetActive(false);
+			myGlow.Off();
+		}
+			
 		myRig.useGravity = false;
-		myRig.velocity = Vector2.zero;
-		myGlow.Off();
 		isPlaced = true;
 		isHeld = false;
 		transform.position = pos;
 		transform.rotation = Quaternion.identity; //물체별로 다른 각도 조절 필요할 듯
-		
-		if (!isReusable)
-		{
-			OnHeld.RemoveListener(Held);
-		}
 	}
 	void InteractionDetect()
 	{
@@ -63,7 +60,12 @@ public class Holdable : MonoBehaviour, IInteractable
 		{
 			if (Input.GetMouseButtonDown(0) && info.collider  == myCol)
 			{
-				isHeld = true;
+				if ((isReusable && isPlaced) || !isPlaced)
+				{
+					isHeld = true;
+					isPlaced = false;
+				}
+				
 			}
 		}
 		if (isHeld && Input.GetMouseButtonUp(0))
@@ -81,10 +83,11 @@ public class Holdable : MonoBehaviour, IInteractable
 	{
 		myGlow = GetComponent<GlowObjectCmd>();
 		myCol = GetComponent<Collider>();
-		bufferArea = transform.localScale.magnitude / 2f;
+		bufferArea = Mathf.Sqrt(Mathf.Log10( transform.localScale.magnitude) / 2) / 3;
 		myRig = GetComponent<Rigidbody>();
 		OnHeld = new UnityEvent();
 		OnHeld.AddListener(Held);
+		OnHeld.AddListener(myGlow.On);
 	}
 
 	#region 유니티기본
@@ -94,17 +97,18 @@ public class Holdable : MonoBehaviour, IInteractable
 	}
 	private void Update()
 	{
-		if (!isPlaced)
-		{
-			InteractionDetect();
-		}
-		
+		InteractionDetect();
 	}
 	private void LateUpdate()
 	{
 		if (isHeld)
 		{
 			OnHeld.Invoke();
+		}
+		if(isHeld || isPlaced)
+		{
+			myRig.velocity = Vector3.zero;
+			myRig.angularVelocity = Vector3.zero;
 		}
 	}
 	#endregion
