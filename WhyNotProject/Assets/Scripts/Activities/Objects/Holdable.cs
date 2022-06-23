@@ -42,6 +42,12 @@ public class Holdable : MonoBehaviour, IInteractable
 	}
 	public void Place(Vector3 pos)
 	{
+		if (!isReusable)
+		{
+			gameObject.SetActive(false);
+			myGlow.Off();
+		}
+			
 		myRig.useGravity = false;
 		isPlaced = true;
 		isHeld = false;

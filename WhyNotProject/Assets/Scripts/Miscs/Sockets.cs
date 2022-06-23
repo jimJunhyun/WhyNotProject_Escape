@@ -16,6 +16,7 @@ public class Sockets : MonoBehaviour
 		}
 		else if (keys.Contains(keyInfo) && !keyInfo.isHeld && !keyInfo.isPlaced)
 		{
+			OnMatched.Invoke();
 			keyInfo.Place(transform.position);
 		}
 	}

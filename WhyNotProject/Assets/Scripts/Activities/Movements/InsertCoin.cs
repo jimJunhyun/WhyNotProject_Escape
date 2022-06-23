@@ -4,23 +4,15 @@ using UnityEngine;
 
 public class InsertCoin : MonoBehaviour
 {
-	Coroutine c;
-    public void startInsert()
+	Animator anim;
+	public string TriggerName;
+	private void Awake()
 	{
-		c = StartCoroutine(translate());
+		anim = GetComponent<Animator>();
 	}
-
-	public void stopInsert()
+	public void StartAnim()
 	{
-		StopCoroutine(c);
+		anim.SetTrigger(TriggerName);
 	}
-
-	IEnumerator translate()
-	{
-		while (true)
-		{
-			transform.Translate(Vector3.right * Time.deltaTime);
-			yield return null;
-		}
-	}
+	
 }
