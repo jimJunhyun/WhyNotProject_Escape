@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class OptionUI : MonoBehaviour
 {
     [SerializeField] private RectTransform rectTransform;
+    [SerializeField] private RectTransform helpImageTransform;
     [SerializeField] private Slider bgmToggle;
     [SerializeField] private Slider bgmVolumeSlider;
     [SerializeField] private Slider sfxToggle;
@@ -23,10 +24,26 @@ public class OptionUI : MonoBehaviour
     public bool ccToggleEnabled;
     private bool toggleChanged;
     private bool sliderChanged;
+    private bool helpImageOpened;
 
     private void Start()
     {
-        rectTransform = GetComponent<RectTransform>();
+        bgmToggle.value = PlayerPrefs.GetFloat("BGMToggle", 1);
+
+        if (bgmToggle.value == 1)
+        {
+            bgmVolumeSlider.value = PlayerPrefs.GetFloat("BGMVolume", 100);
+        }
+
+        sfxToggle.value = PlayerPrefs.GetFloat("SFXToggle", 1);
+
+        if (sfxToggle.value == 1)
+        {
+            sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 100);
+        }
+
+        ccToggle.value = PlayerPrefs.GetFloat("CCToggle", 1);
+        ccSpeedSlider.value = PlayerPrefs.GetFloat("CCSpeed", 50);
     }
 
     private void Update()
@@ -37,15 +54,19 @@ public class OptionUI : MonoBehaviour
 
     private void OptionOpenClose()
     {
+        DOTween.timeScale = 1.0f;
+
         if (Input.GetKeyDown(KeyCode.Escape) && optionOpened == false)
         {
             optionOpened = true;
-            rectTransform.DOAnchorPosY(0, 1f);
+            rectTransform.DOAnchorPosY(0, 1f).SetUpdate(true);
+            Time.timeScale = 0.0f;
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && optionOpened == true)
         {
             optionOpened = false;
-            rectTransform.DOAnchorPosY(450, 1f);
+            rectTransform.DOAnchorPosY(450, 1f).SetUpdate(true);
+            Time.timeScale = 1.0f;
         }
     }
 
@@ -73,6 +94,8 @@ public class OptionUI : MonoBehaviour
                 bgmToggleEnabled = true;
                 bgmVolumeSlider.value = PlayerPrefs.GetFloat("BGMVolume", 1);
             }
+
+            PlayerPrefs.SetFloat("BGMToggle", bgmToggle.value);
         }
 
         toggleChanged = false;
@@ -95,6 +118,8 @@ public class OptionUI : MonoBehaviour
                 sfxToggleEnabled = true;
                 sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1);
             }
+
+            PlayerPrefs.SetFloat("SFXToggle", sfxToggle.value);
         }
 
         toggleChanged = false;
@@ -110,6 +135,8 @@ public class OptionUI : MonoBehaviour
         {
             ccToggleEnabled = true;
         }
+
+        PlayerPrefs.SetFloat("CCToggle", ccToggle.value);
     }
 
     public void BGMSliderChange()
@@ -118,10 +145,7 @@ public class OptionUI : MonoBehaviour
 
         if (toggleChanged == false)
         {
-            if (bgmVolumeSlider.value == 0)
-            {
-                PlayerPrefs.SetFloat("BGMVolume", bgmVolumeSlider.value);
-            }
+            PlayerPrefs.SetFloat("BGMVolume", bgmVolumeSlider.value);
 
             bgmToggle.value = Mathf.Ceil(bgmVolumeSlider.value);
 
@@ -133,6 +157,8 @@ public class OptionUI : MonoBehaviour
             {
                 bgmToggleEnabled = true;
             }
+
+            PlayerPrefs.SetFloat("BGMToggle", bgmToggle.value);
         }
 
         sliderChanged = false;
@@ -144,10 +170,7 @@ public class OptionUI : MonoBehaviour
 
         if (toggleChanged == false)
         {
-            if (sfxVolumeSlider.value == 0)
-            {
-                PlayerPrefs.SetFloat("SFXVolume", sfxVolumeSlider.value);
-            }
+            PlayerPrefs.SetFloat("SFXVolume", sfxVolumeSlider.value);
 
             sfxToggle.value = Mathf.Ceil(sfxVolumeSlider.value);
 
@@ -159,8 +182,35 @@ public class OptionUI : MonoBehaviour
             {
                 sfxToggleEnabled = true;
             }
+
+            PlayerPrefs.SetFloat("SFXToggle", sfxToggle.value);
         }
 
         sliderChanged = false;
+    }
+
+    public void CCSliderChange()
+    {
+        sliderChanged = true;
+
+        if (toggleChanged == false)
+        {
+            PlayerPrefs.SetFloat("CCSpeed", ccSpeedSlider.value);
+        }
+
+        sliderChanged = false;
+    }
+
+    public void HelpImagePopup()
+    {
+        if (helpImageOpened == false)
+        {
+            helpImageTransform.DOSizeDelta(new Vector2(592, 333), 1f).SetUpdate(true);
+            //DOSizeDelta(new Vector3(160, 30), 1f).SetUpdate(true); //버튼 클릭 시 UI 크기 조절
+        }
+        else
+        {
+            helpImageTransform.DOSizeDelta(new Vector2(0, 0), 1f).SetUpdate(true);
+        }
     }
 }
