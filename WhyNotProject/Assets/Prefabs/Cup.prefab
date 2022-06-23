@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 5065204734272954636}
   - component: {fileID: 5065204734272954637}
   - component: {fileID: 5065204734272954638}
+  - component: {fileID: 7174442656610594811}
+  - component: {fileID: 6260631326210996875}
+  - component: {fileID: 2031040995540056644}
   m_Layer: 0
   m_Name: Cup
   m_TagString: Untagged
@@ -81,3 +84,43 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7174442656610594811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5065204734272954639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea54e8e14d6fe448875d8ab4b502d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6260631326210996875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5065204734272954639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlowColor: {r: 0, g: 1, b: 0.17647552, a: 0}
+  LerpFactor: 10
+--- !u!136 &2031040995540056644
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5065204734272954639}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0054806652
+  m_Height: 0.013897793
+  m_Direction: 2
+  m_Center: {x: 0.000053015436, y: -0.00006445548, z: 0.002897818}

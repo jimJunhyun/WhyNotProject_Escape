@@ -30,7 +30,8 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController characterController;
 
-    private LockedCursorController cursor;
+    [HideInInspector]
+    public LockedCursorController cursor;
 
 
     private void Start()

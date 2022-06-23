@@ -10,7 +10,6 @@ using UnityEngine.Events;
 public class Holdable : MonoBehaviour, IInteractable
 {
 	RaycastHit info;
-	public string triggerName;
 	public float bufferArea;
     public UnityEvent OnHeld { get; set;}
     public bool isHeld { get; set;}

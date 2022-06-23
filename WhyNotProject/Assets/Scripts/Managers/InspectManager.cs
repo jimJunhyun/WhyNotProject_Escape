@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class InspectManager : MonoBehaviour
 {
     public static InspectManager Instance;
-    Camera inspectCam;
     public float moveSpeed = 100f;
 
     public Image panel;
@@ -16,7 +15,6 @@ public class InspectManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        inspectCam = GetComponent<Camera>();
         panel.enabled = false;
         cc = pc.GetComponent<CharacterController>();
     }
@@ -25,6 +23,7 @@ public class InspectManager : MonoBehaviour
 	{
         panel.enabled = true;
         pc.enabled = false;
+        pc.cursor.enabled = false;
         cc.enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -33,6 +32,7 @@ public class InspectManager : MonoBehaviour
 	{
         panel.enabled = false;
         pc.enabled = true;
+        pc.cursor.enabled = true;
         cc.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
