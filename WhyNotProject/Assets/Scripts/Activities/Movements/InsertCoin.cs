@@ -12,7 +12,9 @@ public class InsertCoin : MonoBehaviour
 	}
 	public void StartAnim()
 	{
+		Debug.Log("DDDD");
 		anim.SetTrigger(TriggerName);
+		
 	}
 	
 }
