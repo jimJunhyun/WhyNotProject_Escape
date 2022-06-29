@@ -56,13 +56,13 @@ public class OptionUI : MonoBehaviour
     {
         DOTween.timeScale = 1.0f;
 
-        if (Input.GetKeyDown(KeyCode.Escape) && optionOpened == false)
+        if (Input.GetKeyDown(KeyCode.O) && optionOpened == false)
         {
             optionOpened = true;
             rectTransform.DOAnchorPosY(0, 1f).SetUpdate(true);
             Time.timeScale = 0.0f;
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && optionOpened == true)
+        else if (Input.GetKeyDown(KeyCode.O) && optionOpened == true)
         {
             optionOpened = false;
             rectTransform.DOAnchorPosY(450, 1f).SetUpdate(true);
