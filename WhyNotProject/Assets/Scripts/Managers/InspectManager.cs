@@ -8,9 +8,10 @@ public class InspectManager : MonoBehaviour
     public static InspectManager Instance;
     Camera inspectCam;
     public float moveSpeed = 100f;
+    [HideInInspector]
+    public int InspectingNum = 0;
 
     public Image panel;
-    public PlayerCameraMove camMove;
     public PlayerController pc;
     CharacterController cc;
     // Start is called before the first frame update
@@ -22,19 +23,33 @@ public class InspectManager : MonoBehaviour
         cc = pc.GetComponent<CharacterController>();
     }
 
-    public void ActiveInspect()
+	private void Update()
 	{
+		if (InspectingNum > 0)
+		{
+            ActiveInspect();
+		}
+		else
+		{
+            DisableInspect();
+		}
+	}
+
+	public void ActiveInspect()
+	{
+        Debug.Log("??????");
         panel.enabled = true;
-        camMove.enabled = false;
         pc.enabled = false;
         cc.enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 	}
+
+
     public void DisableInspect()
 	{
+        Debug.Log("!!@!@");
         panel.enabled = false;
-        camMove.enabled = true;
         pc.enabled = true;
         cc.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
