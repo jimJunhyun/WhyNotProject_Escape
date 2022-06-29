@@ -621,9 +621,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 100
+  InspectingNum: 0
   panel: {fileID: 1062176482}
   pc: {fileID: 237991169}
-  inspecting: 0
 --- !u!1 &623160849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,9 +1412,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1661005566}
     m_Modifications:
+    - target: {fileID: 1897083142617875508, guid: ab029adb87ce959428112dfa1b76f391, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2423960539100306097, guid: ab029adb87ce959428112dfa1b76f391, type: 3}
       propertyPath: m_Name
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423960539100306097, guid: ab029adb87ce959428112dfa1b76f391, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2423960539100306098, guid: ab029adb87ce959428112dfa1b76f391, type: 3}
       propertyPath: m_RootOrder
@@ -1472,7 +1480,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8091560493012881455, guid: ab029adb87ce959428112dfa1b76f391, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5440939670716067999, guid: ab029adb87ce959428112dfa1b76f391, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab029adb87ce959428112dfa1b76f391, type: 3}
 --- !u!4 &1289312580 stripped
 Transform:
