@@ -5,6 +5,8 @@ public class GlowObjectCmd : MonoBehaviour
 {
 	public Color GlowColor;
 	public float LerpFactor = 10;
+	bool isFocused = false;
+	Collider myCol;
 
 	public Renderer[] Renderers
 	{
@@ -20,8 +22,20 @@ public class GlowObjectCmd : MonoBehaviour
 	private Color _currentColor;
 	private Color _targetColor;
 
+	public void On()
+	{
+		this.enabled = true;
+	}
+
+	public void Off()
+	{
+		_currentColor = Color.black;
+		this.enabled = false;
+	}
+
 	void Start()
 	{
+		myCol = GetComponent<Collider>();
 		Renderers = GetComponentsInChildren<Renderer>();
 		GlowController.RegisterObject(this);
 	}
@@ -43,11 +57,25 @@ public class GlowObjectCmd : MonoBehaviour
 	/// </summary>
 	private void Update()
 	{
-		_currentColor = Color.Lerp(_currentColor, _targetColor, Time.deltaTime * LerpFactor);
+		HoldManager.Instance.MouseCursorDetect(out RaycastHit hit);
+		isFocused = (hit.collider == myCol);
 
-		if (_currentColor.Equals(_targetColor))
+
+		if (isFocused)
 		{
-			enabled = false;
+			_targetColor = GlowColor;
+			
 		}
+		else
+		{
+			_targetColor = Color.black;
+		}
+		_currentColor = Color.Lerp(_currentColor, _targetColor, Time.deltaTime * LerpFactor);
+		
+
+		//if (_currentColor.Equals(_targetColor))
+		//{
+		//	enabled = false;
+		//}
 	}
 }

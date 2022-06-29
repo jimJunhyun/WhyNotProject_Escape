@@ -11,6 +11,6 @@ public interface IInteractable
 	public void Held(); //들렸을 때 행위
 	public void Fall(); //손에서 놓았을때
 	public void Throw();
-	public void Place(); //배치할 때 행위
+	public void Place(Vector3 pos); //배치할 때 행위
 
 }

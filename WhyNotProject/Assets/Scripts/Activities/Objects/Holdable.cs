@@ -10,18 +10,18 @@ using UnityEngine.Events;
 public class Holdable : MonoBehaviour, IInteractable
 {
 	RaycastHit info;
-	Ray screenRay;
+	public float bufferArea;
     public UnityEvent OnHeld { get; set;}
     public bool isHeld { get; set;}
 	public bool isPlaced { get; set;}
 	[Tooltip("놓여진 이후에도 다시 뽑아서 사용할 수 있는가?")]
 	public bool isReusable = false;
+	GlowObjectCmd myGlow;
+	Collider myCol;
 	Rigidbody myRig;
     public void Held()
 	{
-		isHeld = true;
-		isPlaced = false;
-		myRig.velocity = Vector2.zero;
+		HoldManager.Instance.currentHolding = this;
 		myRig.useGravity = false;
 		transform.position = HoldManager.Instance.HoldPos;
 		transform.rotation = Quaternion.identity;
@@ -29,6 +29,7 @@ public class Holdable : MonoBehaviour, IInteractable
 	}
     public void Fall()
 	{
+		HoldManager.Instance.currentHolding = null;
 		isHeld = false;
 		myRig.useGravity = true;
 		gameObject.layer = 0;
@@ -36,50 +37,66 @@ public class Holdable : MonoBehaviour, IInteractable
 	public void Throw() 
 	{
 		Fall();
-		myRig.AddForce(screenRay.direction * HoldManager.Instance.throwPower, ForceMode.Impulse);
+		myRig.AddForce(HoldManager.Instance.throwDirection * HoldManager.Instance.throwPower, ForceMode.Impulse);
 	}
-	public void Place()
+	public void Place(Vector3 pos)
 	{
-		isPlaced = true;
-		myRig.useGravity = false;
-		myRig.velocity = Vector2.zero;
-
-		transform.rotation = Quaternion.identity; //물체별로 다른 각도 조절 필요할 듯
-
 		if (!isReusable)
 		{
-			OnHeld.RemoveListener(Held);
+			gameObject.SetActive(false);
+			myGlow.Off();
 		}
+			
+		myRig.useGravity = false;
+		isPlaced = true;
+		isHeld = false;
+		transform.position = pos;
+		transform.rotation = Quaternion.identity; //물체별로 다른 각도 조절 필요할 듯
 	}
-	private void Awake()
+	void InteractionDetect()
 	{
-		myRig = GetComponent<Rigidbody>();
-		OnHeld = new UnityEvent();
-		OnHeld.AddListener(Held);
-	}
-	private void Update()
-	{
-		if (Input.GetMouseButtonDown(0))
+		if (HoldManager.Instance.MouseCursorDetect(out info))
 		{
-			screenRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-			if (Physics.Raycast(screenRay, out info))
+			if (Input.GetMouseButtonDown(0) && info.collider  == myCol)
 			{
-				if(info.collider == gameObject.GetComponent<Collider>())
+				if ((isReusable && isPlaced) || !isPlaced)
 				{
 					isHeld = true;
+					isPlaced = false;
 				}
+				
 			}
 		}
-		else if (isHeld && Input.GetMouseButtonUp(0))
+		if (isHeld && Input.GetMouseButtonUp(0))
 		{
 			info = new RaycastHit();
 			Fall();
 		}
-		else if(isHeld && Input.GetMouseButtonDown(1))
+		else if (isHeld && Input.GetMouseButtonDown(1))
 		{
 			info = new RaycastHit();
 			Throw();
 		}
+	}
+	void Init()
+	{
+		myGlow = GetComponent<GlowObjectCmd>();
+		myCol = GetComponent<Collider>();
+		bufferArea = Mathf.Sqrt(Mathf.Log10( transform.localScale.magnitude) / 2) / 3;
+		myRig = GetComponent<Rigidbody>();
+		OnHeld = new UnityEvent();
+		OnHeld.AddListener(Held);
+		OnHeld.AddListener(myGlow.On);
+	}
+
+	#region 유니티기본
+	private void Awake()
+	{
+		Init();
+	}
+	private void Update()
+	{
+		InteractionDetect();
 	}
 	private void LateUpdate()
 	{
@@ -87,5 +104,11 @@ public class Holdable : MonoBehaviour, IInteractable
 		{
 			OnHeld.Invoke();
 		}
+		if(isHeld || isPlaced)
+		{
+			myRig.velocity = Vector3.zero;
+			myRig.angularVelocity = Vector3.zero;
+		}
 	}
+	#endregion
 }

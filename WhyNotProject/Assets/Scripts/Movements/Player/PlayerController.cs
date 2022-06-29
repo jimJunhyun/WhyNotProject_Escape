@@ -4,18 +4,132 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private PlayerMovement playerMovement;
+    [SerializeField] private Transform playerCamera = null;
+    [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private float mouseSensityvity = 4.0f;
+    [Range(0.0f, 0.05f)]
+    [SerializeField] private float moveSmoothTime = 0.3f;
+    [SerializeField] private float walkSpeed = 2.0f;
+    [SerializeField] private float jumpForce = 2.0f;
+    [SerializeField] private float standHeight = 2.0f;
+    [SerializeField] private float crouchHeight = 0.9f;
 
-    private void Awake()
+    [SerializeField] private KeyCode jumpKey = KeyCode.Space;
+    [SerializeField] private KeyCode crouchKey = KeyCode.C;
+
+    private float cameraPitch = 0.0f;
+    private float velocityY = 0.0f;
+
+    private bool testland;
+    private bool crouching;
+    private bool canJump = true;
+    private bool canCamera = true;
+
+    private Vector2 currentDir = Vector2.zero;
+    private Vector2 currentDirVelocity = Vector2.zero;
+
+    private CharacterController characterController;
+
+    [HideInInspector]
+    public LockedCursorController cursor;
+
+
+    private void Start()
     {
-        playerMovement = GetComponent<PlayerMovement>();
+        characterController = GetComponent<CharacterController>();
+        cursor = GameObject.Find("LockedCursor").GetComponent<LockedCursorController>();
+        characterController.center = new Vector3(0, 0, 0);
+        playerCamera.transform.position = new Vector3(0, 4.0f, 0);
     }
 
     private void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        UpdateMouseLook();
+        UpdateMovement();
 
-        playerMovement.MoveTo(new Vector3(x, 0, z));
+        crouching = Input.GetKey(crouchKey);
+    }
+
+    private void FixedUpdate()
+    {
+        float desiredHeight = crouching ? crouchHeight : standHeight;
+
+        if (characterController.height != desiredHeight)
+        {
+            Crouch(desiredHeight);
+
+            var camPos = playerCamera.transform.position;
+            camPos.y = transform.position.y + characterController.height / 1.5f;
+
+            playerCamera.transform.position = camPos;
+        }
+        
+    }
+
+
+    private void UpdateMouseLook()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            canCamera = !canCamera;
+            cursor.Esc = !canCamera;
+        }
+
+        if (canCamera != false)
+        {
+            Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+
+            cameraPitch -= mouseDelta.y * mouseSensityvity;
+            cameraPitch = Mathf.Clamp(cameraPitch, -80, 80);
+
+            playerCamera.localEulerAngles = Vector3.right * cameraPitch;
+            transform.Rotate(Vector3.up * mouseDelta.x * mouseSensityvity);
+        }
+    }
+
+    private void UpdateMovement()
+    {
+        Vector2 targetDir = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        targetDir.Normalize();
+
+        currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);
+
+        if (characterController.isGrounded == true)
+        {
+            velocityY = 0.0f;
+
+            if (testland == true)
+            {
+                testland = false;
+            }
+        }
+
+        if (Physics.Raycast(transform.position + new Vector3(0, characterController.height / 2, 0), Vector3.down, characterController.height / 1.8f) ||
+            characterController.isGrounded == true)
+        {
+            if (Input.GetKeyDown(jumpKey) && canJump == true)
+            {
+                velocityY = jumpForce;
+            }
+        }
+
+        if (velocityY <= -2)
+        {
+            testland = true;
+        }
+
+        velocityY += gravity * Time.deltaTime;
+        
+        Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * walkSpeed + Vector3.up * velocityY;
+
+        characterController.Move(velocity * Time.deltaTime);
+    }
+
+    private void Crouch (float height)
+    {
+        float center = 0;
+
+        characterController.height = Mathf.Lerp(characterController.height, height, 0.2f);
+        characterController.center = Vector3.Lerp(characterController.center, new Vector3(0, center, 0), 0.2f);
     }
 }

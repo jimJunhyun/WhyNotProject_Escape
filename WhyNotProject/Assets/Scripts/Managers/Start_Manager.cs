@@ -5,14 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class Start_Manager : MonoBehaviour
 {
+    private OptionUI optionUI;
+
+    private void Start()
+    {
+        optionUI = GameObject.Find("OptionPanel").GetComponent<OptionUI>();
+    }
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!Input.GetKeyDown(KeyCode.Escape) && optionUI.optionOpened == false)
         {
-            SceneManager.LoadScene("PlayScene");
+            if (Input.anyKeyDown)
+            {
+                SceneManager.LoadScene("PlayScene");
+            }
         }
-
-
-
     }
 }

@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class LockedCursorController : MonoBehaviour
 {
-    bool move = false;
-    RectTransform rectTrans;
+    private bool esc = false;
+
+    public  bool Esc
+    {
+        get { return esc; }
+        set { esc = value; }
+    }
+
+    private RectTransform rectTrans;
 
     private void Awake()
     {
@@ -14,18 +21,13 @@ public class LockedCursorController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            move = !move;
-        }
+        Cursor.lockState = esc ? CursorLockMode.None : CursorLockMode.Locked;
 
-        Cursor.lockState = move ? CursorLockMode.None : CursorLockMode.Locked;
-
-        if (move == false)
+        if (esc == false)
         {
             rectTrans.transform.position = new Vector2(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2);
         }
-        else if (move == true)
+        else if (esc == true)
         {
             rectTrans.transform.position = Input.mousePosition;
         }
