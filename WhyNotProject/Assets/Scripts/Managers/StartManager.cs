@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Start_Manager : MonoBehaviour
+public class StartManager : MonoBehaviour
 {
     private OptionUI optionUI;
 
@@ -14,7 +14,7 @@ public class Start_Manager : MonoBehaviour
 
     private void Update()
     {
-        if (!Input.GetKeyDown(KeyCode.Escape) && optionUI.optionOpened == false)
+        if (!Input.GetKeyDown(KeyCode.O) && optionUI.optionOpened == false)
         {
             if (Input.anyKeyDown)
             {
