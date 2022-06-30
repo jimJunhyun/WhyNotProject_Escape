@@ -30,7 +30,7 @@ public class Inspectable : MonoBehaviour
 			{
 				gameObject.layer = 6;
 				currentInspected = true;
-				++InspectManager.Instance.InspectingNum;
+				InspectManager.Instance.ActiveInspect();
 			}
 		}
 		else if(Input.GetMouseButtonDown(1) && HoldManager.Instance.MouseCursorDetect(out hit))
@@ -41,7 +41,7 @@ public class Inspectable : MonoBehaviour
 				gameObject.layer = originLayer;
 				transform.position = originPos;
 				transform.rotation = originRot;
-				--InspectManager.Instance.InspectingNum;
+				InspectManager.Instance.DisableInspect();
 			}
 		}
 		Inspect();
