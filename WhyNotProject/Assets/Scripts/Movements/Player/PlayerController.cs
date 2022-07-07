@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         cursor = GameObject.Find("LockedCursor").GetComponent<LockedCursorController>();
         characterController.center = new Vector3(0, 0, 0);
-        playerCamera.transform.position = new Vector3(0, 4.0f, transform.position.z);
+        playerCamera.transform.position = new Vector3(0, 4.0f, 0);
     }
 
     private void Update()
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateMouseLook()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             canCamera = !canCamera;
             cursor.Esc = !canCamera;

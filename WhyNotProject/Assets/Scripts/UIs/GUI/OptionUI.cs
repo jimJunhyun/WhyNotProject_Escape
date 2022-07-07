@@ -54,13 +54,15 @@ public class OptionUI : MonoBehaviour
 
     private void OptionOpenClose()
     {
-        if (Input.GetKeyDown(KeyCode.O) && optionOpened == false)
+        DOTween.timeScale = 1.0f;
+
+        if (Input.GetKeyDown(KeyCode.Escape) && optionOpened == false)
         {
             optionOpened = true;
             rectTransform.DOAnchorPosY(0, 1f).SetUpdate(true);
             Time.timeScale = 0.0f;
         }
-        else if (Input.GetKeyDown(KeyCode.O) && optionOpened == true)
+        else if (Input.GetKeyDown(KeyCode.Escape) && optionOpened == true)
         {
             optionOpened = false;
             rectTransform.DOAnchorPosY(450, 1f).SetUpdate(true);
@@ -203,13 +205,12 @@ public class OptionUI : MonoBehaviour
     {
         if (helpImageOpened == false)
         {
-            helpImageTransform.DOScale(new Vector2(1, 1), 1f).SetUpdate(true);
-            helpImageOpened = true;
+            helpImageTransform.DOSizeDelta(new Vector2(592, 333), 1f).SetUpdate(true);
+            //DOSizeDelta(new Vector3(160, 30), 1f).SetUpdate(true); //버튼 클릭 시 UI 크기 조절
         }
         else
         {
-            helpImageTransform.DOScale(new Vector2(0, 0), 1f).SetUpdate(true);
-            helpImageOpened = false;
+            helpImageTransform.DOSizeDelta(new Vector2(0, 0), 1f).SetUpdate(true);
         }
     }
 }
