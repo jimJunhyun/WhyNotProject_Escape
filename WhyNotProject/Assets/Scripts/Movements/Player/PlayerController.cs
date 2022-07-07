@@ -36,10 +36,11 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        
         characterController = GetComponent<CharacterController>();
         cursor = GameObject.Find("LockedCursor").GetComponent<LockedCursorController>();
         characterController.center = new Vector3(0, 0, 0);
-        playerCamera.transform.position = new Vector3(0, 4.0f, 0);
+        playerCamera.transform.position = new Vector3(transform.position.x, transform.position.y + characterController.height / 2, transform.position.z);
     }
 
     private void Update()
