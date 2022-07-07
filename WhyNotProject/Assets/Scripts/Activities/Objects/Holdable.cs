@@ -14,11 +14,18 @@ public class Holdable : MonoBehaviour, IInteractable
     public UnityEvent OnHeld { get; set;}
     public bool isHeld { get; set;}
 	public bool isPlaced { get; set;}
-	[Tooltip("놓여진 이후에도 다시 뽑아서 사용할 수 있는가?")]
+	[Header("놓여진 이후에도 다시 뽑아서 사용할 수 있는가?")]
 	public bool isReusable = false;
+	[Header("놓여진 상태에서의 각도(360')")]
+	public Vector3 rotPreset;
+	[Header("놓기 애니메이션의 길이")]
+	public float animLength = 1;
+
 	GlowObjectCmd myGlow;
 	Collider myCol;
 	Rigidbody myRig;
+	MeshRenderer myRen;
+
     public void Held()
 	{
 		HoldManager.Instance.currentHolding = this;
@@ -46,12 +53,16 @@ public class Holdable : MonoBehaviour, IInteractable
 			gameObject.SetActive(false);
 			myGlow.Off();
 		}
+		else
+		{
+			StartCoroutine(DelayOn());
+		}
 			
 		myRig.useGravity = false;
 		isPlaced = true;
 		isHeld = false;
 		transform.position = pos;
-		transform.rotation = Quaternion.identity; //물체별로 다른 각도 조절 필요할 듯
+		transform.eulerAngles = rotPreset; //물체별로 다른 각도 조절 필요할 듯
 	}
 	void InteractionDetect()
 	{
@@ -82,11 +93,23 @@ public class Holdable : MonoBehaviour, IInteractable
 	{
 		myGlow = GetComponent<GlowObjectCmd>();
 		myCol = GetComponent<Collider>();
+		myRen = GetComponent<MeshRenderer>();
 		bufferArea = Mathf.Sqrt(Mathf.Log10( transform.localScale.magnitude) / 2) / 3;
 		myRig = GetComponent<Rigidbody>();
 		OnHeld = new UnityEvent();
 		OnHeld.AddListener(Held);
 		OnHeld.AddListener(myGlow.On);
+	}
+
+	IEnumerator DelayOn()
+	{
+		myRen.enabled = false;
+		myCol.enabled = false;
+		myRig.useGravity = false;
+		yield return new WaitForSeconds(animLength);
+		myRen.enabled = true;
+		myCol.enabled = true;
+		myRig.useGravity = true;
 	}
 
 	#region 유니티기본
