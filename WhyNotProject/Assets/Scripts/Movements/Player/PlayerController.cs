@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateMouseLook()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             canCamera = !canCamera;
             cursor.Esc = !canCamera;
