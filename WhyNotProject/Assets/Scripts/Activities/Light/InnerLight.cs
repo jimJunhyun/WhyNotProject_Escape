@@ -24,12 +24,10 @@ public class InnerLight : MonoBehaviour
     {
         if (sunRotation.localEulerAngles.x <= 200)
         {
-            meshRenderer.materials[2].SetColor("_EmissionColor", Color.white * -10);
             mainInnerLight.enabled = false;
         }
         else
         {
-            meshRenderer.materials[2].SetColor("_EmissionColor", Color.white * 5);
             mainInnerLight.enabled = true;
         }
     }
