@@ -11,6 +11,7 @@ public class Holdable : MonoBehaviour, IInteractable
 {
 	RaycastHit info;
 	public float bufferArea;
+	public int weight;
     public UnityEvent OnHeld { get; set;}
     public bool isHeld { get; set;}
 	public bool isPlaced { get; set;}
