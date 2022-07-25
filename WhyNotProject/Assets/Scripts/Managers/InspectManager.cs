@@ -37,13 +37,18 @@ public class InspectManager : MonoBehaviour
 		}
 	}
 
+	private void LateUpdate()
+	{
+		inspectCam.fieldOfView = Camera.main.fieldOfView;
+	}
+
 	public void ActiveInspect()
 	{
-
         panel.enabled = true;
         pc.enabled = false;
         cc.enabled = false;
         lcctrl.Esc = true;
+        Cursor.visible = false;
 	}
 
 
