@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class OptionUI : MonoBehaviour
 {
+    public static OptionUI Instance;
+
     [SerializeField] private RectTransform rectTransform;
     [SerializeField] private RectTransform helpImageTransform;
     [SerializeField] private Slider bgmToggle;
@@ -25,6 +27,16 @@ public class OptionUI : MonoBehaviour
     private bool toggleChanged;
     private bool sliderChanged;
     private bool helpImageOpened;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {
@@ -54,16 +66,20 @@ public class OptionUI : MonoBehaviour
 
     private void OptionOpenClose()
     {
-        DOTween.timeScale = 1.0f;
-
-        if (Input.GetKeyDown(KeyCode.Escape) && optionOpened == false)
+        if (Input.GetKeyDown(KeyCode.O) && optionOpened == false)
         {
             optionOpened = true;
             rectTransform.DOAnchorPosY(0, 1f).SetUpdate(true);
             Time.timeScale = 0.0f;
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && optionOpened == true)
+        else if (Input.GetKeyDown(KeyCode.O) && optionOpened == true)
         {
+            if (helpImageOpened == true)
+            {
+                helpImageOpened = false;
+                helpImageTransform.DOScale(new Vector2(0, 0), 1f).SetUpdate(true);
+            }
+
             optionOpened = false;
             rectTransform.DOAnchorPosY(450, 1f).SetUpdate(true);
             Time.timeScale = 1.0f;
@@ -205,12 +221,13 @@ public class OptionUI : MonoBehaviour
     {
         if (helpImageOpened == false)
         {
-            helpImageTransform.DOSizeDelta(new Vector2(592, 333), 1f).SetUpdate(true);
-            //DOSizeDelta(new Vector3(160, 30), 1f).SetUpdate(true); //버튼 클릭 시 UI 크기 조절
+            helpImageOpened = true;
+            helpImageTransform.DOScale(new Vector2(1, 1), 1f).SetUpdate(true);
         }
         else
         {
-            helpImageTransform.DOSizeDelta(new Vector2(0, 0), 1f).SetUpdate(true);
+            helpImageOpened = false;
+            helpImageTransform.DOScale(new Vector2(0, 0), 1f).SetUpdate(true);
         }
     }
 }
