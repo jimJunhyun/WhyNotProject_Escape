@@ -16,9 +16,14 @@ public class Holdable : MonoBehaviour, IInteractable
 	public bool isPlaced { get; set;}
 	[Tooltip("놓여진 이후에도 다시 뽑아서 사용할 수 있는가?")]
 	public bool isReusable = false;
+	public Vector3 placedRot;
+	public float animLen;
+
+
 	GlowObjectCmd myGlow;
 	Collider myCol;
 	Rigidbody myRig;
+	Renderer myRen;
     public void Held()
 	{
 		HoldManager.Instance.currentHolding = this;
@@ -39,19 +44,12 @@ public class Holdable : MonoBehaviour, IInteractable
 		Fall();
 		myRig.AddForce(HoldManager.Instance.throwDirection * HoldManager.Instance.throwPower, ForceMode.Impulse);
 	}
+
 	public void Place(Vector3 pos)
 	{
-		if (!isReusable)
-		{
-			gameObject.SetActive(false);
-			myGlow.Off();
-		}
-			
-		myRig.useGravity = false;
-		isPlaced = true;
-		isHeld = false;
-		transform.position = pos;
-		transform.rotation = Quaternion.identity; //물체별로 다른 각도 조절 필요할 듯
+		myRen.enabled = false;
+		myCol.enabled = false;
+		StartCoroutine(DelayPlace(pos));
 	}
 	void InteractionDetect()
 	{
@@ -82,11 +80,30 @@ public class Holdable : MonoBehaviour, IInteractable
 	{
 		myGlow = GetComponent<GlowObjectCmd>();
 		myCol = GetComponent<Collider>();
+		myRen = GetComponent<Renderer>();
 		bufferArea = Mathf.Sqrt(Mathf.Log10( transform.localScale.magnitude) / 2) / 3;
 		myRig = GetComponent<Rigidbody>();
 		OnHeld = new UnityEvent();
 		OnHeld.AddListener(Held);
 		OnHeld.AddListener(myGlow.On);
+	}
+
+	IEnumerator DelayPlace(Vector3 pos)
+	{
+		isPlaced = true;
+		yield return new WaitForSeconds(animLen);
+		myRig.useGravity = false;
+		
+		isHeld = false;
+		transform.position = pos;
+		transform.eulerAngles = placedRot;
+		myCol.enabled = true;
+		myRen.enabled = true;
+		if (!isReusable)
+		{
+			gameObject.SetActive(false);
+			myGlow.Off();
+		}
 	}
 
 	#region 유니티기본
