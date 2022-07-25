@@ -14,6 +14,7 @@ public class InspectManager : MonoBehaviour
     public Image panel;
     public PlayerController pc;
     CharacterController cc;
+    LockedCursorController lcctrl;
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,6 +22,7 @@ public class InspectManager : MonoBehaviour
         inspectCam = GetComponent<Camera>();
         panel.enabled = false;
         cc = pc.GetComponent<CharacterController>();
+        lcctrl = GameObject.Find("LockedCursor").GetComponent<LockedCursorController>();
     }
 
 	private void Update()
@@ -37,22 +39,19 @@ public class InspectManager : MonoBehaviour
 
 	public void ActiveInspect()
 	{
-        Debug.Log("??????");
+
         panel.enabled = true;
         pc.enabled = false;
         cc.enabled = false;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        lcctrl.Esc = true;
 	}
 
 
     public void DisableInspect()
 	{
-        Debug.Log("!!@!@");
         panel.enabled = false;
         pc.enabled = true;
         cc.enabled = true;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        lcctrl.Esc = false;
     }
 }
