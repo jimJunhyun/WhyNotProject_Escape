@@ -49,7 +49,7 @@ public class Holdable : MonoBehaviour, IInteractable
 	{
 		myRen.enabled = false;
 		myCol.enabled = false;
-		StartCoroutine(DelayPlace(pos));
+		StartCoroutine(DelayPlace(pos)); //!?
 	}
 	void InteractionDetect()
 	{
