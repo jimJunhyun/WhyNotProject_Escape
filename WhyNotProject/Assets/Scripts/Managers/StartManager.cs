@@ -5,16 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class StartManager : MonoBehaviour
 {
-    private OptionUI optionUI;
-
-    private void Start()
-    {
-        optionUI = GameObject.Find("OptionPanel").GetComponent<OptionUI>();
-    }
-
     private void Update()
     {
-        if (!Input.GetKeyDown(KeyCode.O) && optionUI.optionOpened == false)
+        if (!Input.GetKeyDown(KeyCode.O) && OptionUI.Instance.optionOpened == false)
         {
             if (Input.anyKeyDown)
             {

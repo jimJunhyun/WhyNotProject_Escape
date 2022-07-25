@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class SunRotation : MonoBehaviour
 {
+    [SerializeField] private Light mainInnerLight;
     [SerializeField] private float dayMinute;
-    private Light sunLight;
+    [SerializeField] private float nightFogDensity;
+    [SerializeField] private float fogDensityCalc;
     private int passedDay;
     private float rotateAngle;
+    private float dayFogDensity;
+    private float currentFogDensity;
+
+    bool isNight;
 
     void Start()
     {
-        sunLight = GetComponent<Light>();
+        dayFogDensity = RenderSettings.fogDensity;
         StartCoroutine(DayPass());
     }
 
@@ -26,24 +32,34 @@ public class SunRotation : MonoBehaviour
 
         transform.Rotate(new Vector3(rotateAngle, 0, 0) * Time.deltaTime);
 
-        if (transform.localEulerAngles.x >= 315)
+        if (transform.eulerAngles.x >= 170)
         {
-            sunLight.intensity = (transform.localEulerAngles.x - 315) / 45;
+            if (currentFogDensity <= nightFogDensity)
+            {
+                currentFogDensity += 0.1f * fogDensityCalc * Time.deltaTime;
+                RenderSettings.fogDensity = currentFogDensity;
+            }
+
+            mainInnerLight.enabled = true;
         }
-        else if (transform.localEulerAngles.x < 315 && transform.localEulerAngles.x >= 270)
+        else if (transform.eulerAngles.x <= 10)
         {
-            sunLight.intensity = 0;
-        }
-        else
-        {
-            sunLight.intensity = 1;
+            if (currentFogDensity >= dayFogDensity)
+            {
+                currentFogDensity -= 0.1f * fogDensityCalc * Time.deltaTime;
+                RenderSettings.fogDensity = currentFogDensity;
+            }
+
+            mainInnerLight.enabled = false;
         }
     }
 
     IEnumerator DayPass()
     {
-        passedDay++;
-        yield return new WaitForSeconds(dayMinute * 60);
-        StartCoroutine(DayPass());
+        while (true)
+        {
+            passedDay++;
+            yield return new WaitForSeconds(dayMinute * 60);
+        }
     }
 }

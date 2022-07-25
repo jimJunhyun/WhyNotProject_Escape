@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class InnerLight : MonoBehaviour
 {
-    private MeshRenderer meshRenderer;
     private Light mainInnerLight;
-    private Transform sunRotation;
+    private Transform sunTransform;
 
     private void Start()
     {
-        sunRotation = GameObject.Find("Sun").GetComponent<Transform>();
-        meshRenderer = GetComponent<MeshRenderer>();
+        sunTransform = GameObject.Find("Sun").GetComponent<Transform>();
         mainInnerLight = GetComponentInChildren<Light>();
     }
 
@@ -22,15 +20,13 @@ public class InnerLight : MonoBehaviour
 
     private void LightOnOff()
     {
-        if (sunRotation.localEulerAngles.x <= 200)
+        if (sunTransform.eulerAngles.x >= 170)
         {
-            meshRenderer.materials[2].SetColor("_EmissionColor", Color.white * -10);
-            mainInnerLight.enabled = false;
+            mainInnerLight.enabled = true;
         }
         else
         {
-            meshRenderer.materials[2].SetColor("_EmissionColor", Color.white * 5);
-            mainInnerLight.enabled = true;
+            mainInnerLight.enabled = false;
         }
     }
 }
