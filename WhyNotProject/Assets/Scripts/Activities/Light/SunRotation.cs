@@ -10,8 +10,6 @@ public class SunRotation : MonoBehaviour
     private int passedDay;
     private float rotateAngle;
 
-    bool isNight;
-
     void Start()
     {
         StartCoroutine(DayPass());
