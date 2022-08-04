@@ -35,7 +35,7 @@ public class SunRotation : MonoBehaviour
 
             for (int i = 0; i < lightMaterial.Length; i++)
             {
-                lightMaterial[i].SetColor("_EmissionColor", new Color(231, 213, 63, 255) * 1f);
+                lightMaterial[i].SetColor("_EmissionColor", (i == 0 ? new Color(231, 213, 63, 255) : new Color(231, 231, 231, 255)) * 1f);
             }
         }
         else if (transform.eulerAngles.x <= 10)
@@ -47,7 +47,7 @@ public class SunRotation : MonoBehaviour
 
             for (int i = 0; i < lightMaterial.Length; i++)
             {
-                lightMaterial[i].SetColor("_EmissionColor", new Color(231, 213, 63, 255) * 0f);
+                lightMaterial[i].SetColor("_EmissionColor", (i == 0 ? new Color(231, 213, 63, 255) : new Color(231, 231, 231, 255)) * 0f);
             }
         }
     }
