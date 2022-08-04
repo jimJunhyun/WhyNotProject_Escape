@@ -4,20 +4,14 @@ using UnityEngine;
 
 public class SunRotation : MonoBehaviour
 {
-    [SerializeField] private Light mainInnerLight;
+    [SerializeField] private Light[] nightLight;
+    [SerializeField] private Material[] lightMaterial;
     [SerializeField] private float dayMinute;
-    [SerializeField] private float nightFogDensity;
-    [SerializeField] private float fogDensityCalc;
     private int passedDay;
     private float rotateAngle;
-    private float dayFogDensity;
-    private float currentFogDensity;
-
-    bool isNight;
 
     void Start()
     {
-        dayFogDensity = RenderSettings.fogDensity;
         StartCoroutine(DayPass());
     }
 
@@ -34,23 +28,27 @@ public class SunRotation : MonoBehaviour
 
         if (transform.eulerAngles.x >= 170)
         {
-            if (currentFogDensity <= nightFogDensity)
+            for (int i = 0; i < nightLight.Length; i++)
             {
-                currentFogDensity += 0.1f * fogDensityCalc * Time.deltaTime;
-                RenderSettings.fogDensity = currentFogDensity;
+                nightLight[i].enabled = true;
             }
 
-            mainInnerLight.enabled = true;
+            for (int i = 0; i < lightMaterial.Length; i++)
+            {
+                lightMaterial[i].SetColor("_EmissionColor", new Color(231, 213, 63, 255) * 1f);
+            }
         }
         else if (transform.eulerAngles.x <= 10)
         {
-            if (currentFogDensity >= dayFogDensity)
+            for (int i = 0; i < nightLight.Length; i++)
             {
-                currentFogDensity -= 0.1f * fogDensityCalc * Time.deltaTime;
-                RenderSettings.fogDensity = currentFogDensity;
+                nightLight[i].enabled = false;
             }
 
-            mainInnerLight.enabled = false;
+            for (int i = 0; i < lightMaterial.Length; i++)
+            {
+                lightMaterial[i].SetColor("_EmissionColor", new Color(231, 213, 63, 255) * 0f);
+            }
         }
     }
 
