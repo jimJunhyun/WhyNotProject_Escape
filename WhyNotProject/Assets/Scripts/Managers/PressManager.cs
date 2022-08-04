@@ -7,6 +7,7 @@ public class PressManager : MonoBehaviour
 {
 
     public string Key;
+    public string Checker = null;
     string currentKey;
 
     public UnityEvent OnMatched;
@@ -20,16 +21,37 @@ public class PressManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentKey == Key)
+        if(Checker == null)
 		{
-            Debug.Log("!!");
-            OnMatched.Invoke();
-            currentKey = "";
+            CheckKey();
 		}
     }
 
     public void AddKey(string Key)
 	{
-        currentKey += Key;
+        if(Checker != null && Key == Checker)
+		{
+            CheckKey();
+		}
+		else
+		{
+            currentKey += Key;
+        }
+        
 	}
+
+    void CheckKey()
+	{
+        if (currentKey == Key)
+        {
+            Debug.Log("!!");
+            OnMatched.Invoke();
+            currentKey = "";
+        }
+		else
+		{
+            Debug.Log("??");
+            currentKey = "";
+		}
+    }
 }
