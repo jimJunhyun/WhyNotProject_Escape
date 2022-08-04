@@ -17,7 +17,10 @@ public class PressManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(currentKey == Key)
+		{
+
+		}
     }
 
     public void AddKey(string Key)
