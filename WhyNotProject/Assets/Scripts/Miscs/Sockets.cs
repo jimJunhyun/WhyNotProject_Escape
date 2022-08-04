@@ -14,7 +14,7 @@ public class Sockets : MonoBehaviour
 	{
 		if(!collision.gameObject.TryGetComponent(out keyInfo))
 		{
-			throw new System.Exception();
+			Debug.Log(collision.name + " detected at " + collision.ClosestPointOnBounds(transform.position));
 		}
 		else if (keys.Contains(keyInfo) && !keyInfo.isHeld && !keyInfo.isPlaced && activated)
 		{
