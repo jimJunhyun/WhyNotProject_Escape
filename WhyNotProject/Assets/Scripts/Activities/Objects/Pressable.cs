@@ -2,17 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(GlowObjectCmd))]
 public class Pressable : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public PressManager manager;
+    public string KeyInfo;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	RaycastHit hit;
+	Collider myCol;
+
+	private void Awake()
+	{
+		myCol = GetComponent<Collider>();
+	}
+
+	private void Update()
+	{
+		if (Input.GetMouseButtonDown(0) && HoldManager.Instance.MouseCursorDetect(out hit))
+		{
+			if (hit.collider == myCol)
+			{
+				manager.AddKey(KeyInfo);
+			}
+		}
+	}
 }
