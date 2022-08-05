@@ -21,13 +21,13 @@ public class LockedCursorController : MonoBehaviour
 
     private void Update()
     {
-        Cursor.lockState = esc ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.lockState = OptionUI.Instance.optionOpened ? CursorLockMode.None : CursorLockMode.Locked;
 
-        if (esc == false)
+        if (!OptionUI.Instance.optionOpened)
         {
             rectTrans.transform.position = new Vector2(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2);
         }
-        else if (esc == true)
+        else
         {
             rectTrans.transform.position = Input.mousePosition;
         }
