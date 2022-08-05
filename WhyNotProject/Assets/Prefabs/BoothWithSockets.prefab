@@ -460,7 +460,6 @@ GameObject:
   - component: {fileID: 8497178038930811755}
   - component: {fileID: 8497178038930811754}
   - component: {fileID: 8497178038930811757}
-  - component: {fileID: 8497178038930811540}
   - component: {fileID: 8497178038930811753}
   - component: {fileID: 8497178038930811542}
   m_Layer: 2
@@ -501,7 +500,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8497178038930811756}
   m_Enabled: 0
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -547,18 +546,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8497178038930811540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8497178038930811756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d8e6df40fc85514ea8ec52f9f6c7d90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8497178038930811753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,7 +563,7 @@ MonoBehaviour:
   OnMatched:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8497178038930811540}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DoorOpen, Assembly-CSharp
         m_MethodName: Open
         m_Mode: 1
@@ -714,7 +701,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8497178039868595502}
   m_Enabled: 0
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -1108,6 +1095,10 @@ PrefabInstance:
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7164174036242428170, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7164174036267757982, guid: 938a57b087134b2489065894a6f435a5, type: 3}
       propertyPath: m_Name
       value: Phone
@@ -1155,6 +1146,78 @@ PrefabInstance:
     - target: {fileID: 7164174036267757983, guid: 938a57b087134b2489065894a6f435a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174036283136066, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174036344335644, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174036688864459, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174036881606212, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174036894453912, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174037006467910, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174037029962198, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174037078554204, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174037288742039, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174037292471037, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174037528437127, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174037623647850, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174037656915864, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174037665346604, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174037670047473, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174037680620273, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174037710348234, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164174037905283294, guid: 938a57b087134b2489065894a6f435a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5679641586804523020, guid: 938a57b087134b2489065894a6f435a5, type: 3}
@@ -1496,6 +1559,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4416417894639229338, guid: 508b9483f4bfbbe4987692f5d2e6eeda, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038752636964028301, guid: 508b9483f4bfbbe4987692f5d2e6eeda, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5038752637181520970, guid: 508b9483f4bfbbe4987692f5d2e6eeda, type: 3}
       propertyPath: m_Name
       value: Phonebooth
@@ -1543,6 +1614,14 @@ PrefabInstance:
     - target: {fileID: 5038752637181520971, guid: 508b9483f4bfbbe4987692f5d2e6eeda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038752638182175605, guid: 508b9483f4bfbbe4987692f5d2e6eeda, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172369071958334887, guid: 508b9483f4bfbbe4987692f5d2e6eeda, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 508b9483f4bfbbe4987692f5d2e6eeda, type: 3}
@@ -2209,7 +2288,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8497178038753303227}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
