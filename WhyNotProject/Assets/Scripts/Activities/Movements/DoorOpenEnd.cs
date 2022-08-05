@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorOpen : MonoBehaviour
+public class DoorOpenEnd : MonoBehaviour
 {
+	public ManagerScene scener;
 	public float delaySec = 1f;
 	private void OnTriggerEnter(Collider other)
 	{
-		StartCoroutine(DelayEnd());
-	}
-
-	IEnumerator DelayEnd()
-	{
-		yield return new WaitForSeconds(delaySec);
-
+		if (other.CompareTag("Player"))
+		{
+			scener.DelayChange(delaySec, "EndScene");
+		}
+		
 	}
 }
