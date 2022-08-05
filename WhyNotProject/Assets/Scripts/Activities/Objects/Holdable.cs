@@ -11,9 +11,11 @@ public class Holdable : MonoBehaviour, IInteractable
 {
 	RaycastHit info;
 	public float bufferArea;
+	
     public UnityEvent OnHeld { get; set;}
     public bool isHeld { get; set;}
 	public bool isPlaced { get; set;}
+	public Vector3 holdRot;
 	[Tooltip("놓여진 이후에도 다시 뽑아서 사용할 수 있는가?")]
 	public bool isReusable = false;
 	public Vector3 placedRot;
@@ -29,7 +31,7 @@ public class Holdable : MonoBehaviour, IInteractable
 		HoldManager.Instance.currentHolding = this;
 		myRig.useGravity = false;
 		transform.position = HoldManager.Instance.HoldPos;
-		transform.rotation = Quaternion.identity;
+		transform.eulerAngles = holdRot;
 		gameObject.layer = 2;
 	}
     public void Fall()
@@ -49,7 +51,7 @@ public class Holdable : MonoBehaviour, IInteractable
 	{
 		myRen.enabled = false;
 		myCol.enabled = false;
-		StartCoroutine(DelayPlace(pos)); //!?
+		StartCoroutine(DelayPlace(pos));
 	}
 	void InteractionDetect()
 	{
@@ -81,7 +83,11 @@ public class Holdable : MonoBehaviour, IInteractable
 		myGlow = GetComponent<GlowObjectCmd>();
 		myCol = GetComponent<Collider>();
 		myRen = GetComponent<Renderer>();
-		bufferArea = Mathf.Sqrt(Mathf.Log10( transform.localScale.magnitude) / 2) / 3;
+		if(bufferArea == 0)
+		{
+			bufferArea = Mathf.Sqrt(Mathf.Log10(transform.localScale.magnitude) / 2) / 3;
+		}
+		
 		myRig = GetComponent<Rigidbody>();
 		OnHeld = new UnityEvent();
 		OnHeld.AddListener(Held);
