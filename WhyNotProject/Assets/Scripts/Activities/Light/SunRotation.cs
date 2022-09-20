@@ -7,11 +7,13 @@ public class SunRotation : MonoBehaviour
     [SerializeField] private Light[] nightLight;
     [SerializeField] private Material[] lightMaterial;
     [SerializeField] private float dayMinute;
+    private Light sunLight;
     private int passedDay;
     private float rotateAngle;
 
     void Start()
     {
+        sunLight = GetComponent<Light>();
         StartCoroutine(DayPass());
     }
 
@@ -35,8 +37,10 @@ public class SunRotation : MonoBehaviour
 
             for (int i = 0; i < lightMaterial.Length; i++)
             {
-                lightMaterial[i].SetColor("_EmissionColor", new Color(231, 213, 63, 255) * 1f);
+                lightMaterial[i].SetColor("_EmissionColor", Color.white);
             }
+
+            sunLight.intensity = 0;
         }
         else if (transform.eulerAngles.x <= 10)
         {
@@ -47,8 +51,10 @@ public class SunRotation : MonoBehaviour
 
             for (int i = 0; i < lightMaterial.Length; i++)
             {
-                lightMaterial[i].SetColor("_EmissionColor", new Color(231, 213, 63, 255) * 0f);
+                lightMaterial[i].SetColor("_EmissionColor", Color.black);
             }
+
+            sunLight.intensity = 1;
         }
     }
 
