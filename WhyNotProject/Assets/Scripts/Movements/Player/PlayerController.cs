@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     private float cameraPitch = 0.0f;
     private float velocityY = 0.0f;
 
-    private bool testland;
     private bool crouching;
     private bool canJump = true;
     private bool canCamera = true;
@@ -33,21 +32,18 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public LockedCursorController cursor;
 
-
     private void Start()
     {
-        
         characterController = GetComponent<CharacterController>();
         cursor = GameObject.Find("LockedCursor").GetComponent<LockedCursorController>();
-        characterController.center = new Vector3(0, 0, 0);
-        playerCamera.transform.position = new Vector3(transform.position.x, transform.position.y + characterController.height / 1.5f, transform.position.z);
+        characterController.height = standHeight;
+        playerCamera.localPosition = new Vector3(0, characterController.center.y + characterController.height / 3f);
     }
 
     private void Update()
     {
         UpdateMouseLook();
         UpdateMovement();
-
         crouching = Input.GetKey(crouchKey);
     }
 
@@ -57,12 +53,11 @@ public class PlayerController : MonoBehaviour
 
         if (characterController.height != desiredHeight)
         {
-            Crouch(desiredHeight);
+            AdjustCrouchHeight(desiredHeight);
 
-            var camPos = playerCamera.transform.position;
-            camPos.y = transform.position.y + characterController.height / 1.5f;
-
-            playerCamera.transform.position = camPos;
+            var camPos = playerCamera.localPosition;
+            camPos.y = characterController.center.y + characterController.height/3f;
+            playerCamera.localPosition = camPos;
         }
         
     }
@@ -81,8 +76,7 @@ public class PlayerController : MonoBehaviour
             Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
             cameraPitch -= mouseDelta.y * mouseSensityvity;
-            cameraPitch = Mathf.Clamp(cameraPitch, -80, 80);
-
+            cameraPitch = Mathf.Clamp(cameraPitch, -90, 90);
             playerCamera.localEulerAngles = Vector3.right * cameraPitch;
             transform.Rotate(Vector3.up * mouseDelta.x * mouseSensityvity);
         }
@@ -98,26 +92,9 @@ public class PlayerController : MonoBehaviour
         if (characterController.isGrounded == true)
         {
             velocityY = 0.0f;
-
-            if (testland == true)
-            {
-                testland = false;
-            }
         }
 
-        if (Physics.Raycast(transform.position + new Vector3(0, characterController.height / 2, 0), Vector3.down, characterController.height / 1.8f) ||
-            characterController.isGrounded == true)
-        {
-            if (Input.GetKeyDown(jumpKey) && canJump == true)
-            {
-                velocityY = jumpForce;
-            }
-        }
-
-        if (velocityY <= -2)
-        {
-            testland = true;
-        }
+        Jump();
 
         velocityY += gravity * Time.deltaTime;
         
@@ -126,9 +103,21 @@ public class PlayerController : MonoBehaviour
         characterController.Move(velocity * Time.deltaTime);
     }
 
-    private void Crouch (float height)
+    private void Jump()
+	{
+        if (Physics.Raycast(transform.position + new Vector3(0, characterController.height / 2, 0), Vector3.down, characterController.height / 1.8f) ||
+        characterController.isGrounded == true)
+        {
+            if (Input.GetKeyDown(jumpKey) && canJump == true)
+            {
+                velocityY = jumpForce;
+            }
+        }
+    }
+
+    private void AdjustCrouchHeight(float height)
     {
-        float center = 0;
+        float center = height/2;
 
         characterController.height = Mathf.Lerp(characterController.height, height, 0.2f);
         characterController.center = Vector3.Lerp(characterController.center, new Vector3(0, center, 0), 0.2f);
