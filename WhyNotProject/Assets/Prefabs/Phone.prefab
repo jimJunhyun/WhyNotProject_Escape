@@ -1934,7 +1934,6 @@ GameObject:
   - component: {fileID: 5671342603531642031}
   - component: {fileID: 1030275077484141799}
   - component: {fileID: 8595715875951954573}
-  - component: {fileID: 2969481307992738921}
   m_Layer: 0
   m_Name: Phone
   m_TagString: Untagged
@@ -2065,30 +2064,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!145 &2969481307992738921
-SpringJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7164174037528437121}
-  m_ConnectedBody: {fileID: 0}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0.008, y: 0.008, z: -0.007}
-  m_AutoConfigureConnectedAnchor: 0
-  m_ConnectedAnchor: {x: 0.4, y: -0.29, z: 10.24}
-  serializedVersion: 2
-  m_Spring: 100
-  m_Damper: 0.2
-  m_MinDistance: 0
-  m_MaxDistance: 1
-  m_Tolerance: 0.025
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!1 &7164174037623647828
 GameObject:
   m_ObjectHideFlags: 0
