@@ -7,7 +7,7 @@ public class StartManager : MonoBehaviour
 {
     private void Update()
     {
-        if (!Input.GetKeyDown(KeyCode.O) && OptionUI.Instance.optionOpened == false)
+        if (!Input.GetKeyDown(KeyCode.O) && OptionUI.instance.optionOpened == false)
         {
             if (Input.anyKeyDown)
             {
