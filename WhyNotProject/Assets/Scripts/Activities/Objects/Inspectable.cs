@@ -26,7 +26,7 @@ public class Inspectable : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(0) && HoldManager.Instance.MouseCursorDetect(out hit))
 		{
-			if(hit.collider == myCol && !currentInspected)
+			if(hit.collider == myCol && !currentInspected && !OptionUI.instance.IsPointerOverUIObject())
 			{
 				gameObject.layer = 6;
 				currentInspected = true;
@@ -35,7 +35,7 @@ public class Inspectable : MonoBehaviour
 		}
 		else if(Input.GetMouseButtonDown(1) && HoldManager.Instance.MouseCursorDetect(out hit))
 		{
-			if(hit.collider == myCol && currentInspected)
+			if(hit.collider == myCol && currentInspected && !OptionUI.instance.IsPointerOverUIObject())
 			{
 				currentInspected = false;
 				gameObject.layer = originLayer;

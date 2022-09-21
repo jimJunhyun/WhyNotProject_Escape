@@ -59,7 +59,7 @@ public class Holdable : MonoBehaviour, IInteractable
 		{
 			if (Input.GetMouseButtonDown(0) && info.collider  == myCol)
 			{
-				if ((isReusable && isPlaced) || !isPlaced)
+				if (((isReusable && isPlaced) || !isPlaced) && !OptionUI.instance.IsPointerOverUIObject())
 				{
 					isHeld = true;
 					isPlaced = false;
@@ -67,12 +67,12 @@ public class Holdable : MonoBehaviour, IInteractable
 				
 			}
 		}
-		if (isHeld && Input.GetMouseButtonUp(0))
+		if (isHeld && Input.GetMouseButtonUp(0) && !OptionUI.instance.IsPointerOverUIObject())
 		{
 			info = new RaycastHit();
 			Fall();
 		}
-		else if (isHeld && Input.GetMouseButtonDown(1))
+		else if (isHeld && Input.GetMouseButtonDown(1) && !OptionUI.instance.IsPointerOverUIObject())
 		{
 			info = new RaycastHit();
 			Throw();
