@@ -1320,6 +1320,7 @@ GameObject:
   - component: {fileID: 1872297023}
   - component: {fileID: 1872297025}
   - component: {fileID: 1872297024}
+  - component: {fileID: 1872297026}
   m_Layer: 5
   m_Name: CCText
   m_TagString: Untagged
@@ -1343,7 +1344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.0000093329245, y: 0}
+  m_AnchoredPosition: {x: -0.0000093329245, y: 10}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1872297024
@@ -1366,7 +1367,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC790\uB9C9"
+  m_text: "\uC5F0\uACB0\uC774 \uB418\uC9C0\uC54A\uC544 \uC090-\uC18C\uB9AC \uD6C4
+    \uC18C\uB9AC\uC0D8\uC73C\uB85C\n\uC5F0\uACB0\uB418\uC624\uBA70 \uD1B5\uD654\uB8CC\uAC00
+    \uBD80\uAC00\uB429\uB2C8\uB2E4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8263517d613c63c4fa6fbbae0a1de9e2, type: 2}
   m_sharedMaterial: {fileID: 5503233240425641342, guid: 8263517d613c63c4fa6fbbae0a1de9e2, type: 2}
@@ -1393,8 +1396,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1405,7 +1408,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 30
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1443,6 +1446,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872297022}
   m_CullTransparentMesh: 1
+--- !u!114 &1872297026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872297022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d482c60382f62c46b702d4c26422658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ccs: []
 --- !u!108 &1891889881 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 1995881611572574022, guid: cf503a0fd1a2fd94cb8b6aa44a582b30, type: 3}
