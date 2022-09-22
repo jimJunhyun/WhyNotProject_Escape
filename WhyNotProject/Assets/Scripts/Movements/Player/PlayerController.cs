@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,31 +14,27 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 2.0f;
     [SerializeField] private float standHeight = 2.0f;
     [SerializeField] private float crouchHeight = 0.9f;
-
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode crouchKey = KeyCode.C;
-
-    private float cameraPitch = 0.0f;
-    private float velocityY = 0.0f;
-
-    private bool crouching;
-    private bool canJump = true;
-    private bool canCamera = true;
-
-    private Vector2 currentDir = Vector2.zero;
-    private Vector2 currentDirVelocity = Vector2.zero;
-
-    private CharacterController characterController;
 
     [HideInInspector]
     public LockedCursorController cursor;
 
+    private float cameraPitch = 0.0f;
+    private float velocityY = 0.0f;
+    private bool crouching;
+    private bool canJump = true;
+    private bool canCamera = true;
+    private Vector2 currentDir = Vector2.zero;
+    private Vector2 currentDirVelocity = Vector2.zero;
+    private CharacterController controller;
+
     private void Start()
     {
-        characterController = GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
         cursor = GameObject.Find("LockedCursor").GetComponent<LockedCursorController>();
-        characterController.height = standHeight;
-        playerCamera.localPosition = new Vector3(0, characterController.center.y + characterController.height / 3f);
+        controller.height = standHeight;
+        playerCamera.localPosition = new Vector3(0, controller.center.y + controller.height / 3f);
     }
 
     private void Update()
@@ -51,21 +48,20 @@ public class PlayerController : MonoBehaviour
     {
         float desiredHeight = crouching ? crouchHeight : standHeight;
 
-        if (characterController.height != desiredHeight)
+        if (controller.height != desiredHeight)
         {
             AdjustCrouchHeight(desiredHeight);
 
             var camPos = playerCamera.localPosition;
-            camPos.y = characterController.center.y + characterController.height/3f;
+            camPos.y = controller.center.y + controller.height/3f;
             playerCamera.localPosition = camPos;
         }
         
     }
 
-
     private void UpdateMouseLook()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.O))
         {
             canCamera = !canCamera;
             cursor.Esc = !canCamera;
@@ -84,34 +80,26 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateMovement()
     {
-        Vector2 targetDir = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        targetDir.Normalize();
+        OnJump();
+        velocityY = CalcVelocityY();
 
+        Vector2 targetDir = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);
 
-        if (characterController.isGrounded == true)
-        {
-            velocityY = 0.0f;
-        }
-
-        Jump();
-
-        velocityY += gravity * Time.deltaTime;
-        
         Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * walkSpeed + Vector3.up * velocityY;
-
-        characterController.Move(velocity * Time.deltaTime);
+        controller.Move(velocity * Time.deltaTime);
     }
 
-    private void Jump()
+    private float CalcVelocityY()
 	{
-        if (Physics.Raycast(transform.position + new Vector3(0, characterController.height / 2, 0), Vector3.down, characterController.height / 1.8f) ||
-        characterController.isGrounded == true)
+        return controller.isGrounded == true ? velocityY > 0 ? velocityY : 0.0f : velocityY + gravity * Time.deltaTime;
+	}
+
+    public void OnJump()
+	{
+        if (Physics.Raycast(transform.localPosition + controller.center, Vector3.down, controller.height / 2f + 0.2f) || controller.isGrounded)
         {
-            if (Input.GetKeyDown(jumpKey) && canJump == true)
-            {
-                velocityY = jumpForce;
-            }
+            velocityY = jumpForce;
         }
     }
 
@@ -119,7 +107,7 @@ public class PlayerController : MonoBehaviour
     {
         float center = height/2;
 
-        characterController.height = Mathf.Lerp(characterController.height, height, 0.2f);
-        characterController.center = Vector3.Lerp(characterController.center, new Vector3(0, center, 0), 0.2f);
+        DOTween.To(() => controller.height, x => controller.height = x, height, 0.2f).SetEase(Ease.Linear);
+        DOTween.To(() => controller.center.y, x => controller.center = new Vector3(0, x), center, 0.2f).SetEase(Ease.Linear);
     }
 }
