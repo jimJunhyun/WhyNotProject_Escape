@@ -19,10 +19,8 @@ public class OptionUI : MonoBehaviour
     [SerializeField] private Slider sfxVolumeSlider;
     public Slider SFXVolumeSlider => sfxVolumeSlider;
     [SerializeField] private Slider ccToggle;
-    [SerializeField] private Slider ccSpeedSlider;
     [SerializeField] private TextMeshProUGUI bgmCurrentVolume;
     [SerializeField] private TextMeshProUGUI sfxCurrentVolume;
-    [SerializeField] private TextMeshProUGUI ccCurrentSpeed;
     public bool optionOpened;
     private bool toggleChanged;
     private bool sliderChanged;
@@ -48,7 +46,6 @@ public class OptionUI : MonoBehaviour
         bgmToggle.value = Mathf.Ceil(bgmVolumeSlider.value);
         sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 100);
         sfxToggle.value = Mathf.Ceil(sfxVolumeSlider.value);
-        ccSpeedSlider.value = PlayerPrefs.GetFloat("CCSpeed", 50);
         ccToggle.value = PlayerPrefs.GetFloat("CCToggle", 1);
     }
 
@@ -84,7 +81,6 @@ public class OptionUI : MonoBehaviour
     {
         bgmCurrentVolume.text = $"{Mathf.Floor(bgmVolumeSlider.value * 100)}";
         sfxCurrentVolume.text = $"{Mathf.Floor(sfxVolumeSlider.value * 100)}";
-        ccCurrentSpeed.text = $"{Mathf.Floor(ccSpeedSlider.value * 100)}";
     }
 
     public void BGMToggleChange()
@@ -155,18 +151,6 @@ public class OptionUI : MonoBehaviour
             PlayerPrefs.SetFloat("SFXVolume", sfxVolumeSlider.value);
 
             sfxToggle.value = Mathf.Ceil(sfxVolumeSlider.value);
-        }
-
-        sliderChanged = false;
-    }
-
-    public void CCSliderChange()
-    {
-        sliderChanged = true;
-
-        if (toggleChanged == false)
-        {
-            PlayerPrefs.SetFloat("CCSpeed", ccSpeedSlider.value);
         }
 
         sliderChanged = false;
