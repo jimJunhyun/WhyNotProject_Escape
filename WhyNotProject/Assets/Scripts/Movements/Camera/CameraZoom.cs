@@ -11,11 +11,11 @@ public class CameraZoom : MonoBehaviour
     [SerializeField] private KeyCode zoomKeyCode = KeyCode.Z;
 
     private bool isZoomed = false;
-    private Camera camera;
+    private Camera cam;
 
 	private void Start()
 	{
-		camera = GetComponent<Camera>();
+		cam = GetComponent<Camera>();
 	}
 
 	private void Update()
@@ -28,11 +28,11 @@ public class CameraZoom : MonoBehaviour
     {
         if (isZoomed == false)
         {
-            camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, normalFOV, lerpSpeed);
+            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, normalFOV, lerpSpeed);
         }
         else
         {
-            camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, zoomedFOV, lerpSpeed);
+            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, zoomedFOV, lerpSpeed);
         }
     }
 }

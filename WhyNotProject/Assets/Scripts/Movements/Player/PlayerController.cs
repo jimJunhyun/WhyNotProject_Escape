@@ -97,10 +97,13 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump()
 	{
-        if (Physics.Raycast(transform.localPosition + controller.center, Vector3.down, controller.height / 2f + 0.2f) || controller.isGrounded)
-        {
-            velocityY = jumpForce;
-        }
+        if (Input.GetKeyDown(jumpKey))
+		{
+            if (Physics.Raycast(transform.localPosition + controller.center, Vector3.down, controller.height / 2f + 0.2f) || controller.isGrounded)
+            {
+                velocityY = jumpForce;
+            }
+		}
     }
 
     private void AdjustCrouchHeight(float height)
@@ -110,4 +113,9 @@ public class PlayerController : MonoBehaviour
         DOTween.To(() => controller.height, x => controller.height = x, height, 0.2f).SetEase(Ease.Linear);
         DOTween.To(() => controller.center.y, x => controller.center = new Vector3(0, x), center, 0.2f).SetEase(Ease.Linear);
     }
+
+	private void OnDestroy()
+	{
+		DOTween.KillAll();
+	}
 }
