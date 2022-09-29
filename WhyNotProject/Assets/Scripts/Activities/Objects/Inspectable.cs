@@ -35,16 +35,13 @@ public class Inspectable : MonoBehaviour
 				currentInspected = true;
 				++InspectManager.Instance.InspectingNum;
 			}
-			if(hit.collider == myCol && currentInspected)
+			else if(hit.collider == myCol && currentInspected)
 			{
 				AdditionalInspect?.Invoke();
 			}
 		}
 		else if(Input.GetMouseButtonDown(1) && HoldManager.Instance.MouseCursorDetect(out hit))
 		{
-			Debug.Log("opt? : " + !OptionUI.instance.IsPointerOverUIObject());
-			Debug.Log("ins? : " + currentInspected);
-			Debug.Log("me? : " + (hit.collider == myCol));
 			if(hit.collider == myCol && currentInspected && !OptionUI.instance.IsPointerOverUIObject())
 			{
 				currentInspected = false;
