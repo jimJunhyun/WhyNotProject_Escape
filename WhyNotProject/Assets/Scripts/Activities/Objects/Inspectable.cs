@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 [RequireComponent(typeof(GlowObjectCmd))]
 public class Inspectable : MonoBehaviour
 {
+	public UnityEvent AdditionalInspect;
+
 	RaycastHit hit;
 	Collider myCol;
 	int originLayer;
@@ -31,6 +34,10 @@ public class Inspectable : MonoBehaviour
 				gameObject.layer = 6;
 				currentInspected = true;
 				++InspectManager.Instance.InspectingNum;
+			}
+			if(hit.collider == myCol && currentInspected)
+			{
+				AdditionalInspect?.Invoke();
 			}
 		}
 		else if(Input.GetMouseButtonDown(1) && HoldManager.Instance.MouseCursorDetect(out hit))
