@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class OptionUI : MonoBehaviour
@@ -18,10 +20,9 @@ public class OptionUI : MonoBehaviour
     [SerializeField] private Slider sfxVolumeSlider;
     public Slider SFXVolumeSlider => sfxVolumeSlider;
     [SerializeField] private Slider ccToggle;
-    [SerializeField] private Slider ccSpeedSlider;
     [SerializeField] private TextMeshProUGUI bgmCurrentVolume;
     [SerializeField] private TextMeshProUGUI sfxCurrentVolume;
-    [SerializeField] private TextMeshProUGUI ccCurrentSpeed;
+    [SerializeField] private TextMeshProUGUI ccText;
     public bool optionOpened;
     private bool toggleChanged;
     private bool sliderChanged;
@@ -47,12 +48,21 @@ public class OptionUI : MonoBehaviour
         bgmToggle.value = Mathf.Ceil(bgmVolumeSlider.value);
         sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 100);
         sfxToggle.value = Mathf.Ceil(sfxVolumeSlider.value);
-        ccSpeedSlider.value = PlayerPrefs.GetFloat("CCSpeed", 50);
         ccToggle.value = PlayerPrefs.GetFloat("CCToggle", 1);
     }
 
     private void Update()
     {
+        if (SceneManager.GetActiveScene().name == "StartScene" && !Input.GetKeyDown(KeyCode.O) && !optionOpened)
+        {
+            if (Input.anyKeyDown)
+            {
+                SceneManager.LoadScene("PlayScene");
+            }
+        }
+
+        ccText.gameObject.SetActive(ccToggle.value != 0);
+
         OptionOpenClose();
         TextUI();
     }
@@ -83,7 +93,6 @@ public class OptionUI : MonoBehaviour
     {
         bgmCurrentVolume.text = $"{Mathf.Floor(bgmVolumeSlider.value * 100)}";
         sfxCurrentVolume.text = $"{Mathf.Floor(sfxVolumeSlider.value * 100)}";
-        ccCurrentSpeed.text = $"{Mathf.Floor(ccSpeedSlider.value * 100)}";
     }
 
     public void BGMToggleChange()
@@ -159,18 +168,6 @@ public class OptionUI : MonoBehaviour
         sliderChanged = false;
     }
 
-    public void CCSliderChange()
-    {
-        sliderChanged = true;
-
-        if (toggleChanged == false)
-        {
-            PlayerPrefs.SetFloat("CCSpeed", ccSpeedSlider.value);
-        }
-
-        sliderChanged = false;
-    }
-
     public void HelpImagePopup()
     {
         if (helpImageOpened == false)
@@ -183,5 +180,15 @@ public class OptionUI : MonoBehaviour
             helpImageOpened = false;
             helpImageTransform.DOScale(new Vector2(0, 0), 1f).SetUpdate(true);
         }
+    }
+
+    public bool IsPointerOverUIObject()
+    {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
     }
 }
