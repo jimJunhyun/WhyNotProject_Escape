@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class OptionUI : MonoBehaviour
@@ -21,6 +22,7 @@ public class OptionUI : MonoBehaviour
     [SerializeField] private Slider ccToggle;
     [SerializeField] private TextMeshProUGUI bgmCurrentVolume;
     [SerializeField] private TextMeshProUGUI sfxCurrentVolume;
+    [SerializeField] private TextMeshProUGUI ccText;
     public bool optionOpened;
     private bool toggleChanged;
     private bool sliderChanged;
@@ -51,6 +53,16 @@ public class OptionUI : MonoBehaviour
 
     private void Update()
     {
+        if (SceneManager.GetActiveScene().name == "StartScene" && !Input.GetKeyDown(KeyCode.O) && !optionOpened)
+        {
+            if (Input.anyKeyDown)
+            {
+                SceneManager.LoadScene("PlayScene");
+            }
+        }
+
+        ccText.gameObject.SetActive(ccToggle.value != 0);
+
         OptionOpenClose();
         TextUI();
     }
@@ -175,7 +187,9 @@ public class OptionUI : MonoBehaviour
         PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
         eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         List<RaycastResult> results = new List<RaycastResult>();
+
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+
         return results.Count > 0;
     }
 }
