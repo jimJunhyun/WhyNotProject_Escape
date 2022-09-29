@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class EndManager : MonoBehaviour
 {
-	public Collider door;
+	public List<Collider> door;
     public void OpenDoor()
 	{
-		door.isTrigger = true;
+		foreach (var item in door)
+		{
+			item.isTrigger = true;
+		}
 	}
 }
