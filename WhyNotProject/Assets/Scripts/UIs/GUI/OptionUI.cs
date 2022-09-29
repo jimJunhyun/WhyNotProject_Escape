@@ -189,7 +189,6 @@ public class OptionUI : MonoBehaviour
         List<RaycastResult> results = new List<RaycastResult>();
 
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-
         return results.Count > 0;
     }
 }
