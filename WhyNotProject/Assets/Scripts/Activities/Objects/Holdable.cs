@@ -20,7 +20,7 @@ public class Holdable : MonoBehaviour, IInteractable
 	public bool isReusable = false;
 	public Vector3 placedRot;
 	public float animLen;
-
+	public int objWeight;
 
 	GlowObjectCmd myGlow;
 	Collider myCol;
@@ -39,7 +39,7 @@ public class Holdable : MonoBehaviour, IInteractable
 		HoldManager.Instance.currentHolding = null;
 		isHeld = false;
 		myRig.useGravity = true;
-		gameObject.layer = 0;
+		gameObject.layer = 7;
 	}
 	public void Throw() 
 	{
