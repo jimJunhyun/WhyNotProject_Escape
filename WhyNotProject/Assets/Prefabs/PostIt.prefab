@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 614049067260380370}
   - component: {fileID: 8422444335440012345}
   - component: {fileID: 4329855298077621470}
+  - component: {fileID: 6471234592047179477}
   m_Layer: 0
   m_Name: PostIt
   m_TagString: Untagged
@@ -160,11 +161,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pen: {fileID: 0}
-  CleanPaper: {fileID: 2100000, guid: 7e8c75c9902e8c9478a907c503db818a, type: 2}
   HintPaper: {fileID: 2100000, guid: c30ef98e445b60d4b84a74385ed14ad7, type: 2}
   OnMatched:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6471234592047179477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8630438780456721777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f4b3d4b4d7840d44a220ac46045b462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &4812169655919482311
 PrefabInstance:
   m_ObjectHideFlags: 0
