@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class ManagerScene : MonoBehaviour
 {
-
 	public void DelayChange(float time, string name)
 	{
 		StartCoroutine(Delay(time, name));
@@ -19,6 +18,11 @@ public class ManagerScene : MonoBehaviour
 
 	public void Change(string name)
 	{
+		if (name == "EndScene")
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+
 		SceneManager.LoadScene(name);
 	}
 }
