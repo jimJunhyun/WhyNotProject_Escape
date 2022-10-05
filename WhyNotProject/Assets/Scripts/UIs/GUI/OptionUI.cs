@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Authentication.ExtendedProtection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -53,16 +54,31 @@ public class OptionUI : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name == "StartScene" && !Input.GetKeyDown(KeyCode.O) && !optionOpened)
+        if (!Input.GetKeyDown(KeyCode.O) && !optionOpened)
         {
-            if (Input.anyKeyDown)
+            if (SceneManager.GetActiveScene().name != "PlayScene")
             {
-                SceneManager.LoadScene("PlayScene");
+                int sceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
+
+                if (sceneBuildIndex == 2)
+                {
+                    if (Input.GetKeyDown(KeyCode.R))
+                    {
+                        SceneManager.LoadScene(sceneBuildIndex - 1);
+                    }
+                    else if (Input.GetKeyDown(KeyCode.H))
+                    {
+                        SceneManager.LoadScene(sceneBuildIndex - 2);
+                    }
+                }
+                else if (sceneBuildIndex == 0 && Input.anyKeyDown)
+                {
+                    SceneManager.LoadScene(sceneBuildIndex + 1);
+                }
             }
         }
 
         ccText.gameObject.SetActive(ccToggle.value != 0);
-
         OptionOpenClose();
         TextUI();
     }
@@ -72,7 +88,9 @@ public class OptionUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O) && optionOpened == false)
         {
             optionOpened = true;
+
             rectTransform.DOAnchorPosY(0, 1f).SetUpdate(true);
+
             Time.timeScale = 0.0f;
         }
         else if (Input.GetKeyDown(KeyCode.O) && optionOpened == true)
@@ -80,11 +98,14 @@ public class OptionUI : MonoBehaviour
             if (helpImageOpened == true)
             {
                 helpImageOpened = false;
+
                 helpImageTransform.DOScale(new Vector2(0, 0), 1f).SetUpdate(true);
             }
 
             optionOpened = false;
+
             rectTransform.DOAnchorPosY(450, 1f).SetUpdate(true);
+
             Time.timeScale = 1.0f;
         }
     }
@@ -189,6 +210,7 @@ public class OptionUI : MonoBehaviour
         List<RaycastResult> results = new List<RaycastResult>();
 
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+
         return results.Count > 0;
     }
 }
