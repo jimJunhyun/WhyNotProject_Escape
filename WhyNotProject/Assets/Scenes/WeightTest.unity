@@ -1902,7 +1902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2423960539100306098, guid: ab029adb87ce959428112dfa1b76f391, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.935
+      value: -1.788
       objectReference: {fileID: 0}
     - target: {fileID: 2423960539100306098, guid: ab029adb87ce959428112dfa1b76f391, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2468,6 +2468,7 @@ MonoBehaviour:
     m_Bits: 128
   moveAmount: {x: 0, y: 0, z: 0}
   currentWeight: 0
+  moveEase: 27
 --- !u!65 &924974284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3317,7 +3318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2423960539100306097, guid: ab029adb87ce959428112dfa1b76f391, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2423960539100306098, guid: ab029adb87ce959428112dfa1b76f391, type: 3}
       propertyPath: m_RootOrder
@@ -3337,7 +3338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2423960539100306098, guid: ab029adb87ce959428112dfa1b76f391, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.156
+      value: 2.252
       objectReference: {fileID: 0}
     - target: {fileID: 2423960539100306098, guid: ab029adb87ce959428112dfa1b76f391, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5248,7 +5249,7 @@ MonoBehaviour:
   mouseSensityvity: 2
   moveSmoothTime: 0.3
   walkSpeed: 2
-  jumpForce: 2
+  jumpForce: 3
   standHeight: 2
   crouchHeight: 1.1
   jumpKey: 32

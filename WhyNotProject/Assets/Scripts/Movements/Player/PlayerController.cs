@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     private float cameraPitch = 0.0f;
     private float velocityY = 0.0f;
 
-    private bool testland;
     private bool crouching;
     private bool canJump = true;
     private bool canCamera = true;
@@ -97,26 +96,12 @@ public class PlayerController : MonoBehaviour
 
         if (characterController.isGrounded == true)
         {
-            velocityY = 0.0f;
-
-            if (testland == true)
-            {
-                testland = false;
-            }
+            velocityY = -1f;
         }
 
-        if (Physics.Raycast(transform.position + new Vector3(0, characterController.height / 2, 0), Vector3.down, characterController.height / 1.8f) ||
-            characterController.isGrounded == true)
+        if (Input.GetKeyDown(jumpKey) && canJump == true)
         {
-            if (Input.GetKeyDown(jumpKey) && canJump == true)
-            {
-                velocityY = jumpForce;
-            }
-        }
-
-        if (velocityY <= -2)
-        {
-            testland = true;
+            Jump();
         }
 
         velocityY += gravity * Time.deltaTime;
@@ -124,6 +109,14 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * walkSpeed + Vector3.up * velocityY;
 
         characterController.Move(velocity * Time.deltaTime);
+    }
+
+    private void Jump()
+	{
+        if (characterController.isGrounded == true)
+        {
+            velocityY = jumpForce;
+        }
     }
 
     private void Crouch (float height)

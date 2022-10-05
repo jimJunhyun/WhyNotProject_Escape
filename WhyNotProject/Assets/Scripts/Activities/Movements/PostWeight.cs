@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PostWeight : MonoBehaviour
 {
@@ -12,8 +13,9 @@ public class PostWeight : MonoBehaviour
 	public LayerMask interactableLayer;
 
 	[SerializeField] private Vector3 moveAmount;
-
 	[SerializeField] int currentWeight = 0;
+
+	public Ease moveEase;
 
 	private void Awake()
 	{
@@ -21,11 +23,6 @@ public class PostWeight : MonoBehaviour
 		basePosition = parentObject.position;
 
 		moveAmount = maxWeightPosition - parentObject.position;
-	}
-
-	private void Update()
-	{
-		CheckWeight();
 	}
 
 	private void CheckWeight()
@@ -37,7 +34,7 @@ public class PostWeight : MonoBehaviour
 			currentWeight = Mathf.Clamp(currentWeight, 0, maxWeight);
 		}
 
-		parentObject.position = Vector3.Lerp(parentObject.position, basePosition + moveAmount * (float)(currentWeight / (float)maxWeight), 0.01f);
+		parentObject.DOMoveY(basePosition.y + moveAmount.y * (float)(currentWeight / (float)maxWeight), 1f).SetEase(moveEase, 1f);
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -46,6 +43,7 @@ public class PostWeight : MonoBehaviour
 		{
 			other.transform.SetParent(parentObject);
 			objs.Add(other);
+			CheckWeight();
 		}
 	}
 
@@ -55,6 +53,7 @@ public class PostWeight : MonoBehaviour
 		{
 			other.transform.SetParent(null);
 			objs.Remove(other);
+			CheckWeight();
 		}
 	}
 }
