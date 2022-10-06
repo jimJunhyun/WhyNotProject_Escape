@@ -10,7 +10,7 @@ public class Inspectable : MonoBehaviour
 	public UnityEvent AdditionalInspect;
 
 	RaycastHit hit;
-	Collider myCol;
+	Collider[] myColsArr;
 	int originLayer;
 	Vector3 originPos;
 	Quaternion originRot;
@@ -19,7 +19,7 @@ public class Inspectable : MonoBehaviour
 
 	private void Awake()
 	{
-		myCol = GetComponent<Collider>();
+		myColsArr = GetComponents<Collider>();
 		originLayer = gameObject.layer;
 		originPos = transform.position;
 		originRot = transform.rotation;
@@ -29,27 +29,35 @@ public class Inspectable : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(0) && HoldManager.Instance.MouseCursorDetect(out hit))
 		{
-			if(hit.collider == myCol && !currentInspected && !OptionUI.instance.IsPointerOverUIObject())
+			for (int i = 0; i < myColsArr.Length; i++)
 			{
-				gameObject.layer = 6;
-				currentInspected = true;
-				++InspectManager.Instance.InspectingNum;
+				if(hit.collider == myColsArr[i] && !currentInspected && !OptionUI.instance.IsPointerOverUIObject())
+				{
+					gameObject.layer = 6;
+					currentInspected = true;
+					++InspectManager.Instance.InspectingNum;
+				}
+				else if(hit.collider == myColsArr[i] && currentInspected)
+				{
+					AdditionalInspect?.Invoke();
+				}
 			}
-			else if(hit.collider == myCol && currentInspected)
-			{
-				AdditionalInspect?.Invoke();
-			}
+			
 		}
 		else if(Input.GetMouseButtonDown(1) && HoldManager.Instance.MouseCursorDetect(out hit))
 		{
-			if(hit.collider == myCol && currentInspected && !OptionUI.instance.IsPointerOverUIObject())
+			for (int i = 0; i < myColsArr.Length; i++)
 			{
-				currentInspected = false;
-				gameObject.layer = originLayer;
-				transform.position = originPos;
-				transform.rotation = originRot;
-				--InspectManager.Instance.InspectingNum;
+				if(hit.collider == myColsArr[i] && currentInspected && !OptionUI.instance.IsPointerOverUIObject())
+				{
+					currentInspected = false;
+					gameObject.layer = originLayer;
+					transform.position = originPos;
+					transform.rotation = originRot;
+					--InspectManager.Instance.InspectingNum;
+				}
 			}
+			
 		}
 		Inspect();
 	}
