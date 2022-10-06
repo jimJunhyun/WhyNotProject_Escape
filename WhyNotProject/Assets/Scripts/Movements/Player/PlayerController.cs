@@ -17,17 +17,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode crouchKey = KeyCode.C;
 
-    [HideInInspector]
-    public LockedCursorController cursor;
-
     private float cameraPitch = 0.0f;
     private float velocityY = 0.0f;
+
     private bool crouching;
     private bool canJump = true;
     private bool canCamera = true;
+
     private Vector2 currentDir = Vector2.zero;
     private Vector2 currentDirVelocity = Vector2.zero;
-    private CharacterController controller;
+
+    private CharacterController characterController;
+
+    [HideInInspector]
+    public LockedCursorController cursor;
 
     private void Start()
     {
@@ -86,27 +89,32 @@ public class PlayerController : MonoBehaviour
         Vector2 targetDir = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);
 
+        if (characterController.isGrounded == true)
+        {
+            velocityY = -1f;
+        }
+
+        if (Input.GetKeyDown(jumpKey) && canJump == true)
+        {
+            Jump();
+        }
+
+        velocityY += gravity * Time.deltaTime;
+        
         Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * walkSpeed + Vector3.up * velocityY;
-        controller.Move(velocity * Time.deltaTime);
+
+        characterController.Move(velocity * Time.deltaTime);
     }
 
-    private float CalcVelocityY()
+    private void Jump()
 	{
-        return controller.isGrounded == true ? velocityY > 0 ? velocityY : 0.0f : velocityY + gravity * Time.deltaTime;
-	}
-
-    public void OnJump()
-	{
-        if (Input.GetKeyDown(jumpKey))
-		{
-            if (Physics.Raycast(transform.localPosition + controller.center, Vector3.down, controller.height / 2f + 0.2f) || controller.isGrounded)
-            {
-                velocityY = jumpForce;
-            }
-		}
+        if (characterController.isGrounded == true)
+        {
+            velocityY = jumpForce;
+        }
     }
 
-    private void AdjustCrouchHeight(float height)
+    private void Crouch (float height)
     {
         float center = height/2;
 

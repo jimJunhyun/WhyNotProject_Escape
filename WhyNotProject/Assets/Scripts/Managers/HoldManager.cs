@@ -19,7 +19,6 @@ public class HoldManager : MonoBehaviour
     [HideInInspector]
     public Holdable currentHolding;
     
-    
     // Start is called before the first frame update
     void Awake()
     {
