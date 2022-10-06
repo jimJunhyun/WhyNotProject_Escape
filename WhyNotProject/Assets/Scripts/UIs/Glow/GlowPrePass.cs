@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(Camera))]
@@ -11,7 +11,7 @@ public class GlowPrePass : MonoBehaviour
 
 	void OnEnable()
 	{
-        PrePass = new RenderTexture(Screen.width, Screen.height, 24);
+		PrePass = new RenderTexture(Screen.width, Screen.height, 24);
 		PrePass.antiAliasing = QualitySettings.antiAliasing;
 		Blurred = new RenderTexture(Screen.width >> 1, Screen.height >> 1, 0);
 
@@ -35,7 +35,7 @@ public class GlowPrePass : MonoBehaviour
 		GL.Clear(false, true, Color.clear);
 
 		Graphics.Blit(src, Blurred);
-		
+
 		for (int i = 0; i < 4; i++)
 		{
 			var temp = RenderTexture.GetTemporary(Blurred.width, Blurred.height);
