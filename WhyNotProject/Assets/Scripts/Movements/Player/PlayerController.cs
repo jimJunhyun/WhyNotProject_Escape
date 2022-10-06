@@ -17,20 +17,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode crouchKey = KeyCode.C;
 
-    private float cameraPitch = 0.0f;
-    private float velocityY = 0.0f;
-
-    private bool crouching;
-    private bool canJump = true;
-    private bool canCamera = true;
-
-    private Vector2 currentDir = Vector2.zero;
-    private Vector2 currentDirVelocity = Vector2.zero;
-
-    private CharacterController characterController;
-
     [HideInInspector]
     public LockedCursorController cursor;
+
+    private float cameraPitch = 0.0f;
+    private float velocityY = 0.0f;
+    private bool crouching;
+    private bool canCamera = true;
+    private Vector2 currentDir = Vector2.zero;
+    private Vector2 currentDirVelocity = Vector2.zero;
+    private CharacterController controller;
 
     private void Start()
     {
@@ -56,10 +52,10 @@ public class PlayerController : MonoBehaviour
             AdjustCrouchHeight(desiredHeight);
 
             var camPos = playerCamera.localPosition;
-            camPos.y = controller.center.y + controller.height/3f;
+            camPos.y = controller.center.y + controller.height / 3f;
             playerCamera.localPosition = camPos;
         }
-        
+
     }
 
     private void UpdateMouseLook()
@@ -89,41 +85,36 @@ public class PlayerController : MonoBehaviour
         Vector2 targetDir = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);
 
-        if (characterController.isGrounded == true)
-        {
-            velocityY = -1f;
-        }
-
-        if (Input.GetKeyDown(jumpKey) && canJump == true)
-        {
-            Jump();
-        }
-
-        velocityY += gravity * Time.deltaTime;
-        
         Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * walkSpeed + Vector3.up * velocityY;
-
-        characterController.Move(velocity * Time.deltaTime);
+        controller.Move(velocity * Time.deltaTime);
     }
 
-    private void Jump()
-	{
-        if (characterController.isGrounded == true)
+    private float CalcVelocityY()
+    {
+        return controller.isGrounded == true ? velocityY > 0 ? velocityY : 0.0f : velocityY + gravity * Time.deltaTime;
+    }
+
+    public void OnJump()
+    {
+        if (Input.GetKeyDown(jumpKey))
         {
-            velocityY = jumpForce;
+            if (Physics.Raycast(transform.localPosition + controller.center, Vector3.down, controller.height / 2f + 0.2f) || controller.isGrounded)
+            {
+                velocityY = jumpForce;
+            }
         }
     }
 
-    private void Crouch (float height)
+    private void AdjustCrouchHeight(float height)
     {
-        float center = height/2;
+        float center = height / 2;
 
         DOTween.To(() => controller.height, x => controller.height = x, height, 0.2f).SetEase(Ease.Linear);
         DOTween.To(() => controller.center.y, x => controller.center = new Vector3(0, x), center, 0.2f).SetEase(Ease.Linear);
     }
 
-	private void OnDestroy()
-	{
-		DOTween.KillAll();
-	}
+    private void OnDestroy()
+    {
+        DOTween.KillAll();
+    }
 }
