@@ -10,9 +10,9 @@ public class PostWeight : MonoBehaviour
 	public Vector3 basePosition;
 	public Vector3 maxWeightPosition;
 	public List<Collider> objs = new List<Collider>();
-	public LayerMask interactableLayer;
+	//public LayerMask interactableLayer;
 
-	[SerializeField] private Vector3 moveAmount;
+	private Vector3 moveAmount;
 	[SerializeField] int currentWeight = 0;
 
 	public Ease moveEase;
@@ -25,7 +25,7 @@ public class PostWeight : MonoBehaviour
 		moveAmount = maxWeightPosition - parentObject.position;
 	}
 
-	private void CheckWeight()
+	private void CheckWeight() //무게를 확인하여 위치 조정
 	{
 		currentWeight = 0;
 		foreach (Collider col in objs)
