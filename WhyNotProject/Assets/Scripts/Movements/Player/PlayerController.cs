@@ -91,7 +91,21 @@ public class PlayerController : MonoBehaviour
 
     private float CalcVelocityY()
     {
-        return controller.isGrounded == true ? velocityY > 0 ? velocityY : 0.0f : velocityY + gravity * Time.deltaTime;
+        if (controller.isGrounded == true)
+        {
+            return velocityY > 0 ? velocityY : 0;
+        }
+        else
+        {
+            if (Physics.Raycast(transform.position + controller.center, Vector3.up, controller.height / 2 + 0.1f) && velocityY > 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return velocityY + gravity * Time.deltaTime;
+            }
+        }
     }
 
     public void OnJump()
