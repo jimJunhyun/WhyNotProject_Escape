@@ -50,8 +50,10 @@ public class Inspectable : MonoBehaviour
 		{
 			for (int i = 0; i < myColsArr.Length; i++)
 			{
-				if(hit.collider == myColsArr[i] && currentInspected && !OptionUI.instance.IsPointerOverUIObject())
+				Debug.Log(!OptionUI.instance.IsPointerOverUIObject());
+				if (hit.collider == myColsArr[i] && currentInspected && !OptionUI.instance.IsPointerOverUIObject())
 				{
+					Debug.Log("!");
 					currentInspected = false;
 					gameObject.layer = originLayer;
 					transform.position = originPos;
