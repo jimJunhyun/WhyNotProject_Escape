@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class StartText : MonoBehaviour
 {
@@ -21,9 +22,8 @@ public class StartText : MonoBehaviour
         {
             flashingText.text = "";
             yield return new WaitForSeconds(.5f);
-            flashingText.text = "Press a key to Start";
+            flashingText.text = (SceneManager.GetActiveScene().buildIndex == 0) ? "Press a key to Start" : "Press H key to Home";
             yield return new WaitForSeconds(.5f);
-
         }
 
     }
