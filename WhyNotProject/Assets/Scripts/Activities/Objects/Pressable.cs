@@ -26,7 +26,7 @@ public class Pressable : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(0) && HoldManager.Instance.MouseCursorDetect(out hit))
 		{
-			if (hit.collider == myCol && !isPressing && !OptionUI.instance.IsPointerOverUIObject())
+			if (hit.collider == myCol && !isPressing)
 			{
 				StartCoroutine(DelayEnable());
 				OnClicked.Invoke();

@@ -6,7 +6,7 @@ public class GlowObjectCmd : MonoBehaviour
 	public Color GlowColor;
 	public float LerpFactor = 10;
 	bool isFocused = false;
-	Collider[] myCols;
+	Collider myCol;
 
 	public Renderer[] Renderers
 	{
@@ -35,7 +35,7 @@ public class GlowObjectCmd : MonoBehaviour
 
 	void Start()
 	{
-		myCols = GetComponents<Collider>();
+		myCol = GetComponent<Collider>();
 		Renderers = GetComponentsInChildren<Renderer>();
 		GlowController.RegisterObject(this);
 	}
@@ -58,19 +58,7 @@ public class GlowObjectCmd : MonoBehaviour
 	private void Update()
 	{
 		HoldManager.Instance.MouseCursorDetect(out RaycastHit hit);
-		for (int i = 0; i < myCols.Length; i++)
-		{
-			if(hit.collider == myCols[i])
-			{
-				isFocused = true;
-				break;
-			}
-			else
-			{
-				isFocused = false;
-			}
-		}
-		
+		isFocused = (hit.collider == myCol);
 
 
 		if (isFocused)
