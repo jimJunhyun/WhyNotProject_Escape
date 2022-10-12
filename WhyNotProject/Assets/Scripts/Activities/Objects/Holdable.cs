@@ -26,12 +26,13 @@ public class Holdable : MonoBehaviour, IInteractable
 	Collider myCol;
 	Rigidbody myRig;
 	Renderer myRen;
+	PlayerController player;
     public void Held()
 	{
 		HoldManager.Instance.currentHolding = this;
 		myRig.useGravity = false;
 		transform.position = HoldManager.Instance.HoldPos;
-		transform.eulerAngles = holdRot;
+		transform.LookAt(player.transform);
 		gameObject.layer = 2;
 	}
     public void Fall()
@@ -59,7 +60,7 @@ public class Holdable : MonoBehaviour, IInteractable
 		{
 			if (Input.GetMouseButtonDown(0) && info.collider  == myCol)
 			{
-				if ((isReusable && isPlaced) || !isPlaced)
+				if (((isReusable && isPlaced) || !isPlaced) && !OptionUI.instance.IsPointerOverUIObject())
 				{
 					isHeld = true;
 					isPlaced = false;
@@ -67,12 +68,12 @@ public class Holdable : MonoBehaviour, IInteractable
 				
 			}
 		}
-		if (isHeld && Input.GetMouseButtonUp(0))
+		if (isHeld && Input.GetMouseButtonUp(0) && !OptionUI.instance.IsPointerOverUIObject())
 		{
 			info = new RaycastHit();
 			Fall();
 		}
-		else if (isHeld && Input.GetMouseButtonDown(1))
+		else if (isHeld && Input.GetMouseButtonDown(1) && !OptionUI.instance.IsPointerOverUIObject())
 		{
 			info = new RaycastHit();
 			Throw();
@@ -83,9 +84,11 @@ public class Holdable : MonoBehaviour, IInteractable
 		myGlow = GetComponent<GlowObjectCmd>();
 		myCol = GetComponent<Collider>();
 		myRen = GetComponent<Renderer>();
+		player = FindObjectOfType<PlayerController>();
 		if(bufferArea == 0)
 		{
-			bufferArea = Mathf.Sqrt(Mathf.Log10(transform.localScale.magnitude) / 2) / 3;
+			bufferArea = Mathf.Sqrt(Mathf.Abs(Mathf.Log10(transform.localScale.magnitude) / 2)) / 3;
+
 		}
 		
 		myRig = GetComponent<Rigidbody>();

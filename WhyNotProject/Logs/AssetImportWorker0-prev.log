@@ -15,11 +15,11 @@ C:/Users/user/Documents/GitHub/WhyNotProject_Escape/WhyNotProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60324
+59802
 Successfully changed project path to: C:/Users/user/Documents/GitHub/WhyNotProject_Escape/WhyNotProject
 C:/Users/user/Documents/GitHub/WhyNotProject_Escape/WhyNotProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 30.06 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 31.96 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.30f1 (1fb1bf06830e)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/Resources/UnitySubsystems
@@ -35,72 +35,120 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56932
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56272
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001445 seconds.
+Registered in 0.001275 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 24.66 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 31.26 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.488 seconds
+- Completed reload, in  0.453 seconds
 Domain Reload Profiling:
-	ReloadAssembly (489ms)
-		BeginReloadAssembly (55ms)
+	ReloadAssembly (453ms)
+		BeginReloadAssembly (45ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (376ms)
-			LoadAssemblies (53ms)
+		EndReloadAssembly (355ms)
+			LoadAssemblies (43ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (121ms)
+			SetupTypeCache (110ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (34ms)
-			SetupLoadedEditorAssemblies (141ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (131ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (25ms)
-				BeforeProcessingInitializeOnLoad (13ms)
-				ProcessInitializeOnLoadAttributes (67ms)
-				ProcessInitializeOnLoadMethodAttributes (31ms)
+				RefreshPlugins (31ms)
+				BeforeProcessingInitializeOnLoad (14ms)
+				ProcessInitializeOnLoadAttributes (61ms)
+				ProcessInitializeOnLoadMethodAttributes (20ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002706 seconds.
+Registered in 0.002600 seconds.
 Begin MonoManager ReloadAssembly
+Symbol file data-000001DB84E374F0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87F46250 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB885419B0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87780100 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB879E8010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88F65C60 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88F65C60 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88F65C60 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8925D890 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84E374F0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88658BC0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87E37140 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniVRM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84BA3A20 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Samples.ScreenSpace.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB883DB230 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\FastSpringBone.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84867190 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Utils.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84BA3A20 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8848FA30 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87831C40 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB848697A0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB883DB230 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8940F040 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Samples.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87905870 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88706040 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84C0D230 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.33 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 27.97 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.835 seconds
+- Completed reload, in  0.758 seconds
 Domain Reload Profiling:
-	ReloadAssembly (836ms)
-		BeginReloadAssembly (153ms)
+	ReloadAssembly (759ms)
+		BeginReloadAssembly (100ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (16ms)
-		EndReloadAssembly (638ms)
-			LoadAssemblies (99ms)
+			CreateAndSetChildDomain (14ms)
+		EndReloadAssembly (618ms)
+			LoadAssemblies (67ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (219ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (50ms)
+			SetupTypeCache (187ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (38ms)
 			SetupLoadedEditorAssemblies (227ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (60ms)
-				ProcessInitializeOnLoadAttributes (153ms)
+				RefreshPlugins (28ms)
+				BeforeProcessingInitializeOnLoad (58ms)
+				ProcessInitializeOnLoadAttributes (129ms)
 				ProcessInitializeOnLoadMethodAttributes (6ms)
 				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
@@ -109,15 +157,15 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 0.36 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.39 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1555 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 73.4 MB.
-System memory in use after: 73.5 MB.
+Unloading 2108 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.4 MB.
+System memory in use after: 91.5 MB.
 
-Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1997.
-Total: 2.106800 ms (FindLiveObjects: 0.086700 ms CreateObjectMapping: 0.028700 ms MarkObjects: 1.934700 ms  DeleteObjects: 0.056100 ms)
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 2550.
+Total: 2.145700 ms (FindLiveObjects: 0.121400 ms CreateObjectMapping: 0.038700 ms MarkObjects: 1.928200 ms  DeleteObjects: 0.056500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -132,123 +180,249 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Sounds/Music
-  artifactKey: Guid(cca5b8e4e50dfb948af50725735da822) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/Music using Guid(cca5b8e4e50dfb948af50725735da822) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8778951ffa555b8fba316013f3b2163b') in 0.004075 seconds 
+  path: Assets/Scenes/PlayScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/PlayScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56e37f3f82a82c8d929aa8d80444acb5') in 0.015425 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000132 seconds.
-  path: Assets/Sounds/Clip
-  artifactKey: Guid(de3fb9b5a35b79144966b5926770323e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/Clip using Guid(de3fb9b5a35b79144966b5926770323e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfe3b1556313440a1c76b0b470cc91c7') in 0.002121 seconds 
+  Time since last request: 1104.597531 seconds.
+  path: Assets/Scripts/Managers/BGMManager.cs
+  artifactKey: Guid(c92db0c9bd3ccf749bad81beb5ce0afc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Managers/BGMManager.cs using Guid(c92db0c9bd3ccf749bad81beb5ce0afc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08914c7561c9367c3698ee7b1eacee58') in 0.026634 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 115.741816 seconds.
-  path: Assets/Scenes/StartScene.unity
-  artifactKey: Guid(c2dae1e7e78f8bb4393eacfb269c8317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/StartScene.unity using Guid(c2dae1e7e78f8bb4393eacfb269c8317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0a6253294a4c332f056d26014f4e2a5') in 0.010878 seconds 
+  Time since last request: 0.251647 seconds.
+  path: Assets/Scripts/Managers/EndManager.cs
+  artifactKey: Guid(d5f3f6472fa228246996a50b163b3a1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Managers/EndManager.cs using Guid(d5f3f6472fa228246996a50b163b3a1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4855cea4d936bc123e44ad965f412d9b') in 0.005801 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.165721 seconds.
+  path: Assets/Scripts/Activities/Objects/Inspectable.cs
+  artifactKey: Guid(fea54e8e14d6fe448875d8ab4b502d72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Activities/Objects/Inspectable.cs using Guid(fea54e8e14d6fe448875d8ab4b502d72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b077f7a3f9d400068eb7ccb2aa118a0c') in 0.005106 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002266 seconds.
+Registered in 0.002596 seconds.
 Begin MonoManager ReloadAssembly
+Symbol file data-000001DB89484650 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB883CB210 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB893A5030 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB883CB210 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8B22A040 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C020080 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C020080 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8DDAD6D0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84BA3620 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84A3EB10 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8B215E90 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8DE2E570 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniVRM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87F64B90 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Samples.ScreenSpace.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88D37060 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\FastSpringBone.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB89484650 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Utils.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87F65710 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87EFF230 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88F37400 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87F4E850 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84E50E00 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CE5C7F0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Samples.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB899DC830 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB895F9B20 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB898E8430 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.46 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.37 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.689 seconds
+- Completed reload, in  0.720 seconds
 Domain Reload Profiling:
-	ReloadAssembly (689ms)
-		BeginReloadAssembly (90ms)
+	ReloadAssembly (721ms)
+		BeginReloadAssembly (91ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (582ms)
+			LoadAssemblies (70ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (189ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (230ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (61ms)
+				ProcessInitializeOnLoadAttributes (154ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2076 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.8 MB.
+System memory in use after: 88.9 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2552.
+Total: 2.007700 ms (FindLiveObjects: 0.111100 ms CreateObjectMapping: 0.033100 ms MarkObjects: 1.842500 ms  DeleteObjects: 0.020200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 268.429119 seconds.
+  path: Assets/Scripts/UIs/Glow/GlowObjectCmd.cs
+  artifactKey: Guid(8f97577f7490be846abb026b83b52db0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UIs/Glow/GlowObjectCmd.cs using Guid(8f97577f7490be846abb026b83b52db0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '678c40a307d1425c1f9173ee45811468') in 0.007415 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.400510 seconds.
+  path: Assets/Scripts/UIs/Glow/GlowObjectCmd.cs
+  artifactKey: Guid(8f97577f7490be846abb026b83b52db0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UIs/Glow/GlowObjectCmd.cs using Guid(8f97577f7490be846abb026b83b52db0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f30e1fcc4297018815ea0a4c29912dd') in 0.001938 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.374005 seconds.
+  path: Assets/Scripts/UIs/Glow/GlowObjectCmd.cs
+  artifactKey: Guid(8f97577f7490be846abb026b83b52db0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UIs/Glow/GlowObjectCmd.cs using Guid(8f97577f7490be846abb026b83b52db0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f4320ed626773ce7f922ea63256b0c2') in 0.002203 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.927058 seconds.
+  path: Assets/Scripts/UIs/Glow/GlowObjectCmd.cs
+  artifactKey: Guid(8f97577f7490be846abb026b83b52db0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UIs/Glow/GlowObjectCmd.cs using Guid(8f97577f7490be846abb026b83b52db0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec11af5073439d4e75c5b624128dbffc') in 0.002337 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003719 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001DB89356A40 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84DED420 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C8C2010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84DED420 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84E04030 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8D6FA600 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8BBE6010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87C47830 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB901206B0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CF39D00 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB892A8100 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB886FA020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniVRM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87F648B0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Samples.ScreenSpace.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88D37060 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\FastSpringBone.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB89356A40 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Utils.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87F63D30 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8D42EFD0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87762410 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87C47830 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88702830 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CE5EF20 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Samples.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C8DBD10 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB89887C30 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87C47830 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.779 seconds
+Domain Reload Profiling:
+	ReloadAssembly (780ms)
+		BeginReloadAssembly (94ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (30ms)
-		EndReloadAssembly (556ms)
-			LoadAssemblies (69ms)
+		EndReloadAssembly (632ms)
+			LoadAssemblies (80ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (183ms)
+			SetupTypeCache (204ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (33ms)
-			SetupLoadedEditorAssemblies (210ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (245ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (58ms)
-				ProcessInitializeOnLoadAttributes (138ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.33 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.5 MB.
-System memory in use after: 71.6 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1999.
-Total: 1.916600 ms (FindLiveObjects: 0.086900 ms CreateObjectMapping: 0.025200 ms MarkObjects: 1.786500 ms  DeleteObjects: 0.017600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002510 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.36 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.731 seconds
-Domain Reload Profiling:
-	ReloadAssembly (731ms)
-		BeginReloadAssembly (87ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (3ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (24ms)
-		EndReloadAssembly (600ms)
-			LoadAssemblies (73ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (200ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (25ms)
-			SetupLoadedEditorAssemblies (221ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (52ms)
-				ProcessInitializeOnLoadAttributes (152ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (5ms)
+				BeforeProcessingInitializeOnLoad (65ms)
+				ProcessInitializeOnLoadAttributes (159ms)
+				ProcessInitializeOnLoadMethodAttributes (10ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.34 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.44 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.5 MB.
-System memory in use after: 71.6 MB.
+Unloading 2076 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.8 MB.
+System memory in use after: 88.9 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2001.
-Total: 2.178500 ms (FindLiveObjects: 0.129500 ms CreateObjectMapping: 0.033500 ms MarkObjects: 1.967400 ms  DeleteObjects: 0.046800 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2554.
+Total: 2.356200 ms (FindLiveObjects: 0.122700 ms CreateObjectMapping: 0.031800 ms MarkObjects: 2.181100 ms  DeleteObjects: 0.020000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -264,168 +438,96 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002366 seconds.
+Registered in 0.002258 seconds.
 Begin MonoManager ReloadAssembly
+Symbol file data-000001DB8953FEE0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8FDE20C0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C8C2010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB91285010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84DC8010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB90C29620 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB903FA030 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87C46A30 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C59FBC0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CC89930 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB90672FF0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8BCDC050 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniVRM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87F65710 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Samples.ScreenSpace.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88D37060 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\FastSpringBone.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88D1CA50 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Utils.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87F65150 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB912F7010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB848721D0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87C46A30 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CBE6230 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CE5A0C0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Samples.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8BCE4060 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88C07A30 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87C46A30 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.39 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
 - Completed reload, in  0.684 seconds
 Domain Reload Profiling:
-	ReloadAssembly (684ms)
-		BeginReloadAssembly (86ms)
+	ReloadAssembly (685ms)
+		BeginReloadAssembly (83ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (24ms)
-		EndReloadAssembly (549ms)
-			LoadAssemblies (71ms)
+		EndReloadAssembly (559ms)
+			LoadAssemblies (70ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
 			SetupTypeCache (188ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (30ms)
-			SetupLoadedEditorAssemblies (198ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (54ms)
-				ProcessInitializeOnLoadAttributes (128ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.32 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.5 MB.
-System memory in use after: 71.6 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2003.
-Total: 1.967400 ms (FindLiveObjects: 0.097200 ms CreateObjectMapping: 0.027800 ms MarkObjects: 1.822600 ms  DeleteObjects: 0.019200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 252.985831 seconds.
-  path: Assets/Scripts/Managers
-  artifactKey: Guid(3ce131e9040ec9e45902406397f0473e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Managers using Guid(3ce131e9040ec9e45902406397f0473e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '390a46def65b599a6cf9637df3338fe4') in 0.009612 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003833 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.30 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.712 seconds
-Domain Reload Profiling:
-	ReloadAssembly (712ms)
-		BeginReloadAssembly (97ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (29ms)
-		EndReloadAssembly (570ms)
-			LoadAssemblies (68ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (209ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (26ms)
-			SetupLoadedEditorAssemblies (210ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (214ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (55ms)
-				ProcessInitializeOnLoadAttributes (141ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.33 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.5 MB.
-System memory in use after: 71.6 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2005.
-Total: 1.936600 ms (FindLiveObjects: 0.090200 ms CreateObjectMapping: 0.025800 ms MarkObjects: 1.802500 ms  DeleteObjects: 0.017500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002138 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.31 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.689 seconds
-Domain Reload Profiling:
-	ReloadAssembly (690ms)
-		BeginReloadAssembly (84ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (23ms)
-		EndReloadAssembly (560ms)
-			LoadAssemblies (67ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (188ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (26ms)
-			SetupLoadedEditorAssemblies (213ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (58ms)
-				ProcessInitializeOnLoadAttributes (141ms)
+				BeforeProcessingInitializeOnLoad (62ms)
+				ProcessInitializeOnLoadAttributes (138ms)
 				ProcessInitializeOnLoadMethodAttributes (6ms)
 				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.35 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.37 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.5 MB.
-System memory in use after: 71.7 MB.
+Unloading 2076 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.8 MB.
+System memory in use after: 88.9 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2007.
-Total: 1.986100 ms (FindLiveObjects: 0.087400 ms CreateObjectMapping: 0.027600 ms MarkObjects: 1.854000 ms  DeleteObjects: 0.016400 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2556.
+Total: 2.172900 ms (FindLiveObjects: 0.116200 ms CreateObjectMapping: 0.031100 ms MarkObjects: 2.005000 ms  DeleteObjects: 0.019200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -441,408 +543,96 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002311 seconds.
+Registered in 0.002425 seconds.
 Begin MonoManager ReloadAssembly
+Symbol file data-000001DB91EE8B10 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB91285010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8796C020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB91285010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87F22020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84D5CDF0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB91D07A90 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84CB9220 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8BEFF940 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CC89D80 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8DF895F0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8BCDC050 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniVRM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C989B80 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Samples.ScreenSpace.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88D37060 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\FastSpringBone.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8BCEC120 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Utils.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C989000 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87762410 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8B482010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB91D04F20 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84DEEC20 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CE60940 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Samples.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8DDA6080 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB91DC7820 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB91D04F20 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
 - Completed reload, in  0.729 seconds
 Domain Reload Profiling:
-	ReloadAssembly (730ms)
-		BeginReloadAssembly (87ms)
+	ReloadAssembly (729ms)
+		BeginReloadAssembly (85ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (27ms)
-		EndReloadAssembly (583ms)
-			LoadAssemblies (67ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (195ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (29ms)
-			SetupLoadedEditorAssemblies (223ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (59ms)
-				ProcessInitializeOnLoadAttributes (148ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (6ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.37 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.5 MB.
-System memory in use after: 71.7 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2009.
-Total: 1.993200 ms (FindLiveObjects: 0.106600 ms CreateObjectMapping: 0.027200 ms MarkObjects: 1.835500 ms  DeleteObjects: 0.022600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002216 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.31 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.754 seconds
-Domain Reload Profiling:
-	ReloadAssembly (755ms)
-		BeginReloadAssembly (118ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (47ms)
-		EndReloadAssembly (579ms)
+			CreateAndSetChildDomain (25ms)
+		EndReloadAssembly (602ms)
 			LoadAssemblies (68ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (217ms)
+			SetupTypeCache (192ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (27ms)
-			SetupLoadedEditorAssemblies (210ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (245ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (54ms)
-				ProcessInitializeOnLoadAttributes (141ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (4ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.6 MB.
-System memory in use after: 71.7 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2011.
-Total: 1.952900 ms (FindLiveObjects: 0.087800 ms CreateObjectMapping: 0.025100 ms MarkObjects: 1.822900 ms  DeleteObjects: 0.016500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002250 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.49 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.834 seconds
-Domain Reload Profiling:
-	ReloadAssembly (835ms)
-		BeginReloadAssembly (88ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (23ms)
-		EndReloadAssembly (700ms)
-			LoadAssemblies (76ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (222ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (33ms)
-			SetupLoadedEditorAssemblies (283ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (71ms)
-				ProcessInitializeOnLoadAttributes (193ms)
-				ProcessInitializeOnLoadMethodAttributes (10ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (4ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.32 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.6 MB.
-System memory in use after: 71.7 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2013.
-Total: 2.184100 ms (FindLiveObjects: 0.094000 ms CreateObjectMapping: 0.025400 ms MarkObjects: 2.044800 ms  DeleteObjects: 0.019000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003141 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.35 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.707 seconds
-Domain Reload Profiling:
-	ReloadAssembly (708ms)
-		BeginReloadAssembly (89ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (24ms)
-		EndReloadAssembly (573ms)
-			LoadAssemblies (70ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (201ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (27ms)
-			SetupLoadedEditorAssemblies (210ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (60ms)
-				ProcessInitializeOnLoadAttributes (135ms)
+				BeforeProcessingInitializeOnLoad (70ms)
+				ProcessInitializeOnLoadAttributes (160ms)
 				ProcessInitializeOnLoadMethodAttributes (6ms)
 				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.36 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.6 MB.
-System memory in use after: 71.7 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2015.
-Total: 2.086200 ms (FindLiveObjects: 0.086000 ms CreateObjectMapping: 0.029100 ms MarkObjects: 1.953100 ms  DeleteObjects: 0.016900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002363 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.31 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.663 seconds
-Domain Reload Profiling:
-	ReloadAssembly (663ms)
-		BeginReloadAssembly (83ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (23ms)
-		EndReloadAssembly (537ms)
-			LoadAssemblies (67ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (184ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (26ms)
-			SetupLoadedEditorAssemblies (202ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (58ms)
-				ProcessInitializeOnLoadAttributes (130ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (4ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.32 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.6 MB.
-System memory in use after: 71.7 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2017.
-Total: 2.013100 ms (FindLiveObjects: 0.099200 ms CreateObjectMapping: 0.024500 ms MarkObjects: 1.870500 ms  DeleteObjects: 0.018200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 316.094048 seconds.
-  path: Assets/Scenes/StartScene.unity
-  artifactKey: Guid(c2dae1e7e78f8bb4393eacfb269c8317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/StartScene.unity using Guid(c2dae1e7e78f8bb4393eacfb269c8317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9c8bb54f46ea4703d9542b6e076adb9') in 0.031439 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.436504 seconds.
-  path: Assets/Scenes/PlayScene.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/PlayScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f31c973c5790201214cc708b0e66081') in 0.005809 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002206 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.715 seconds
-Domain Reload Profiling:
-	ReloadAssembly (716ms)
-		BeginReloadAssembly (88ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (3ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (26ms)
-		EndReloadAssembly (581ms)
-			LoadAssemblies (74ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (192ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (27ms)
-			SetupLoadedEditorAssemblies (223ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (52ms)
-				ProcessInitializeOnLoadAttributes (151ms)
-				ProcessInitializeOnLoadMethodAttributes (9ms)
-				AfterProcessingInitializeOnLoad (6ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.36 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.6 MB.
-System memory in use after: 71.7 MB.
+Unloading 2076 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.8 MB.
+System memory in use after: 89.0 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2019.
-Total: 2.531200 ms (FindLiveObjects: 0.086700 ms CreateObjectMapping: 0.024700 ms MarkObjects: 2.400200 ms  DeleteObjects: 0.018800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 65.373519 seconds.
-  path: Assets/Scenes/PlayScene.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/PlayScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d38f38cb8b3d153df077308de614db5') in 0.012413 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002787 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.44 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.828 seconds
-Domain Reload Profiling:
-	ReloadAssembly (829ms)
-		BeginReloadAssembly (106ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (3ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (30ms)
-		EndReloadAssembly (660ms)
-			LoadAssemblies (88ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (239ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (232ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (60ms)
-				ProcessInitializeOnLoadAttributes (154ms)
-				ProcessInitializeOnLoadMethodAttributes (8ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.49 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.6 MB.
-System memory in use after: 71.7 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2021.
-Total: 2.726400 ms (FindLiveObjects: 0.100100 ms CreateObjectMapping: 0.027200 ms MarkObjects: 2.555900 ms  DeleteObjects: 0.041900 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2558.
+Total: 2.088600 ms (FindLiveObjects: 0.131700 ms CreateObjectMapping: 0.043500 ms MarkObjects: 1.893200 ms  DeleteObjects: 0.019400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -858,48 +648,96 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.003202 seconds.
+Registered in 0.002226 seconds.
 Begin MonoManager ReloadAssembly
+Symbol file data-000001DB8927CD30 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8B1EB930 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84A3D530 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C806FB0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87F22020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84D682B0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB848B1030 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB848B1030 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB849BA1D0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB92AF1EA0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8E01B600 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CA0AEE0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniVRM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C9898A0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Samples.ScreenSpace.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88D37060 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\FastSpringBone.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB9101D340 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Utils.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C9898A0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CBD9020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB878495B0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB848B1030 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C8D84B0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB9203D1B0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Samples.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84527020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C4C81D0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB848B1030 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.31 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.718 seconds
+- Completed reload, in  0.812 seconds
 Domain Reload Profiling:
-	ReloadAssembly (719ms)
-		BeginReloadAssembly (95ms)
+	ReloadAssembly (813ms)
+		BeginReloadAssembly (109ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (33ms)
-		EndReloadAssembly (576ms)
-			LoadAssemblies (72ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (648ms)
+			LoadAssemblies (90ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (207ms)
+			SetupTypeCache (204ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (30ms)
-			SetupLoadedEditorAssemblies (206ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (269ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (55ms)
-				ProcessInitializeOnLoadAttributes (136ms)
-				ProcessInitializeOnLoadMethodAttributes (7ms)
-				AfterProcessingInitializeOnLoad (4ms)
+				BeforeProcessingInitializeOnLoad (68ms)
+				ProcessInitializeOnLoadAttributes (181ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (4ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.34 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.6 MB.
-System memory in use after: 71.7 MB.
+Unloading 2076 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.8 MB.
+System memory in use after: 88.9 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2023.
-Total: 2.406200 ms (FindLiveObjects: 0.088800 ms CreateObjectMapping: 0.024600 ms MarkObjects: 2.276500 ms  DeleteObjects: 0.015800 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2560.
+Total: 2.119400 ms (FindLiveObjects: 0.133500 ms CreateObjectMapping: 0.035300 ms MarkObjects: 1.927400 ms  DeleteObjects: 0.022400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -913,131 +751,215 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 84.992129 seconds.
-  path: Assets/Sounds/Music/y2mate.com - analogmannequin  milk cassette xmp3.mp3
-  artifactKey: Guid(1677f2954ca014841ac9df42453f9fb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/Music/y2mate.com - analogmannequin  milk cassette xmp3.mp3 using Guid(1677f2954ca014841ac9df42453f9fb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7a7dc5a47475c25786827123340674e') in 0.095240 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.405073 seconds.
-  path: Assets/Sounds/Music/y2mate.com - bonjr  if its real then ill stay slowed.mp3
-  artifactKey: Guid(0d672182a437be349a2e154120f35d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/Music/y2mate.com - bonjr  if its real then ill stay slowed.mp3 using Guid(0d672182a437be349a2e154120f35d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d87ec8f0fd3cb9e8d6324b0b4a4027e') in 0.017603 seconds 
-========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002388 seconds.
+Registered in 0.003152 seconds.
 Begin MonoManager ReloadAssembly
+Symbol file data-000001DB89279D10 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8B1EB930 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84A3D530 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C806FB0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87F22020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB931E6810 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88F98080 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88F98080 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB849BE5F0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB92AF0070 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8B8934A0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB9382E020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniVRM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C98ACC0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Samples.ScreenSpace.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88D37060 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\FastSpringBone.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB9366E090 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Utils.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C987BE0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CBD9020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB91F05120 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB935658C0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84952030 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB9203DEC0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Samples.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84527020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84EF71D0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C242630 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.32 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.38 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.729 seconds
+- Completed reload, in  0.687 seconds
 Domain Reload Profiling:
-	ReloadAssembly (729ms)
-		BeginReloadAssembly (84ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (3ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (25ms)
-		EndReloadAssembly (596ms)
-			LoadAssemblies (67ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (211ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (31ms)
-			SetupLoadedEditorAssemblies (208ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (56ms)
-				ProcessInitializeOnLoadAttributes (138ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (4ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.32 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.7 MB.
-System memory in use after: 74.8 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2034.
-Total: 2.007500 ms (FindLiveObjects: 0.092500 ms CreateObjectMapping: 0.025100 ms MarkObjects: 1.872500 ms  DeleteObjects: 0.016800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 98.760884 seconds.
-  path: Assets/Scenes/StartScene.unity
-  artifactKey: Guid(c2dae1e7e78f8bb4393eacfb269c8317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/StartScene.unity using Guid(c2dae1e7e78f8bb4393eacfb269c8317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db206e5c8deba7186a3d144b6b5a8e8c') in 0.014920 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 22.694401 seconds.
-  path: Assets/Scenes/PlayScene.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/PlayScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa9b43878e2ac2291fbe29f30deac112') in 0.002655 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002162 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.47 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.745 seconds
-Domain Reload Profiling:
-	ReloadAssembly (746ms)
-		BeginReloadAssembly (85ms)
+	ReloadAssembly (687ms)
+		BeginReloadAssembly (83ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (24ms)
-		EndReloadAssembly (618ms)
-			LoadAssemblies (69ms)
+		EndReloadAssembly (561ms)
+			LoadAssemblies (68ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (196ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (56ms)
-			SetupLoadedEditorAssemblies (223ms)
+			SetupTypeCache (183ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (215ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (54ms)
-				ProcessInitializeOnLoadAttributes (152ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (62ms)
+				ProcessInitializeOnLoadAttributes (139ms)
 				ProcessInitializeOnLoadMethodAttributes (6ms)
 				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (4ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.32 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.7 MB.
-System memory in use after: 74.8 MB.
+Unloading 2076 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.9 MB.
+System memory in use after: 89.0 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2036.
-Total: 1.984700 ms (FindLiveObjects: 0.102500 ms CreateObjectMapping: 0.030100 ms MarkObjects: 1.834800 ms  DeleteObjects: 0.016500 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2562.
+Total: 2.079800 ms (FindLiveObjects: 0.112400 ms CreateObjectMapping: 0.048900 ms MarkObjects: 1.894400 ms  DeleteObjects: 0.023400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 89.948704 seconds.
+  path: Assets/Prefabs/Booth.prefab
+  artifactKey: Guid(252913a80cd5cce4f8a45f79b3a3755e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Booth.prefab using Guid(252913a80cd5cce4f8a45f79b3a3755e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56bf620e1a251ba06859ce82e0b36468') in 0.145526 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.387205 seconds.
+  path: Assets/Prefabs/BoothWithSockets.prefab
+  artifactKey: Guid(ca1d7ecc848018b4db52a486cecdb92c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BoothWithSockets.prefab using Guid(ca1d7ecc848018b4db52a486cecdb92c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e74cb0d554f4ae8825668d55fd596872') in 0.050515 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002484 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001DB8927A6B0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C114870 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88D37060 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88253020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB92B96050 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB93E838E0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB93E7ED90 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CFD1C50 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB849BA1D0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB94264250 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8DCB3190 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB9297D930 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniVRM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C987620 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Samples.ScreenSpace.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB90FAE010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\FastSpringBone.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB91232CA0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Utils.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C987EC0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CBD9020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87820020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84DF4210 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84E50E00 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB9203AA80 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Samples.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB90896810 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB91D4AC20 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C8C7390 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.684 seconds
+Domain Reload Profiling:
+	ReloadAssembly (685ms)
+		BeginReloadAssembly (86ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (26ms)
+		EndReloadAssembly (556ms)
+			LoadAssemblies (69ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (175ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (216ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (62ms)
+				ProcessInitializeOnLoadAttributes (138ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2076 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.2 MB.
+System memory in use after: 92.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2573.
+Total: 2.028900 ms (FindLiveObjects: 0.113800 ms CreateObjectMapping: 0.031200 ms MarkObjects: 1.866900 ms  DeleteObjects: 0.016400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -1053,48 +975,411 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005008 seconds.
+Registered in 0.002505 seconds.
 Begin MonoManager ReloadAssembly
+Symbol file data-000001DB8927B520 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C114870 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C98B020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8D451000 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8DFEF020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB931DEF90 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB931E1CC0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84E52E10 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8BF38B60 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB9425F060 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87EFF690 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB9297D930 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniVRM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C9898A0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Samples.ScreenSpace.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB90FAE010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\FastSpringBone.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB902E1300 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Utils.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C98A700 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CBD9020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87820020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CC8C490 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84DEEC20 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB92039060 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Samples.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB90896810 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8DDBED30 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CC8C490 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.055 seconds
+- Completed reload, in  0.695 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1055ms)
-		BeginReloadAssembly (143ms)
+	ReloadAssembly (695ms)
+		BeginReloadAssembly (87ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (828ms)
-			LoadAssemblies (124ms)
+			CreateAndSetChildDomain (25ms)
+		EndReloadAssembly (566ms)
+			LoadAssemblies (69ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (306ms)
+			SetupTypeCache (177ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (36ms)
-			SetupLoadedEditorAssemblies (294ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (229ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (1ms)
+				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (74ms)
-				ProcessInitializeOnLoadAttributes (200ms)
-				ProcessInitializeOnLoadMethodAttributes (8ms)
-				AfterProcessingInitializeOnLoad (6ms)
+				BeforeProcessingInitializeOnLoad (69ms)
+				ProcessInitializeOnLoadAttributes (142ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.44 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.43 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.7 MB.
-System memory in use after: 74.9 MB.
+Unloading 2076 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.2 MB.
+System memory in use after: 92.3 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2038.
-Total: 2.236400 ms (FindLiveObjects: 0.158800 ms CreateObjectMapping: 0.025500 ms MarkObjects: 2.013400 ms  DeleteObjects: 0.037400 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2575.
+Total: 2.385700 ms (FindLiveObjects: 0.128500 ms CreateObjectMapping: 0.034500 ms MarkObjects: 2.204100 ms  DeleteObjects: 0.017900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002459 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001DB8D4B0BB0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C114870 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88D19020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8D818030 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB92B96050 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8FA628E0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8FA5CE80 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84E52E10 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8BF38B60 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8463BE90 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8B8233C0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB9297D930 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniVRM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C9898A0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Samples.ScreenSpace.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB90FAE010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\FastSpringBone.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB902E9E70 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Utils.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C98A9E0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CBD9020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C2F2040 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8DEB8580 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88D19020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB92039060 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Samples.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87E33080 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8DB74020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB88F47410 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.697 seconds
+Domain Reload Profiling:
+	ReloadAssembly (697ms)
+		BeginReloadAssembly (84ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (26ms)
+		EndReloadAssembly (569ms)
+			LoadAssemblies (69ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (186ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (220ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (63ms)
+				ProcessInitializeOnLoadAttributes (141ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2076 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.2 MB.
+System memory in use after: 92.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2577.
+Total: 2.152100 ms (FindLiveObjects: 0.120500 ms CreateObjectMapping: 0.033200 ms MarkObjects: 1.980800 ms  DeleteObjects: 0.016700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002742 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001DB8D4B06E0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84F77040 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8D298040 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB92970090 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8DAF3010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB91E4EDA0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB91E4DE90 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84E52E10 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8BF39230 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8463B1A0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C23AE00 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8B1E8050 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniVRM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C9881A0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Samples.ScreenSpace.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB90FAE010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\FastSpringBone.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB925479A0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Utils.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C98ACC0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CBD9020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB87B4A930 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8E222A70 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB90E7A020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB920405F0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Samples.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8B1F0860 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8DB74020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8E222A70 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.794 seconds
+Domain Reload Profiling:
+	ReloadAssembly (794ms)
+		BeginReloadAssembly (96ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (647ms)
+			LoadAssemblies (80ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (225ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (241ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (68ms)
+				ProcessInitializeOnLoadAttributes (156ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.48 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2076 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.1 MB.
+System memory in use after: 92.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2579.
+Total: 2.313300 ms (FindLiveObjects: 0.127200 ms CreateObjectMapping: 0.073000 ms MarkObjects: 2.095400 ms  DeleteObjects: 0.017200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003516 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001DB8D4AF870 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84F77040 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB891CD030 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB92970090 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB909C2010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8965D060 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB89662AC0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84E52E10 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB849C0130 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8DA6BD30 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8B788320 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB91FC9010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniVRM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C988A40 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Samples.ScreenSpace.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB90FAE010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\FastSpringBone.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8FCA6C20 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Utils.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8C987620 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8CBD9020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8D32BCA0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84832EB0 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB8FD8B020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB92042D20 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Samples.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB907D4020 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB91CB3010 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001DB84E52E10 doesn't match image C:\Users\user\Documents\GitHub\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.787 seconds
+Domain Reload Profiling:
+	ReloadAssembly (788ms)
+		BeginReloadAssembly (93ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (645ms)
+			LoadAssemblies (78ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (213ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (37ms)
+			SetupLoadedEditorAssemblies (248ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (72ms)
+				ProcessInitializeOnLoadAttributes (157ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.46 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2076 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.2 MB.
+System memory in use after: 92.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2581.
+Total: 2.581900 ms (FindLiveObjects: 0.121000 ms CreateObjectMapping: 0.035500 ms MarkObjects: 2.404900 ms  DeleteObjects: 0.019800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
