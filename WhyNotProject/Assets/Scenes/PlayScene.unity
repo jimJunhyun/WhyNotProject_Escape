@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!108 &143165331 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 2637584787548641178, guid: cf503a0fd1a2fd94cb8b6aa44a582b30, type: 3}
-  m_PrefabInstance: {fileID: 4178068838517917435}
-  m_PrefabAsset: {fileID: 0}
 --- !u!108 &162785224 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 2577897623869280256, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
@@ -270,6 +265,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4191854203713826694, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 963194227}
     - target: {fileID: 5619351987064726821, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -324,11 +323,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
---- !u!108 &545209730 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 6565685958945798616, guid: cf503a0fd1a2fd94cb8b6aa44a582b30, type: 3}
-  m_PrefabInstance: {fileID: 4178068838517917435}
-  m_PrefabAsset: {fileID: 0}
 --- !u!108 &572561255 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 7495868642711911595, guid: cf503a0fd1a2fd94cb8b6aa44a582b30, type: 3}
@@ -851,11 +845,8 @@ MonoBehaviour:
   - {fileID: 572561255}
   - {fileID: 346037645}
   - {fileID: 1859615987}
-  - {fileID: 143165331}
-  - {fileID: 964225178}
   - {fileID: 1891889881}
   - {fileID: 962572221}
-  - {fileID: 545209730}
   - {fileID: 1392812856}
   - {fileID: 1107025557}
   - {fileID: 162785224}
@@ -1085,11 +1076,6 @@ MonoBehaviour:
   holdLimit: 3
   HoldPos: {x: 0, y: 0, z: 0}
   currentHolding: {fileID: 0}
---- !u!108 &964225178 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 5793550309853222170, guid: cf503a0fd1a2fd94cb8b6aa44a582b30, type: 3}
-  m_PrefabInstance: {fileID: 4178068838517917435}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1062176480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,18 +1355,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1933770559858187143, guid: cf503a0fd1a2fd94cb8b6aa44a582b30, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4916652899053002329, guid: cf503a0fd1a2fd94cb8b6aa44a582b30, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5837292507806251483, guid: cf503a0fd1a2fd94cb8b6aa44a582b30, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7440204558759675163, guid: cf503a0fd1a2fd94cb8b6aa44a582b30, type: 3}
       propertyPath: m_Name
       value: NewBackGround
