@@ -26,12 +26,13 @@ public class Holdable : MonoBehaviour, IInteractable
 	Collider myCol;
 	Rigidbody myRig;
 	Renderer myRen;
+	PlayerController player;
     public void Held()
 	{
 		HoldManager.Instance.currentHolding = this;
 		myRig.useGravity = false;
 		transform.position = HoldManager.Instance.HoldPos;
-		transform.eulerAngles = holdRot;
+		transform.LookAt(player.transform);
 		gameObject.layer = 2;
 	}
     public void Fall()
@@ -83,9 +84,11 @@ public class Holdable : MonoBehaviour, IInteractable
 		myGlow = GetComponent<GlowObjectCmd>();
 		myCol = GetComponent<Collider>();
 		myRen = GetComponent<Renderer>();
+		player = FindObjectOfType<PlayerController>();
 		if(bufferArea == 0)
 		{
-			bufferArea = Mathf.Sqrt(Mathf.Log10(transform.localScale.magnitude) / 2) / 3;
+			bufferArea = Mathf.Sqrt(Mathf.Abs(Mathf.Log10(transform.localScale.magnitude) / 2)) / 3;
+
 		}
 		
 		myRig = GetComponent<Rigidbody>();
