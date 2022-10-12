@@ -14,6 +14,8 @@ public class Inspectable : MonoBehaviour
 	int originLayer;
 	Vector3 originPos;
 	Quaternion originRot;
+	float h;
+	float v;
 
 	bool currentInspected = false;
 
@@ -71,9 +73,18 @@ public class Inspectable : MonoBehaviour
 	
 	void GetInput()
 	{
-		float h = Input.GetAxis("Horizontal");
-		float v = Input.GetAxis("Vertical");
+		if (Input.GetMouseButton(0))
+		{
+			h = Input.GetAxis("Mouse X");
+			v = Input.GetAxis("Mouse Y");
+		}
+		if (Input.GetMouseButtonUp(0))
+		{
+			h = 0;
+			v = 0;
+		}
+		
 
-		transform.Rotate(new Vector3(v, h, 0) * InspectManager.Instance.moveSpeed * Time.deltaTime, Space.World);
+		transform.Rotate(new Vector3(h, v) * InspectManager.Instance.moveSpeed * Time.deltaTime, Space.World);
 	}
 }
