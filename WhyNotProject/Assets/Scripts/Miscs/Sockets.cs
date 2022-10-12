@@ -18,9 +18,8 @@ public class Sockets : MonoBehaviour
 		}
 		else if (keys.Contains(keyInfo) && !keyInfo.isHeld && !keyInfo.isPlaced && activated)
 		{
-			keyInfo.Place(transform.position);
 			OnMatched.Invoke();
-			//keyInfo.Place(transform.position);
+			keyInfo.Place(transform.position);
 		}
 	}
 

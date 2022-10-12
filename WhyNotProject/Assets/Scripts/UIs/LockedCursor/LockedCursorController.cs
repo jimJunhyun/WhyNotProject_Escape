@@ -21,9 +21,9 @@ public class LockedCursorController : MonoBehaviour
 
     private void Update()
     {
-        Cursor.lockState = OptionUI.instance.optionOpened || InspectManager.Instance.InspectingNum >= 1 ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.lockState = OptionUI.Instance.optionOpened ? CursorLockMode.None : CursorLockMode.Locked;
 
-        if (!(OptionUI.instance.optionOpened || InspectManager.Instance.InspectingNum >= 1))
+        if (!OptionUI.Instance.optionOpened)
         {
             rectTrans.transform.position = new Vector2(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2);
         }
