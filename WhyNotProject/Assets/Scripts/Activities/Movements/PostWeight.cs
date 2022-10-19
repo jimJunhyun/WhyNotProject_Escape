@@ -6,15 +6,17 @@ using DG.Tweening;
 public class PostWeight : MonoBehaviour
 {
 	public int maxWeight = 10;
-	public Vector3 basePosition;
-	public Vector3 maxWeightPosition;
-
 	public int objCount = 0;
+	[SerializeField] private Vector3 basePosition;
+	[SerializeField] private Vector3 targetPosition;
 
+	[Header("ColliderSettings")]
 	[SerializeField] private int currentWeight = 0;
 	[SerializeField] private Vector3 boxCastSize;
 	[SerializeField] private Vector3 boxPosition;
 	[SerializeField] private int coinLayer;
+
+	[Header("MovementSetting")]
 	[SerializeField] private Ease moveEase;
 	[SerializeField] private float moveTime;
 
@@ -25,27 +27,27 @@ public class PostWeight : MonoBehaviour
 	private void Awake()
 	{
 		basePosition = transform.position;
-		moveAmount = maxWeightPosition - transform.position;
+		moveAmount = targetPosition - transform.position;
 
 		coinLayer = 1 << LayerMask.NameToLayer("Holdable");
 	}
 
 	private void FixedUpdate()
 	{
-		if (objCount != CastCollider())
+		if (objCount != CastCollider()) // 저장된 오브젝트의 수와 범위 내의 오브젝트의 수가 다를 때
 		{
 			ColliderCast();
 		}
 	}
 
-	private int CastCollider()
+	private int CastCollider() //범위 내의 오브젝트를 탐색 및 탐색한 오브젝트의 개수를 반환
 	{
 		hits = Physics.BoxCastAll(transform.position + boxPosition, boxCastSize * 0.5f, Vector3.up, Quaternion.identity, 1f, coinLayer);
 
 		return hits.Length;
 	}
 
-	private void ColliderCast()
+	private void ColliderCast() //현재 범위 내의 오브젝트 저장
 	{
 		if (currentHits?.Length > 0)
 		{
