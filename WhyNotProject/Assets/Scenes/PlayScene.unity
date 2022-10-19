@@ -686,8 +686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072e02a98e8da154aa67f136da85ee02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedNo: 0300000005000000
-  box: {fileID: 1823661737}
+  isOn: 0
 --- !u!114 &445249997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1072,6 +1071,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLighted: 0
   myMat: {fileID: 0}
+  myLogic: 2
+  connectedSignals:
+  - {fileID: 1632310935}
+  - {fileID: 1046814496}
 --- !u!65 &599471282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1844,6 +1847,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLighted: 0
   myMat: {fileID: 0}
+  myLogic: 5
+  connectedSignals:
+  - {fileID: 1046814496}
+  - {fileID: 2146939236}
 --- !u!65 &928380040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2114,8 +2121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072e02a98e8da154aa67f136da85ee02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedNo: 0400000006000000
-  box: {fileID: 1823661737}
+  isOn: 0
 --- !u!114 &1046814497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2434,6 +2440,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLighted: 0
   myMat: {fileID: 0}
+  myLogic: 1
+  connectedSignals:
+  - {fileID: 445249996}
+  - {fileID: 1866605409}
 --- !u!65 &1462544893
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2544,8 +2554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072e02a98e8da154aa67f136da85ee02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedNo: 0200000004000000
-  box: {fileID: 1823661737}
+  isOn: 0
 --- !u!114 &1632310936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3221,6 +3230,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLighted: 0
   myMat: {fileID: 0}
+  myLogic: 4
+  connectedSignals:
+  - {fileID: 1866605409}
+  - {fileID: 1632310935}
 --- !u!108 &1859615987 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 3200067234812826449, guid: cf503a0fd1a2fd94cb8b6aa44a582b30, type: 3}
@@ -3336,8 +3349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072e02a98e8da154aa67f136da85ee02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedNo: 0000000002000000
-  box: {fileID: 1823661737}
+  isOn: 0
 --- !u!114 &1866605410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3437,6 +3449,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLighted: 0
   myMat: {fileID: 0}
+  myLogic: 0
+  connectedSignals:
+  - {fileID: 2146939236}
+  - {fileID: 445249996}
 --- !u!65 &1947453049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3647,8 +3663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072e02a98e8da154aa67f136da85ee02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedNo: 0100000003000000
-  box: {fileID: 1823661737}
+  isOn: 0
 --- !u!114 &2146939237
 MonoBehaviour:
   m_ObjectHideFlags: 0
