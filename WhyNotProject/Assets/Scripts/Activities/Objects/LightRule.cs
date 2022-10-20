@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class LightRule : MonoBehaviour
 {
-	
+	public static LightRule instance;
 	List<LightState> Lights = new List<LightState>();
+	public List<LightSwitch> Switches = new List<LightSwitch>();
 	bool allMatch;
 	PressManager prMan;
 
@@ -14,8 +15,10 @@ public class LightRule : MonoBehaviour
 
 	private void Awake()
 	{
+		instance = this;
 		prMan = GetComponent<PressManager>();
 		GetComponentsInChildren(Lights);
+		GetComponentsInChildren(Switches);
 	}
 
 	private void Update()

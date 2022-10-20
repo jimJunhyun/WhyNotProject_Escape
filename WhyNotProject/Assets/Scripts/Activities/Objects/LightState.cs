@@ -21,11 +21,15 @@ public class LightState : MonoBehaviour
 	public bool isLighted = false;
     public Material myMat;
 	public LogicGates myLogic;
-	public List<LightSwitch> connectedSignals;
+	public List<int> connectedSignals;
+
+	public  bool reversed = false;
+	int gap;
 
 	private void Awake()
 	{
 		myMat = GetComponent<MeshRenderer>().material;
+		gap = connectedSignals[1] - connectedSignals[0];
 	}
 
 	private void Update()
@@ -33,11 +37,34 @@ public class LightState : MonoBehaviour
 		CheckLight();
 	}
 
+	public void Reverse()
+	{
+		if (reversed)
+		{
+			connectedSignals[1] = connectedSignals[0] + gap;
+			reversed = false;
+		}
+		else
+		{
+			connectedSignals[1] = connectedSignals[0] - gap;
+			reversed = true;
+		}
+		
+		if(connectedSignals[1] < 0)
+		{
+			connectedSignals[1] += 5;
+		}
+		if(connectedSignals[1] > 4)
+		{
+			connectedSignals[1] -= 5;
+		}
+	}
+
 	void CheckLight()
 	{
 		if(myLogic == LogicGates.AND)
 		{
-			if(connectedSignals[0].isOn && connectedSignals[1].isOn)
+			if(LightRule.instance.Switches[connectedSignals[0]].isOn && LightRule.instance.Switches[connectedSignals[1]].isOn)
 			{
 				isLighted = true;
 				myMat.EnableKeyword("_EMISSION");
@@ -50,7 +77,7 @@ public class LightState : MonoBehaviour
 		}
 		else if(myLogic == LogicGates.OR)
 		{
-			if (connectedSignals[0].isOn || connectedSignals[1].isOn)
+			if (LightRule.instance.Switches[connectedSignals[0]].isOn || LightRule.instance.Switches[connectedSignals[1]].isOn)
 			{
 				isLighted = true;
 				myMat.EnableKeyword("_EMISSION");
@@ -63,7 +90,7 @@ public class LightState : MonoBehaviour
 		}
 		else if (myLogic == LogicGates.NAND)
 		{
-			if (!(connectedSignals[0].isOn && connectedSignals[1].isOn))
+			if (!(LightRule.instance.Switches[connectedSignals[0]].isOn && LightRule.instance.Switches[connectedSignals[1]].isOn))
 			{
 				isLighted = true;
 				myMat.EnableKeyword("_EMISSION");
@@ -76,7 +103,7 @@ public class LightState : MonoBehaviour
 		}
 		else if (myLogic == LogicGates.NOR)
 		{
-			if (!(connectedSignals[0].isOn || connectedSignals[1].isOn))
+			if (!(LightRule.instance.Switches[connectedSignals[0]].isOn || LightRule.instance.Switches[connectedSignals[1]].isOn))
 			{
 				isLighted = true;
 				myMat.EnableKeyword("_EMISSION");
@@ -89,7 +116,7 @@ public class LightState : MonoBehaviour
 		}
 		else if (myLogic == LogicGates.XOR)
 		{
-			if (connectedSignals[0].isOn != connectedSignals[1].isOn)
+			if (LightRule.instance.Switches[connectedSignals[0]].isOn != LightRule.instance.Switches[connectedSignals[1]].isOn)
 			{
 				isLighted = true;
 				myMat.EnableKeyword("_EMISSION");
@@ -102,7 +129,7 @@ public class LightState : MonoBehaviour
 		}
 		else if (myLogic == LogicGates.XNOR)
 		{
-			if (connectedSignals[0].isOn == connectedSignals[1].isOn)
+			if (LightRule.instance.Switches[connectedSignals[0]].isOn == LightRule.instance.Switches[connectedSignals[1]].isOn)
 			{
 				isLighted = true;
 				myMat.EnableKeyword("_EMISSION");

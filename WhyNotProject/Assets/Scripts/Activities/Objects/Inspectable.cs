@@ -75,8 +75,8 @@ public class Inspectable : MonoBehaviour
 	{
 		if (Input.GetMouseButton(0))
 		{
-			h = Input.GetAxis("Mouse X");
-			v = Input.GetAxis("Mouse Y");
+			v = Input.GetAxis("Mouse X");
+			h = Input.GetAxis("Mouse Y");
 		}
 		if (Input.GetMouseButtonUp(0))
 		{
