@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Events;
 
 public class PostWeight : MonoBehaviour
 {
 	public int maxWeight = 10;
 	public int objCount = 0;
-	[SerializeField] private Vector3 basePosition;
-	[SerializeField] private Vector3 targetPosition;
 
 	[Header("ColliderSettings")]
 	[SerializeField] private int currentWeight = 0;
@@ -20,34 +19,40 @@ public class PostWeight : MonoBehaviour
 	[SerializeField] private Ease moveEase;
 	[SerializeField] private float moveTime;
 
+	public UnityEvent OnTriggered;
+
 	RaycastHit[] hits;
 	RaycastHit[] currentHits;
-	private Vector3 moveAmount;
 
 	private void Awake()
 	{
-		basePosition = transform.position;
-		moveAmount = targetPosition - transform.position;
-
 		coinLayer = 1 << LayerMask.NameToLayer("Holdable");
 	}
 
 	private void FixedUpdate()
 	{
-		if (objCount != CastCollider()) // 저장된 오브젝트의 수와 범위 내의 오브젝트의 수가 다를 때
+		// 저장된 오브젝트와 실제 오브젝트가 다를 때 오브젝트를 다시 탐색
+		if (objCount != CastCollider())
 		{
 			ColliderCast();
 		}
 	}
 
-	private int CastCollider() //범위 내의 오브젝트를 탐색 및 탐색한 오브젝트의 개수를 반환
+	/// <summary>
+	/// 범위 내의 오브젝트를 탐색
+	/// </summary>
+	/// <returns>탐색한 오브젝트의 개수</returns>
+	private int CastCollider()
 	{
 		hits = Physics.BoxCastAll(transform.position + boxPosition, boxCastSize * 0.5f, Vector3.up, Quaternion.identity, 1f, coinLayer);
 
 		return hits.Length;
 	}
 
-	private void ColliderCast() //현재 범위 내의 오브젝트 저장
+	/// <summary>
+	/// 오브젝트를 탐색하여 저장하는 함수
+	/// </summary>
+	private void ColliderCast()
 	{
 		if (currentHits?.Length > 0)
 		{
@@ -58,10 +63,7 @@ public class PostWeight : MonoBehaviour
 		}
 
 		currentHits = hits;
-
-		print("Cast");
 		objCount = CastCollider();
-
 		currentWeight = 0;
 
 		foreach (RaycastHit col in hits)
@@ -71,7 +73,16 @@ public class PostWeight : MonoBehaviour
 			currentWeight = Mathf.Clamp(currentWeight, 0, maxWeight);
 		}
 
-		transform.DOMoveY(basePosition.y + moveAmount.y * (float)(currentWeight / (float)maxWeight), moveTime).SetEase(moveEase, 1f);
+		if (currentWeight >= maxWeight)
+		{
+			OnWeightMax();
+		}
+	}
+
+	/// 최대 무게에 도달했을 때 이벤트를 호출하는 함수
+	private void OnWeightMax()
+	{
+		OnTriggered?.Invoke();
 	}
 
 	private void OnDrawGizmos()
