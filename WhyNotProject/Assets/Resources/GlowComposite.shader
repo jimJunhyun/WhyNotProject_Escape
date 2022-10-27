@@ -1,12 +1,12 @@
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
 Shader "Hidden/GlowComposite"
 {
 	Properties
 	{
-		_MainTex ("Texture", 2D) = "white" {}
+		_MainTex("Texture", 2D) = "white" {}
 	}
-	SubShader
+		SubShader
 	{
 		Cull Off ZWrite Off ZTest Always
 
@@ -15,7 +15,7 @@ Shader "Hidden/GlowComposite"
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
-			
+
 			#include "UnityCG.cginc"
 
 			struct appdata
@@ -33,7 +33,7 @@ Shader "Hidden/GlowComposite"
 
 			float2 _MainTex_TexelSize;
 
-			v2f vert (appdata v)
+			v2f vert(appdata v)
 			{
 				v2f o;
 				o.vertex = UnityObjectToClipPos(v.vertex);
@@ -47,14 +47,14 @@ Shader "Hidden/GlowComposite"
 
 				return o;
 			}
-			
+
 			sampler2D _MainTex;
 			sampler2D _GlowPrePassTex;
 			sampler2D _GlowBlurredTex;
 			sampler2D _TempTex0;
 			float _Intensity;
 
-			fixed4 frag (v2f i) : SV_Target
+			fixed4 frag(v2f i) : SV_Target
 			{
 				fixed4 col = tex2D(_MainTex, i.uv0);
 				fixed4 glow = max(0, tex2D(_GlowBlurredTex, i.uv1) - tex2D(_GlowPrePassTex, i.uv1));

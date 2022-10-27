@@ -5,9 +5,19 @@ using UnityEngine;
 public class RestartManager : MonoBehaviour
 {
 	public ManagerScene scener;
-	// Start is called before the first frame update
+
 	private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+	public void Restart()
 	{
-		scener.DelayChange(1.5f, "StartScene");
+		scener.Change("PlayScene");
 	}
+
+	public void Home()
+	{
+        scener.Change("StartScene");
+    }
 }
