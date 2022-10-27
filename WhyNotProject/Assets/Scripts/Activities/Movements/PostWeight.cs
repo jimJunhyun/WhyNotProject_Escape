@@ -3,26 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
+using System.Linq;
 
 public class PostWeight : MonoBehaviour
 {
 	public int maxWeight = 10;
 	public int objCount = 0;
 
-	[Header("ColliderSettings")]
+	[Header("Collider Settings")]
 	[SerializeField] private int currentWeight = 0;
 	[SerializeField] private Vector3 boxCastSize;
 	[SerializeField] private Vector3 boxPosition;
 	[SerializeField] private int coinLayer;
 
-	[Header("MovementSetting")]
+	private RaycastHit[] hits;
+	private RaycastHit[] currentHits;
+
+	[Header("Movement Setting")]
 	[SerializeField] private Ease moveEase;
 	[SerializeField] private float moveTime;
 
 	public UnityEvent OnTriggered;
-
-	RaycastHit[] hits;
-	RaycastHit[] currentHits;
 
 	private void Awake()
 	{
@@ -44,7 +45,7 @@ public class PostWeight : MonoBehaviour
 	/// <returns>탐색한 오브젝트의 개수</returns>
 	private int CastCollider()
 	{
-		hits = Physics.BoxCastAll(transform.position + boxPosition, boxCastSize * 0.5f, Vector3.up, Quaternion.identity, 1f, coinLayer);
+		hits = Physics.BoxCastAll(transform.position + boxPosition, boxCastSize * 0.5f, Vector3.up, Quaternion.identity, 0f, coinLayer);
 
 		return hits.Length;
 	}
@@ -63,13 +64,14 @@ public class PostWeight : MonoBehaviour
 		}
 
 		currentHits = hits;
+
 		objCount = CastCollider();
 		currentWeight = 0;
 
-		foreach (RaycastHit col in hits)
+		foreach (RaycastHit hit in hits)
 		{
-			col.transform.SetParent(transform);
-			currentWeight += col.transform.GetComponent<Holdable>().objWeight;
+			hit.transform.SetParent(transform);
+			currentWeight += hit.transform.GetComponent<Holdable>().objWeight;
 			currentWeight = Mathf.Clamp(currentWeight, 0, maxWeight);
 		}
 
