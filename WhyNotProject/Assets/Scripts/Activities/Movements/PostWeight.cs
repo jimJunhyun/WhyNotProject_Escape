@@ -39,7 +39,7 @@ public class PostWeight : MonoBehaviour
 	}
 
 	/// <summary>
-	/// 범위 내의 오브젝트를 탐색
+	/// 범위 내의 오브젝트를 탐색하는 함수
 	/// </summary>
 	/// <returns>탐색한 오브젝트의 개수</returns>
 	private int CastCollider()
