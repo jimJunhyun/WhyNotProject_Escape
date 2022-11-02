@@ -1,40 +1,34 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+
+[Serializable]
+public class ClosedCaption
+{
+    public string conditionNumber = "";
+    public string captionText = "";
+    public float outputTime = 3f;
+}
+
+public class ClosedCaptionData
+{
+    public List<ClosedCaption> captions;
+}
 
 public class CCManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI ccText;
-    private Coroutine ccCoroutine;
-    private int ccCount;
-    public int CCCount
+    [SerializeField] private TextAsset ccJSONFile;
+    private Dictionary<string, ClosedCaption> captionDictionary;
+
+    private void Start()
     {
-        get { return ccCount; }
-        set
-        {
-            ccCount = value;
-            ccCoroutine = StartCoroutine(CCPrint(ccCount));
-        }
+        ParseJSON();
     }
 
-    private void Awake()
+    private void ParseJSON()
     {
-        ccCount = 0;
-    }
+        ClosedCaptionData caption = JsonUtility.FromJson<ClosedCaptionData>(ccJSONFile.text);
 
-    private IEnumerator CCPrint(int ccCount)
-    {
-        List<Dictionary<string, object>> ccList = CSVReader.Read("여기에 .csv 파일 이름");
-
-        for (int i = 0; i < ccList.Count; i++)
-        {
-            ccText.text = ccList[i].ToString();
-
-            yield return new WaitForSeconds(0 /*여기에 동적으로 대사 별 시간*/);
-        }
-
-        StopCoroutine(ccCoroutine);
+        Debug.Log(caption.captions[0].captionText);
     }
 }

@@ -881,7 +881,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 963194228}
   gravity: -9.81
-  mouseSensityvity: 2
   moveSmoothTime: 0.3
   walkSpeed: 2
   jumpForce: 2
@@ -889,6 +888,9 @@ MonoBehaviour:
   crouchHeight: 1.1
   jumpKey: 32
   crouchKey: 99
+  mouseSensityvity: 2
+  camAngleXMax: 90
+  camAngleXMin: 0
   cursor: {fileID: 623160853}
 --- !u!143 &237991171
 CharacterController:
