@@ -28,7 +28,7 @@ public class LightState : MonoBehaviour
 
 	private void Awake()
 	{
-		myMat = GetComponent<MeshRenderer>().material;
+		//myMat = GetComponent<MeshRenderer>().material;
 		gap = connectedSignals[1] - connectedSignals[0];
 	}
 
