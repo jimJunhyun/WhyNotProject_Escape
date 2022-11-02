@@ -32,7 +32,7 @@ public class Pressable : MonoBehaviour
 				Debug.Log("PRESS");
 				StartCoroutine(DelayEnable());
 				OnClicked.Invoke();
-				manager.AddKey(KeyInfo);
+				manager?.AddKey(KeyInfo);
 			}
 		}
 	}
