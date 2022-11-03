@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 [Serializable]
@@ -10,25 +12,73 @@ public class ClosedCaption
     public float outputTime = 3f;
 }
 
-public class ClosedCaptionData
-{
-    public List<ClosedCaption> captions;
-}
-
 public class CCManager : MonoBehaviour
 {
+    public static CCManager instance;
+
+    [SerializeField] private TextMeshProUGUI ccText;
     [SerializeField] private TextAsset ccJSONFile;
-    private Dictionary<string, ClosedCaption> captionDictionary;
+    private Dictionary<string, ClosedCaption> captions;
+    private string currentCondition;
+    public string CurrentCondition
+    {
+        get { return currentCondition; }
+        set
+        {
+            currentCondition = value;
+
+            StartCoroutine("CCOutputDelay");
+        }
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {
-        ParseJSON();
+        captions = JsonUtility.FromJson<Dictionary<string, ClosedCaption>>(ccJSONFile.text);
     }
 
-    private void ParseJSON()
+    private void Update()
     {
-        ClosedCaptionData caption = JsonUtility.FromJson<ClosedCaptionData>(ccJSONFile.text);
+        OnClickTest();
+    }
 
-        Debug.Log(caption.captions[0].captionText);
+    private IEnumerator CCOutputDelay()
+    {
+        for (int i = 0; ; i++)
+        {
+            if (captions[$"{currentCondition}_{i}"] != null)
+            {
+                ccText.text = captions[$"{currentCondition}_{i}"].captionText;
+
+                yield return new WaitForSecondsRealtime(captions[$"{currentCondition}_{i}"].outputTime);
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        StopCoroutine("CCOutputDelay");
+    }
+
+    public void OnClickTest()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            CurrentCondition = "Test";
+        }
     }
 }
