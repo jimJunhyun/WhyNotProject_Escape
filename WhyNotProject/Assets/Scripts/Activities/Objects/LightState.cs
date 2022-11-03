@@ -29,11 +29,16 @@ public class LightState : MonoBehaviour
 	private void Awake()
 	{
 		gap = connectedSignals[1] - connectedSignals[0];
+		myMat.DisableKeyword("_EMISSION");
 	}
 
 	private void Update()
 	{
-		CheckLight();
+		if (LightRule.instance.isUsable)
+		{
+			CheckLight();
+		}
+		
 	}
 
 	public void Reverse()

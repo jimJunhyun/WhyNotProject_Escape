@@ -12,7 +12,11 @@ public class LightSwitch : MonoBehaviour
 	}
 	public void LeverSwitch()
 	{
-		isOn = !isOn;
-		myAnim.SetBool("isOn", isOn);
+		if (LightRule.instance.isUsable)
+		{
+			isOn = !isOn;
+			myAnim.SetBool("isOn", isOn);
+		}
+		
 	}
 }
