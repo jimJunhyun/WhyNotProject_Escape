@@ -5,8 +5,18 @@ using UnityEngine;
 public class LightSwitch : MonoBehaviour
 {
     public bool isOn;
+	Animator myAnim;
+	void Awake()
+	{
+		myAnim = GetComponent<Animator>();
+	}
 	public void LeverSwitch()
 	{
-		isOn = !isOn;
+		if (LightRule.instance.isUsable)
+		{
+			isOn = !isOn;
+			myAnim.SetBool("isOn", isOn);
+		}
+		
 	}
 }

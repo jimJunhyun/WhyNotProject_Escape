@@ -8,6 +8,7 @@ public class LightRule : MonoBehaviour
 	public static LightRule instance;
 	List<LightState> Lights = new List<LightState>();
 	public List<LightSwitch> Switches = new List<LightSwitch>();
+	public bool isUsable;
 	bool allMatch;
 	PressManager prMan;
 
@@ -39,6 +40,11 @@ public class LightRule : MonoBehaviour
 			prMan.AddKey(prMan.Key);
 			interable = false;
 		}
+	}
+
+	public void EnableLight()
+	{
+		isUsable = true;
 	}
 
 	public void TempFunc()
