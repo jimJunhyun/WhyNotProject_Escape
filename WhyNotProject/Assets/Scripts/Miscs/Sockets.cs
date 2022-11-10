@@ -10,6 +10,13 @@ public class Sockets : MonoBehaviour
 	public bool activated = true;
 
 	Holdable keyInfo;
+
+	List<MeshRenderer> animRenderers = new List<MeshRenderer>();
+	private void Awake()
+	{
+		GetComponentsInChildren(animRenderers);
+	}
+
 	private void OnTriggerStay(Collider collision)
 	{
 		if(!collision.gameObject.TryGetComponent(out keyInfo))
@@ -20,7 +27,6 @@ public class Sockets : MonoBehaviour
 		{
 			keyInfo.Place(transform.position);
 			OnMatched.Invoke();
-			//keyInfo.Place(transform.position);
 		}
 	}
 
@@ -32,6 +38,10 @@ public class Sockets : MonoBehaviour
 	public void DisActivate()
 	{
 		activated = false;
+		for (int i = 0; i < animRenderers.Count; i++)
+		{
+			animRenderers[i].enabled = false;
+		}
 	}
 
 }
