@@ -12,13 +12,19 @@ public class ClosedCaption
     public float outputTime = 3f;
 }
 
+public class ClosedCaptionList
+{
+    public List<ClosedCaption> captions;
+}
+
 public class CCManager : MonoBehaviour
 {
     public static CCManager instance;
 
     [SerializeField] private TextMeshProUGUI ccText;
     [SerializeField] private TextAsset ccJSONFile;
-    private Dictionary<string, ClosedCaption> captions;
+    private ClosedCaptionList ccList;
+    private Dictionary<string, ClosedCaption> ccDictionary = new Dictionary<string, ClosedCaption>();
     private string currentCondition;
     public string CurrentCondition
     {
@@ -47,38 +53,34 @@ public class CCManager : MonoBehaviour
 
     private void Start()
     {
-        captions = JsonUtility.FromJson<Dictionary<string, ClosedCaption>>(ccJSONFile.text);
-    }
+        ccList = JsonUtility.FromJson<ClosedCaptionList>(ccJSONFile.text);
 
-    private void Update()
-    {
-        OnClickTest();
+        foreach (ClosedCaption cc in ccList.captions)
+        {
+            ccDictionary.Add(cc.conditionNumber, cc);
+        }
     }
 
     private IEnumerator CCOutputDelay()
     {
-        for (int i = 0; ; i++)
+        for (int i = 1; ; i++)
         {
-            if (captions[$"{currentCondition}_{i}"] != null)
+            if (ccDictionary.ContainsKey($"{currentCondition}_{i}"))
             {
-                ccText.text = captions[$"{currentCondition}_{i}"].captionText;
+                ccText.text = ccDictionary[$"{currentCondition}_{i}"].captionText;
 
-                yield return new WaitForSecondsRealtime(captions[$"{currentCondition}_{i}"].outputTime);
+                yield return new WaitForSecondsRealtime(ccDictionary[$"{currentCondition}_{i}"].outputTime);
             }
             else
             {
+                ccText.text = null;
+
                 break;
             }
         }
 
-        StopCoroutine("CCOutputDelay");
-    }
+        yield return null;
 
-    public void OnClickTest()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            CurrentCondition = "Test";
-        }
+        StopCoroutine("CCOutputDelay");
     }
 }
