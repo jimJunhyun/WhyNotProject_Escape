@@ -5,9 +5,11 @@ using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Reference")]
     [SerializeField] private Transform playerCamera = null;
+
+    [Header("Movement")]
     [SerializeField] private float gravity = -9.81f;
-    [SerializeField] private float mouseSensityvity = 4.0f;
     [Range(0.0f, 0.05f)]
     [SerializeField] private float moveSmoothTime = 0.3f;
     [SerializeField] private float walkSpeed = 2.0f;
@@ -16,6 +18,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float crouchHeight = 0.9f;
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode crouchKey = KeyCode.C;
+
+    [Header("Camera")]
+    [SerializeField] private float mouseSensityvity = 4.0f;
+    [Range(0, 90)][Tooltip("카메라 고저각의 최댓값")]
+    [SerializeField] private int camAngleXMax;
+    [Range(0, -90)][Tooltip("카메라 고저각의 최솟값")]
+    [SerializeField] private int camAngleXMin;
 
     [HideInInspector]
     public LockedCursorController cursor;
@@ -71,7 +80,7 @@ public class PlayerController : MonoBehaviour
             Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
             cameraPitch -= mouseDelta.y * mouseSensityvity;
-            cameraPitch = Mathf.Clamp(cameraPitch, -90, 90);
+            cameraPitch = Mathf.Clamp(cameraPitch, -camAngleXMax, -camAngleXMin);
             playerCamera.localEulerAngles = Vector3.right * cameraPitch;
             transform.Rotate(Vector3.up * mouseDelta.x * mouseSensityvity);
         }

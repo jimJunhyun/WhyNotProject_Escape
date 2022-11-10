@@ -26,12 +26,13 @@ public class Pressable : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(0) && HoldManager.Instance.MouseCursorDetect(out hit))
 		{
-			if (hit.collider == myCol && !isPressing)
+			Debug.Log("CLICKE");
+			if (hit.collider == myCol && !isPressing && !OptionUI.instance.IsPointerOverUIObject())
 			{
+				Debug.Log("PRESS");
 				StartCoroutine(DelayEnable());
 				OnClicked.Invoke();
-				manager.AddKey(KeyInfo);
-				Debug.Log("!");
+				manager?.AddKey(KeyInfo);
 			}
 		}
 	}
@@ -41,5 +42,6 @@ public class Pressable : MonoBehaviour
 		isPressing = true;
 		yield return new WaitForSeconds(pressDelayTime);
 		isPressing = false;
+		Debug.Log("REPRESSABLE");
 	}
 }
