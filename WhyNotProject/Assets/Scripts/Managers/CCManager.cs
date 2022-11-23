@@ -1,40 +1,86 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+
+[Serializable]
+public class ClosedCaption
+{
+    public string conditionNumber = "";
+    public string captionText = "";
+    public float outputTime = 3f;
+}
+
+public class ClosedCaptionList
+{
+    public List<ClosedCaption> captions;
+}
 
 public class CCManager : MonoBehaviour
 {
+    public static CCManager instance;
+
     [SerializeField] private TextMeshProUGUI ccText;
-    private Coroutine ccCoroutine;
-    private int ccCount;
-    public int CCCount
+    [SerializeField] private TextAsset ccJSONFile;
+    private ClosedCaptionList ccList;
+    private Dictionary<string, ClosedCaption> ccDictionary = new Dictionary<string, ClosedCaption>();
+    private string currentCondition;
+    public string CurrentCondition
     {
-        get { return ccCount; }
+        get { return currentCondition; }
         set
         {
-            ccCount = value;
-            ccCoroutine = StartCoroutine(CCPrint(ccCount));
+            currentCondition = value;
+
+            StartCoroutine("CCOutputDelay");
         }
     }
 
     private void Awake()
     {
-        ccCount = 0;
-    }
-
-    private IEnumerator CCPrint(int ccCount)
-    {
-        List<Dictionary<string, object>> ccList = CSVReader.Read("여기에 .csv 파일 이름");
-
-        for (int i = 0; i < ccList.Count; i++)
+        if (instance == null)
         {
-            ccText.text = ccList[i].ToString();
-
-            yield return new WaitForSeconds(0 /*여기에 동적으로 대사 별 시간*/);
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
 
-        StopCoroutine(ccCoroutine);
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        ccList = JsonUtility.FromJson<ClosedCaptionList>(ccJSONFile.text);
+
+        foreach (ClosedCaption cc in ccList.captions)
+        {
+            ccDictionary.Add(cc.conditionNumber, cc);
+        }
+    }
+
+    private IEnumerator CCOutputDelay()
+    {
+        for (int i = 1; ; i++)
+        {
+            if (ccDictionary.ContainsKey($"{currentCondition}_{i}"))
+            {
+                ccText.text = ccDictionary[$"{currentCondition}_{i}"].captionText;
+
+                yield return new WaitForSecondsRealtime(ccDictionary[$"{currentCondition}_{i}"].outputTime);
+            }
+            else
+            {
+                ccText.text = null;
+
+                break;
+            }
+        }
+
+        yield return null;
+
+        StopCoroutine("CCOutputDelay");
     }
 }
