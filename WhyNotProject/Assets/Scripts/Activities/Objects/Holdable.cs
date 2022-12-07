@@ -33,7 +33,7 @@ public class Holdable : MonoBehaviour, IInteractable
 		myRig.useGravity = false;
 		transform.position = HoldManager.Instance.HoldPos;
 		transform.LookAt(player.transform);
-		gameObject.layer = 2;
+		gameObject.layer = 12;
 	}
     public void Fall()
 	{
