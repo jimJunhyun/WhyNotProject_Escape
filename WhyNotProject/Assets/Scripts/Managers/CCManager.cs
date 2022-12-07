@@ -53,6 +53,7 @@ public class CCManager : MonoBehaviour
 
     private void Start()
     {
+        ccText.text = "";
         ccList = JsonUtility.FromJson<ClosedCaptionList>(ccJSONFile.text);
 
         foreach (ClosedCaption cc in ccList.captions)
