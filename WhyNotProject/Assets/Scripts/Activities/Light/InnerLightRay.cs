@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InnerLightRay : MonoBehaviour
 {
+    [SerializeField] private LayerMask heldLayer;
     [SerializeField] private float rayDistance;
     private GameObject player;
     private SunRotation sunRotation;
@@ -26,9 +27,9 @@ public class InnerLightRay : MonoBehaviour
     {
         RaycastHit paperHit;
 
-        Physics.Raycast(transform.position, player.transform.position - transform.position, out paperHit, rayDistance, 2);
+        Physics.Raycast(transform.position, player.transform.position + new Vector3(0f, 1f, 0f) - transform.position, out paperHit, rayDistance, heldLayer);
 
-        if (paperHit.collider)
+        if (paperHit.collider && paperHit.collider.CompareTag("Paper"))
         {
             Debug.Log("변경 텍스쳐");
         }
