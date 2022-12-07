@@ -32,7 +32,14 @@ public class Holdable : MonoBehaviour, IInteractable
 		HoldManager.Instance.currentHolding = this;
 		myRig.useGravity = false;
 		transform.position = HoldManager.Instance.HoldPos;
-		transform.LookAt(player.transform);
+		if(holdRot == Vector3.zero)
+		{
+			transform.LookAt(player.transform);
+		}
+		else
+		{
+			transform.rotation = Quaternion.Euler(holdRot);
+		}
 		gameObject.layer = 12;
 	}
     public void Fall()

@@ -48,20 +48,16 @@ public class Inspectable : MonoBehaviour
 		}
 		else if(Input.GetMouseButtonDown(1) && HoldManager.Instance.MouseCursorDetect(out hit))
 		{
-			for (int i = 0; i < myColsArr.Length; i++)
+			Debug.Log(!OptionUI.instance.IsPointerOverUIObject());
+			if (currentInspected && !OptionUI.instance.IsPointerOverUIObject())
 			{
-				Debug.Log(!OptionUI.instance.IsPointerOverUIObject());
-				if (hit.collider == myColsArr[i] && currentInspected && !OptionUI.instance.IsPointerOverUIObject())
-				{
-					Debug.Log("!");
-					currentInspected = false;
-					gameObject.layer = originLayer;
-					transform.position = originPos;
-					transform.rotation = originRot;
-					--InspectManager.Instance.InspectingNum;
-				}
+				Debug.Log("!");
+				currentInspected = false;
+				gameObject.layer = originLayer;
+				transform.position = originPos;
+				transform.rotation = originRot;
+				--InspectManager.Instance.InspectingNum;
 			}
-			
 		}
 		Inspect();
 	}

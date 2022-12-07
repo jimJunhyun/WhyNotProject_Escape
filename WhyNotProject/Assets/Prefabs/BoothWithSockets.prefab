@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4445356914020019447}
   - component: {fileID: 4747168459089202640}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Fuse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,9 +142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bufferArea: 0
   holdRot: {x: 0, y: 0, z: 0}
-  isReusable: 0
+  isReusable: 1
   placedRot: {x: 0, y: 0, z: 0}
-  animLen: 0
+  animLen: 0.4
   objWeight: 0
 --- !u!1 &3692607592357516431
 GameObject:
@@ -386,7 +386,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  activated: 1
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+  activated: 0
 --- !u!136 &9177953701486951774
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -642,7 +645,7 @@ Transform:
   m_GameObject: {fileID: 8497178038930811756}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.0344, y: 3.6126, z: -0.534}
-  m_LocalScale: {x: 0.09091466, y: 0.09091466, z: 0.09091466}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 6075260431587493479}
   m_Father: {fileID: 8497178038922129662}
@@ -708,7 +711,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8497178038930811753
 MonoBehaviour:
@@ -763,6 +766,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
   activated: 1
 --- !u!95 &8497178038930811542
 Animator:
@@ -1048,6 +1054,9 @@ MonoBehaviour:
           m_StringArgument: Insert
           m_BoolArgument: 0
         m_CallState: 2
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
   activated: 1
 --- !u!95 &8497178039868595496
 Animator:
@@ -1934,6 +1943,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8497178039252185403}
     m_Modifications:
+    - target: {fileID: 670750556544455386, guid: aaedf15430e3ff946a742b3be1a607fd, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0670639
+      objectReference: {fileID: 0}
+    - target: {fileID: 670750556544455386, guid: aaedf15430e3ff946a742b3be1a607fd, type: 3}
+      propertyPath: m_Size.z
+      value: 1.0151328
+      objectReference: {fileID: 0}
+    - target: {fileID: 670750556544455386, guid: aaedf15430e3ff946a742b3be1a607fd, type: 3}
+      propertyPath: m_Center.x
+      value: 0.019142069
+      objectReference: {fileID: 0}
+    - target: {fileID: 670750556544455386, guid: aaedf15430e3ff946a742b3be1a607fd, type: 3}
+      propertyPath: m_Center.y
+      value: 1.9079776e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 670750556544455386, guid: aaedf15430e3ff946a742b3be1a607fd, type: 3}
+      propertyPath: m_Center.z
+      value: 0.0042092195
+      objectReference: {fileID: 0}
     - target: {fileID: 1060513807053106949, guid: aaedf15430e3ff946a742b3be1a607fd, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2013,6 +2042,26 @@ PrefabInstance:
     - target: {fileID: 6115276932581864108, guid: aaedf15430e3ff946a742b3be1a607fd, type: 3}
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369352967043140062, guid: aaedf15430e3ff946a742b3be1a607fd, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0326735
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369352967043140062, guid: aaedf15430e3ff946a742b3be1a607fd, type: 3}
+      propertyPath: m_Size.z
+      value: 1.0454426
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369352967043140062, guid: aaedf15430e3ff946a742b3be1a607fd, type: 3}
+      propertyPath: m_Center.x
+      value: 0.010778438
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369352967043140062, guid: aaedf15430e3ff946a742b3be1a607fd, type: 3}
+      propertyPath: m_Center.y
+      value: -8.898703e-18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369352967043140062, guid: aaedf15430e3ff946a742b3be1a607fd, type: 3}
+      propertyPath: m_Center.z
+      value: -0.0026400783
       objectReference: {fileID: 0}
     - target: {fileID: 7149413511260474918, guid: aaedf15430e3ff946a742b3be1a607fd, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.size
