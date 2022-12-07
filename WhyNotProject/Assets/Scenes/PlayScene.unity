@@ -183,6 +183,8 @@ MonoBehaviour:
   camAngleXMax: 90
   camAngleXMin: -90
   cursor: {fileID: 623160853}
+  isGround: 0
+  isTouching: 0
 --- !u!143 &237991171
 CharacterController:
   m_ObjectHideFlags: 0
@@ -200,7 +202,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!23 &237991172
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -258,7 +260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237991168}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.4, y: 2.969, z: 0.603}
+  m_LocalPosition: {x: 0.4, y: 0.19, z: 0.603}
   m_LocalScale: {x: 1, y: 2.2, z: 1}
   m_Children:
   - {fileID: 963194228}
@@ -1025,7 +1027,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.4351024, y: -0.47851148, z: 0.4526865, w: 0.61383027}
-  m_LocalPosition: {x: 0, y: 0.776, z: -0.221}
+  m_LocalPosition: {x: 0, y: 1.66666, z: -0.221}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 590917048}
