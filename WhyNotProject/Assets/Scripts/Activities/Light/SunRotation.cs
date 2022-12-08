@@ -10,6 +10,8 @@ public class SunRotation : MonoBehaviour
     private Light sunLight;
     private int passedDay;
     private float rotateAngle;
+    private bool isNight;
+    public bool IsNight => isNight;
 
     void Start()
     {
@@ -30,6 +32,8 @@ public class SunRotation : MonoBehaviour
 
         if (transform.eulerAngles.x >= 170)
         {
+            isNight = true;
+
             for (int i = 0; i < nightLight.Length; i++)
             {
                 nightLight[i].enabled = true;
@@ -44,6 +48,8 @@ public class SunRotation : MonoBehaviour
         }
         else if (transform.eulerAngles.x <= 10)
         {
+            isNight = false;
+
             for (int i = 0; i < nightLight.Length; i++)
             {
                 nightLight[i].enabled = false;

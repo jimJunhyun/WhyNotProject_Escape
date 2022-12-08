@@ -31,8 +31,13 @@ public class Holdable : MonoBehaviour, IInteractable
 		HoldManager.Instance.currentHolding = this;
 		myRig.useGravity = false;
 		transform.position = HoldManager.Instance.HoldPos;
+<<<<<<< HEAD
 		transform.eulerAngles = holdRot;
 		gameObject.layer = 2;
+=======
+		transform.LookAt(player.transform);
+		gameObject.layer = 12;
+>>>>>>> origin/InnerMain
 	}
     public void Fall()
 	{

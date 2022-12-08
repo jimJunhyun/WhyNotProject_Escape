@@ -49,7 +49,6 @@ public class PostWeight : MonoBehaviour
 
 		return hits.Length;
 	}
-
 	/// <summary>
 	/// 오브젝트를 탐색하여 저장하는 함수
 	/// </summary>
