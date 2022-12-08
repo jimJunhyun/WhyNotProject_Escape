@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(GlowObjectCmd))]
 public class Pressable : MonoBehaviour
 {
-    public PressManager manager;
+    public PressKeyRecorder recorder;
     public string KeyInfo;
 
 	public UnityEvent OnClicked;
@@ -32,7 +32,7 @@ public class Pressable : MonoBehaviour
 				Debug.Log("PRESS");
 				StartCoroutine(DelayEnable());
 				OnClicked.Invoke();
-				manager?.AddKey(KeyInfo);
+				recorder?.AddKey(KeyInfo);
 			}
 		}
 	}

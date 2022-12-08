@@ -10,14 +10,15 @@ public class LightRule : MonoBehaviour
 	public List<LightSwitch> Switches = new List<LightSwitch>();
 	public bool isUsable;
 	bool allMatch;
-	PressManager prMan;
+	PressKeyRecorder prMan;
+	const string SOLVEMARK = "Solved!";
 
 	bool interable = true;
 
 	private void Awake()
 	{
 		instance = this;
-		prMan = GetComponent<PressManager>();
+		prMan = GetComponent<PressKeyRecorder>();
 		GetComponentsInChildren(Lights);
 		GetComponentsInChildren(Switches);
 	}
@@ -37,7 +38,7 @@ public class LightRule : MonoBehaviour
 		}
 		if(allMatch && interable)
 		{
-			prMan.AddKey(prMan.Key);
+			prMan.AddKey(SOLVEMARK);
 			interable = false;
 		}
 	}
