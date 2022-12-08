@@ -7,7 +7,9 @@ public class PressKeyChecker : MonoBehaviour
 {
     public string Key;
     public UnityEvent OnMatched;
+	public bool isCommand;
 	public bool checking = false;
+	public int coinInserted;
 	
 	PressKeyRecorder curKey;
 	private void Awake()
@@ -16,7 +18,7 @@ public class PressKeyChecker : MonoBehaviour
 	}
 	private void Update()
 	{
-		if (checking)
+		if (checking && (isCommand ||(!isCommand && coinInserted > 0)))
 		{
 			CheckKey();
 		}
@@ -26,7 +28,7 @@ public class PressKeyChecker : MonoBehaviour
 	{
 		checking = true;
 	}
-	public void EndChecking(bool isReset)
+	public void EndChecking(bool isReset) //이걸 전화기 내리면 사용
 	{
 		checking = false;
 		if (isReset)
@@ -34,12 +36,17 @@ public class PressKeyChecker : MonoBehaviour
 			curKey.ResetKey();
 		}
 	}
+	public void AddCoin()
+	{
+		coinInserted += 1;
+	}
 	void CheckKey()
 	{
 		if(curKey.recorded == Key)
 		{
 			OnMatched?.Invoke();
 			curKey.ResetKey();
+			coinInserted -= 1;
 		}
 	}
 	public void TempFunc()
