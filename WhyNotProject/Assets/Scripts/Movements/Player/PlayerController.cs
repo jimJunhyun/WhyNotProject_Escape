@@ -121,7 +121,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(jumpKey))
         {
-            if (Physics.Raycast(transform.localPosition + controller.center, Vector3.down, controller.height / 2f + 0.2f) || controller.isGrounded)
+            bool isTouching = Physics.Raycast(transform.localPosition + controller.center, Vector3.down, controller.height / 2f + 0.1f);
+            bool isGround = controller.isGrounded;
+            if (isTouching || isGround)
             {
                 velocityY = jumpForce;
             }
