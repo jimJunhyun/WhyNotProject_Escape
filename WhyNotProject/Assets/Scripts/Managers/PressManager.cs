@@ -9,6 +9,7 @@ public class PressManager : MonoBehaviour
     public string Key;
     public string Checker = null;
     string currentKey;
+    string prevKey;
 
     public UnityEvent OnMatched;
 
@@ -16,12 +17,13 @@ public class PressManager : MonoBehaviour
     void Awake()
     {
         currentKey = "";
+        prevKey = currentKey;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Checker == null)
+        if(Checker == "" && prevKey != currentKey)
 		{
             CheckKey();
 		}
@@ -32,6 +34,7 @@ public class PressManager : MonoBehaviour
         if(Checker != null && Key == Checker)
 		{
             CheckKey();
+            
 		}
 		else
 		{
@@ -42,16 +45,16 @@ public class PressManager : MonoBehaviour
 
     void CheckKey()
 	{
+        prevKey = currentKey;
         if (currentKey == Key)
         {
-            Debug.Log("!!");
             OnMatched.Invoke();
             currentKey = "";
         }
 		else
 		{
-            Debug.Log("??");
             currentKey = "";
 		}
+        
     }
 }
