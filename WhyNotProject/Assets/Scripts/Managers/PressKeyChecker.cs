@@ -42,12 +42,23 @@ public class PressKeyChecker : MonoBehaviour
 	}
 	void CheckKey()
 	{
-		if(curKey.recorded == Key)
+		if(curKey.recorded != "")
 		{
-			OnMatched?.Invoke();
-			curKey.ResetKey();
-			coinInserted -= 1;
+			if (curKey.recorded == Key)
+			{
+				OnMatched?.Invoke();
+				if (!isCommand)
+				{
+					curKey.ResetKey();
+					coinInserted -= 1;
+				}
+			}
+			if (isCommand && curKey.recorded[curKey.recorded.Length - 1] == '#')
+			{
+				curKey.ResetKey();
+			}
 		}
+		
 	}
 	public void TempFunc()
 	{
