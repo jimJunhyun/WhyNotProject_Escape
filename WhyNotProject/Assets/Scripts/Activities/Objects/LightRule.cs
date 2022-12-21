@@ -47,7 +47,10 @@ public class LightRule : MonoBehaviour
 	{
 		isUsable = true;
 	}
-
+	public void DisableLight()
+	{
+		isUsable = false;
+	}
 	public void TempFunc()
 	{
 		Debug.Log("OpenedBox");

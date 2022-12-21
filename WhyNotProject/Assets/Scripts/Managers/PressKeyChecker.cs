@@ -9,7 +9,6 @@ public class PressKeyChecker : MonoBehaviour
     public UnityEvent OnMatched;
 	public bool isCommand;
 	public bool checking = false;
-	public int coinInserted;
 	
 	PressKeyRecorder curKey;
 	private void Awake()
@@ -18,7 +17,7 @@ public class PressKeyChecker : MonoBehaviour
 	}
 	private void Update()
 	{
-		if (checking && (isCommand ||(!isCommand && coinInserted > 0)))
+		if (checking && (isCommand ||(!isCommand && curKey.coinNum > 0)))
 		{
 			CheckKey();
 		}
@@ -36,10 +35,6 @@ public class PressKeyChecker : MonoBehaviour
 			curKey.ResetKey();
 		}
 	}
-	public void AddCoin()
-	{
-		coinInserted += 1;
-	}
 	void CheckKey()
 	{
 		if(curKey.recorded != "")
@@ -50,7 +45,7 @@ public class PressKeyChecker : MonoBehaviour
 				if (!isCommand)
 				{
 					curKey.ResetKey();
-					coinInserted -= 1;
+					curKey.UseCoin();
 				}
 			}
 			if (isCommand && curKey.recorded[curKey.recorded.Length - 1] == '#')

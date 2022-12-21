@@ -38,6 +38,11 @@ public class LightState : MonoBehaviour
 		{
 			CheckLight();
 		}
+		else
+		{
+			myMat.DisableKeyword("_EMISSION");
+			isLighted = false;
+		}
 		
 	}
 
