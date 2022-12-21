@@ -64,12 +64,11 @@ public class CCManager : MonoBehaviour
 
     private IEnumerator CCOutputDelay()
     {
-        string[] conditionSplit = currentCondition.Split('_');
         int index = 1;
 
-        if (conditionSplit[1] != null)
+        if (!ccDictionary.ContainsKey(currentCondition))
         {
-            if (conditionSplit[1] == "1")
+            if (ccDictionary.ContainsKey($"{currentCondition}_1_1"))
             {
                 for (; ; index++)
                 {
@@ -85,7 +84,7 @@ public class CCManager : MonoBehaviour
                     }
                 }
             }
-            else if (conditionSplit[1] == "2")
+            else if (ccDictionary.ContainsKey($"{currentCondition}_2_1"))
             {
                 for (; ; index++)
                 {
@@ -103,20 +102,21 @@ public class CCManager : MonoBehaviour
 
                 yield return new WaitForSecondsRealtime(ccDictionary[$"{currentCondition}_2_{UnityEngine.Random.Range(1, index)}"].outputTime);
             }
+
+            ccText.text = null;
+
+            yield return null;
         }
         else
         {
-            if (ccDictionary.ContainsKey($"{currentCondition}"))
-            {
-                ccText.text = ccDictionary[currentCondition].captionText;
+            ccText.text = ccDictionary[currentCondition].captionText;
 
-                yield return new WaitForSecondsRealtime(ccDictionary[currentCondition].outputTime);
-            }
+            yield return new WaitForSecondsRealtime(ccDictionary[currentCondition].outputTime);
+
+            ccText.text = null;
+
+            yield return null;
         }
-
-        ccText.text = null;
-
-        yield return null;
 
         StopCoroutine("CCOutputDelay");
     }
