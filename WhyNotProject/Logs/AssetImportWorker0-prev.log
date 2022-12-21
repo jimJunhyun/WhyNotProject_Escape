@@ -15,11 +15,11 @@ C:/Users/user/Documents/GitHub/WPJ/WhyNotProject_Escape/WhyNotProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-61991
+62572
 Successfully changed project path to: C:/Users/user/Documents/GitHub/WPJ/WhyNotProject_Escape/WhyNotProject
 C:/Users/user/Documents/GitHub/WPJ/WhyNotProject_Escape/WhyNotProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 47.46 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 85.74 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.30f1 (1fb1bf06830e)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/Resources/UnitySubsystems
@@ -35,122 +35,174 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56348
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56196
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001875 seconds.
+Registered in 0.005680 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 41.48 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 67.94 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.654 seconds
+- Completed reload, in  1.121 seconds
 Domain Reload Profiling:
-	ReloadAssembly (654ms)
-		BeginReloadAssembly (83ms)
+	ReloadAssembly (1121ms)
+		BeginReloadAssembly (133ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (503ms)
-			LoadAssemblies (80ms)
+		EndReloadAssembly (877ms)
+			LoadAssemblies (132ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (154ms)
+			SetupTypeCache (290ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (45ms)
-			SetupLoadedEditorAssemblies (195ms)
+			RebuildScriptCaches (95ms)
+			SetupLoadedEditorAssemblies (266ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (42ms)
-				BeforeProcessingInitializeOnLoad (20ms)
-				ProcessInitializeOnLoadAttributes (96ms)
-				ProcessInitializeOnLoadMethodAttributes (27ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (68ms)
+				BeforeProcessingInitializeOnLoad (27ms)
+				ProcessInitializeOnLoadAttributes (113ms)
+				ProcessInitializeOnLoadMethodAttributes (44ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004664 seconds.
+Registered in 0.012552 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-000002B8FAF30D00 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Assembly-CSharp-firstpass.dll
+Symbol file data-000001F48AE2C820 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Assembly-CSharp-firstpass.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FB15CB10 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file data-000001F48AE2C820 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Assembly-CSharp.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FB834010 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file data-000001F48BB33270 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Runtime.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FB0F4850 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file data-000001F48AE2C820 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FB867630 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file data-000001F48AD1D840 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FB064010 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file data-000001F48AE2C820 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Runtime.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FB064010 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file data-000001F48B012010 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FADA1020 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file data-000001F48AD27650 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FAB88630 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file data-000001F48B045630 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FB2A0010 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file data-000001F48AFF8620 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Tests.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FBA07620 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file data-000001F486C29C00 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.Timeline.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FABFA010 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file data-000001F486C29C00 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.TextMeshPro.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FAD881D0 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.Services.Core.Editor.dll
+Symbol file data-000001F486BE4340 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FBAED010 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file data-000001F486BE4340 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FB867630 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file data-000001F48B7CBA20 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48B7CBA20 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48C0AB230 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\MToon.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48AB504D0 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.UniUnlit.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48A871640 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F486CCC350 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48AFF8620 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48ADAB080 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM.IO.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48AF0A370 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F486CEBD60 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48A871640 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniVRM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F486203780 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Samples.ScreenSpace.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F486B2E9F0 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.Format.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48AF12E30 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\FastSpringBone.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48AADEE30 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Utils.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48AFF8620 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.Services.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F486203780 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48A9AE230 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniGLTF.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48A9AE230 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48BA18010 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48C172510 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F486C1B970 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48A87A650 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48A794C20 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRM.Samples.Editor.Tests.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48AAD6A70 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UniHumanoid.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48AAB3040 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.VRM10.MToon10.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001F48A405490 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\VRMShaders.GLTF.IO.Tests.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 54.34 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 82.20 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.239 seconds
+- Completed reload, in  2.384 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1241ms)
-		BeginReloadAssembly (180ms)
+	ReloadAssembly (2386ms)
+		BeginReloadAssembly (279ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (11ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (975ms)
-			LoadAssemblies (134ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (2008ms)
+			LoadAssemblies (234ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (337ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (45ms)
-			SetupLoadedEditorAssemblies (358ms)
+			SetupTypeCache (516ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (102ms)
+			SetupLoadedEditorAssemblies (922ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
+				InitializePlatformSupportModulesInManaged (19ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (54ms)
-				BeforeProcessingInitializeOnLoad (69ms)
-				ProcessInitializeOnLoadAttributes (203ms)
-				ProcessInitializeOnLoadMethodAttributes (14ms)
-				AfterProcessingInitializeOnLoad (10ms)
-				EditorAssembliesLoaded (0ms)
+				RefreshPlugins (82ms)
+				BeforeProcessingInitializeOnLoad (268ms)
+				ProcessInitializeOnLoadAttributes (504ms)
+				ProcessInitializeOnLoadMethodAttributes (20ms)
+				AfterProcessingInitializeOnLoad (21ms)
+				EditorAssembliesLoaded (6ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.46 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
+Refreshing native plugins compatible for Editor in 1.12 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2112 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 89.8 MB.
-System memory in use after: 89.9 MB.
+System memory in use before: 89.7 MB.
+System memory in use after: 89.8 MB.
 
 Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 2555.
-Total: 2.398600 ms (FindLiveObjects: 0.145800 ms CreateObjectMapping: 0.046200 ms MarkObjects: 2.118800 ms  DeleteObjects: 0.087200 ms)
+Total: 7.677200 ms (FindLiveObjects: 0.322400 ms CreateObjectMapping: 0.119500 ms MarkObjects: 7.104100 ms  DeleteObjects: 0.129100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -165,117 +217,19 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Imported
-  artifactKey: Guid(5526d862b4bcaa94fafb334eb30be266) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imported using Guid(5526d862b4bcaa94fafb334eb30be266) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca1e611246b748372352a6586d9c1cd4') in 0.017639 seconds 
+  path: Assets/Imported/ClosedCaptionData/ClosedCaptionData.json
+  artifactKey: Guid(87952c38912183f4c94e18f53a3e23fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported/ClosedCaptionData/ClosedCaptionData.json using Guid(87952c38912183f4c94e18f53a3e23fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc19961cec6461dae63b1db10be583e5') in 0.144207 seconds 
 ========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 5.50 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 11 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 45.7 MB.
-System memory in use after: 45.8 MB.
-
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 2555.
-Total: 3.801800 ms (FindLiveObjects: 0.295300 ms CreateObjectMapping: 0.062600 ms MarkObjects: 3.423500 ms  DeleteObjects: 0.019000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 2958.696323 seconds.
+  path: Assets/Imported/ClosedCaptionData/ClosedCaptionData.json
+  artifactKey: Guid(87952c38912183f4c94e18f53a3e23fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported/ClosedCaptionData/ClosedCaptionData.json using Guid(87952c38912183f4c94e18f53a3e23fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '180740308246a1be1292901936840d0f') in 0.082865 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003668 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000002B8FF18DC60 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Assembly-CSharp-firstpass.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8F6EDA120 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FB0CA020 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FBBA6440 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8F6BAC030 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FE84B020 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.Timeline.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FAB52010 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.TextMeshPro.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8F6873E60 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FA742E20 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UnityEditor.UI.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FB2A0010 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FA742E20 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.Rider.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FC088020 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\UnityEngine.UI.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8F6D4CC20 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.Services.Core.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8FEC4CDA0 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002B8F6BAC030 doesn't match image C:\Users\user\Documents\GitHub\WPJ\WhyNotProject_Escape\WhyNotProject\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.43 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.952 seconds
-Domain Reload Profiling:
-	ReloadAssembly (952ms)
-		BeginReloadAssembly (117ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (34ms)
-		EndReloadAssembly (776ms)
-			LoadAssemblies (98ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (256ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (46ms)
-			SetupLoadedEditorAssemblies (291ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (83ms)
-				ProcessInitializeOnLoadAttributes (187ms)
-				ProcessInitializeOnLoadMethodAttributes (8ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.47 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2080 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 87.1 MB.
-System memory in use after: 87.2 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2557.
-Total: 3.924800 ms (FindLiveObjects: 0.193000 ms CreateObjectMapping: 0.117800 ms MarkObjects: 3.578300 ms  DeleteObjects: 0.034800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 5001.852488 seconds.
+  path: Assets/Imported/ClosedCaptionData/ClosedCaptionData.json
+  artifactKey: Guid(87952c38912183f4c94e18f53a3e23fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported/ClosedCaptionData/ClosedCaptionData.json using Guid(87952c38912183f4c94e18f53a3e23fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a70927ed03ce0e4830167029c10f333a') in 0.026944 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
