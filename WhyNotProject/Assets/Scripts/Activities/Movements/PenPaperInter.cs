@@ -21,7 +21,7 @@ public class PenPaperInter : MonoBehaviour
 
 	private void OnCollisionEnter(Collision other)
 	{
-		if(other.gameObject.GetComponent<Holdable>() == pen)
+		if(other.gameObject.GetComponent<Holdable>() == pen && pen.gameObject.layer == 12)
 		{
             OnMatched.Invoke();
 		}
