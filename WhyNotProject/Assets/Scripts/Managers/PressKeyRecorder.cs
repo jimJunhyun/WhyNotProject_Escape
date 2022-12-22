@@ -6,6 +6,7 @@ public class PressKeyRecorder : MonoBehaviour
 {
 	public string recorded;
 	public bool recording = true;
+	public int coinNum = 0;
     public void AddKey(string KeyInfo)
 	{
 		recorded += KeyInfo;
@@ -21,5 +22,13 @@ public class PressKeyRecorder : MonoBehaviour
 	public void RecordEnd()
 	{
 		recording = false;
+	}
+	public void AddCoin()
+	{
+		++coinNum;
+	}
+	public void UseCoin()
+	{
+		++coinNum;
 	}
 }

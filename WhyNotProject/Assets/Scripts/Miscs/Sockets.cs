@@ -20,8 +20,7 @@ public class Sockets : MonoBehaviour
 
 	private void OnTriggerStay(Collider collision)
 	{
-		Debug.Log("Triggered");
-		
+
 		if ((keyInfo= collision.GetComponent<Holdable>())&& keys.Contains(keyInfo) && !keyInfo.isHeld && !keyInfo.isPlaced && activated)
 		{
 			keyInfo.Place(transform.position);

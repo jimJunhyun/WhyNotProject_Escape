@@ -14,12 +14,12 @@ public class Pressable : MonoBehaviour
 	public float pressDelayTime = 0.5f;
 
 	RaycastHit hit;
-	Collider myCol;
+	List<Collider> myCol = new List<Collider>();
 	bool isPressing = false;
 
 	private void Awake()
 	{
-		myCol = GetComponent<Collider>();
+		GetComponents<Collider>(myCol);
 	}
 
 	private void Update()
@@ -27,7 +27,7 @@ public class Pressable : MonoBehaviour
 		if (Input.GetMouseButtonDown(0) && HoldManager.Instance.MouseCursorDetect(out hit))
 		{
 			Debug.Log("CLICKE");
-			if (hit.collider == myCol && !isPressing && !OptionUI.instance.IsPointerOverUIObject())
+			if (myCol.Exists(x => {return x == hit.collider;}) && !isPressing && !OptionUI.instance.IsPointerOverUIObject())
 			{
 				Debug.Log("PRESS");
 				StartCoroutine(DelayEnable());
