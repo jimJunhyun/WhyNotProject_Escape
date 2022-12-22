@@ -5,6 +5,7 @@ using UnityEngine;
 public class InnerLightRay : MonoBehaviour
 {
     [SerializeField] private LayerMask heldLayer;
+    [SerializeField] private Material paperMaterial;
     [SerializeField] private float rayDistance;
     private GameObject player;
     private SunRotation sunRotation;
@@ -13,6 +14,7 @@ public class InnerLightRay : MonoBehaviour
     {
         player = GameObject.Find("Player");
         sunRotation = GameObject.Find("Sun").GetComponent<SunRotation>();
+        paperMaterial.color = Color.white;
     }
 
     private void Update()
@@ -31,11 +33,11 @@ public class InnerLightRay : MonoBehaviour
 
         if (paperHit.collider && paperHit.collider.CompareTag("Paper"))
         {
-            Debug.Log("변경 텍스쳐");
+            paperMaterial.color = new Color(0f, 0f, 0f, 155f / 255f);
         }
         else if (!paperHit.collider)
         {
-            Debug.Log("원래 텍스쳐");
+            paperMaterial.color = new Color(0f, 0f, 0f, 1f);
         }
     }
 }
