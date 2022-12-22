@@ -42,13 +42,13 @@ public class PressKeyChecker : MonoBehaviour
 			if (curKey.recorded == Key)
 			{
 				OnMatched?.Invoke();
+				curKey.ResetKey();
 				if (!isCommand)
 				{
-					curKey.ResetKey();
 					curKey.UseCoin();
 				}
 			}
-			if (isCommand && curKey.recorded[curKey.recorded.Length - 1] == '#')
+			if (curKey.recorded.Length > 0&& curKey.recorded[curKey.recorded.Length - 1] == '#')
 			{
 				curKey.ResetKey();
 			}
