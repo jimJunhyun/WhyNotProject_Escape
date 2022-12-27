@@ -14,12 +14,12 @@ public class LeverUpDown : MonoBehaviour
 	{
 		if (state)
 		{
-			anim.SetTrigger("Down");
+			anim.SetBool("Up", false);
 			state = false;
 		}
 		else
 		{
-			anim.SetTrigger("Up");
+			anim.SetBool("Up", true);
 			state = true;
 		}
 	}
