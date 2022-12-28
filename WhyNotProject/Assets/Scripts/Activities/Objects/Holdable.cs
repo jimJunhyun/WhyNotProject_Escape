@@ -16,6 +16,7 @@ public class Holdable : MonoBehaviour, IInteractable
     public bool isHeld { get; set;}
 	public bool isPlaced { get; set;}
 	public Vector3 holdRot;
+	public bool isLookAt;
 	[Tooltip("놓여진 이후에도 다시 뽑아서 사용할 수 있는가?")]
 	public bool isReusable = false;
 	public Vector3 placedRot;
@@ -32,9 +33,10 @@ public class Holdable : MonoBehaviour, IInteractable
 		HoldManager.Instance.currentHolding = this;
 		myRig.useGravity = false;
 		transform.position = HoldManager.Instance.HoldPos;
-		if(holdRot == Vector3.zero)
+		if(isLookAt)
 		{
 			transform.LookAt(player.transform);
+			transform.rotation = Quaternion.Euler(holdRot + transform.eulerAngles);
 		}
 		else
 		{
