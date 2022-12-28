@@ -9,7 +9,11 @@ public class PressKeyRecorder : MonoBehaviour
 	public int coinNum = 0;
     public void AddKey(string KeyInfo)
 	{
-		recorded += KeyInfo;
+		if (recording)
+		{
+			recorded += KeyInfo;
+		}
+		
 	}
 	public void ResetKey()
 	{

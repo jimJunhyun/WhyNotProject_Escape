@@ -48,12 +48,16 @@ public class PressKeyChecker : MonoBehaviour
 					curKey.UseCoin();
 				}
 			}
-			if (curKey.recorded.Length > 0&& curKey.recorded[curKey.recorded.Length - 1] == '#')
+			else if ( curKey.recorded[curKey.recorded.Length - 1] == '#')
 			{
-				curKey.ResetKey();
+				StartCoroutine(DelayReset());
 			}
 		}
-		
+	}
+	IEnumerator DelayReset()
+	{
+		yield return null;
+		curKey.ResetKey();
 	}
 	public void TempFunc()
 	{

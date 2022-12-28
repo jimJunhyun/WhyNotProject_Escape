@@ -17,8 +17,11 @@ public class Pressable : MonoBehaviour
 	List<Collider> myCol = new List<Collider>();
 	bool isPressing = false;
 
+	Animator anim;
+
 	private void Awake()
 	{
+		anim = GetComponent<Animator>();
 		GetComponents<Collider>(myCol);
 	}
 
@@ -31,7 +34,7 @@ public class Pressable : MonoBehaviour
 			{
 				Debug.Log("PRESS");
 				StartCoroutine(DelayEnable());
-				OnClicked.Invoke();
+				OnClicked?.Invoke();
 				recorder?.AddKey(KeyInfo);
 			}
 		}
