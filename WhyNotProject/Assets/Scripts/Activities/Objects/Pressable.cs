@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(GlowObjectCmd))]
 public class Pressable : MonoBehaviour
 {
-    public PressManager manager;
+    public PressKeyRecorder recorder;
     public string KeyInfo;
 
 	public UnityEvent OnClicked;
@@ -14,12 +14,15 @@ public class Pressable : MonoBehaviour
 	public float pressDelayTime = 0.5f;
 
 	RaycastHit hit;
-	Collider myCol;
+	List<Collider> myCol = new List<Collider>();
 	bool isPressing = false;
+
+	Animator anim;
 
 	private void Awake()
 	{
-		myCol = GetComponent<Collider>();
+		anim = GetComponent<Animator>();
+		GetComponents<Collider>(myCol);
 	}
 
 	private void Update()
@@ -27,12 +30,12 @@ public class Pressable : MonoBehaviour
 		if (Input.GetMouseButtonDown(0) && HoldManager.Instance.MouseCursorDetect(out hit))
 		{
 			Debug.Log("CLICKE");
-			if (hit.collider == myCol && !isPressing && !OptionUI.instance.IsPointerOverUIObject())
+			if (myCol.Exists(x => {return x == hit.collider;}) && !isPressing && !OptionUI.instance.IsPointerOverUIObject())
 			{
 				Debug.Log("PRESS");
 				StartCoroutine(DelayEnable());
-				OnClicked.Invoke();
-				manager?.AddKey(KeyInfo);
+				OnClicked?.Invoke();
+				recorder?.AddKey(KeyInfo);
 			}
 		}
 	}

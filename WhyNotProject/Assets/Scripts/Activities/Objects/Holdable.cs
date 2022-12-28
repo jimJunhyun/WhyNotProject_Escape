@@ -16,6 +16,7 @@ public class Holdable : MonoBehaviour, IInteractable
     public bool isHeld { get; set;}
 	public bool isPlaced { get; set;}
 	public Vector3 holdRot;
+	public bool isLookAt;
 	[Tooltip("놓여진 이후에도 다시 뽑아서 사용할 수 있는가?")]
 	public bool isReusable = false;
 	public Vector3 placedRot;
@@ -26,13 +27,22 @@ public class Holdable : MonoBehaviour, IInteractable
 	Collider myCol;
 	Rigidbody myRig;
 	Renderer myRen;
+	PlayerController player;
     public void Held()
 	{
 		HoldManager.Instance.currentHolding = this;
 		myRig.useGravity = false;
 		transform.position = HoldManager.Instance.HoldPos;
-		transform.eulerAngles = holdRot;
-		gameObject.layer = 2;
+		if(isLookAt)
+		{
+			transform.LookAt(player.transform);
+			transform.rotation = Quaternion.Euler(holdRot + transform.eulerAngles);
+		}
+		else
+		{
+			transform.rotation = Quaternion.Euler(holdRot);
+		}
+		gameObject.layer = 12;
 	}
     public void Fall()
 	{
@@ -59,7 +69,7 @@ public class Holdable : MonoBehaviour, IInteractable
 		{
 			if (Input.GetMouseButtonDown(0) && info.collider  == myCol)
 			{
-				if ((isReusable && isPlaced) || !isPlaced)
+				if (((isReusable && isPlaced) || !isPlaced) && !OptionUI.instance.IsPointerOverUIObject())
 				{
 					isHeld = true;
 					isPlaced = false;
@@ -67,12 +77,12 @@ public class Holdable : MonoBehaviour, IInteractable
 				
 			}
 		}
-		if (isHeld && Input.GetMouseButtonUp(0))
+		if (isHeld && Input.GetMouseButtonUp(0) && !OptionUI.instance.IsPointerOverUIObject())
 		{
 			info = new RaycastHit();
 			Fall();
 		}
-		else if (isHeld && Input.GetMouseButtonDown(1))
+		else if (isHeld && Input.GetMouseButtonDown(1) && !OptionUI.instance.IsPointerOverUIObject())
 		{
 			info = new RaycastHit();
 			Throw();
@@ -83,9 +93,11 @@ public class Holdable : MonoBehaviour, IInteractable
 		myGlow = GetComponent<GlowObjectCmd>();
 		myCol = GetComponent<Collider>();
 		myRen = GetComponent<Renderer>();
+		player = FindObjectOfType<PlayerController>();
 		if(bufferArea == 0)
 		{
-			bufferArea = Mathf.Sqrt(Mathf.Log10(transform.localScale.magnitude) / 2) / 3;
+			bufferArea = Mathf.Sqrt(Mathf.Abs(Mathf.Log10(transform.localScale.magnitude) / 2)) / 3;
+
 		}
 		
 		myRig = GetComponent<Rigidbody>();

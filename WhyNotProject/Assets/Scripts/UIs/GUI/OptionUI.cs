@@ -1,7 +1,5 @@
 using DG.Tweening;
-using System.Collections;
 using System.Collections.Generic;
-using System.Security.Authentication.ExtendedProtection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;

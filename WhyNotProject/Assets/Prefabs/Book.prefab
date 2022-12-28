@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 4376028370150818234}
   - component: {fileID: 753738302472065981}
   - component: {fileID: 5264358270743087294}
+  - component: {fileID: 1593792138956745369}
+  - component: {fileID: 7408512710659902480}
+  - component: {fileID: 1141114733643449405}
   m_Layer: 0
   m_Name: Book
   m_TagString: Untagged
@@ -27,13 +30,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4376028370150818235}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 0, y: 0, z: 12.8}
-  m_LocalScale: {x: 24.406088, y: 24.406088, z: 24.406088}
+  m_LocalScale: {x: 24, y: 24, z: 24}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &4376028370150818233
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -96,6 +99,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fea54e8e14d6fe448875d8ab4b502d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AdditionalInspect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7408512710659902480}
+        m_TargetAssemblyTypeName: BookSequence, Assembly-CSharp
+        m_MethodName: NextPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5264358270743087294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,3 +128,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0, g: 1, b: 0.12510395, a: 0}
   LerpFactor: 10
+--- !u!65 &1593792138956745369
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4376028370150818235}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020081513, y: 0.029999997, z: 0.0049927374}
+  m_Center: {x: 0.0001079614, y: 0.0000000012417641, z: -0.00003938462}
+--- !u!114 &7408512710659902480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4376028370150818235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2b7f5c4c098c34e8b23777700566ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  opened: {fileID: 381947130776709163, guid: aee9681a1152780488c94d643081691e, type: 3}
+  closed: {fileID: 381947130776709163, guid: 76b86038c6f6f9047a90eb7af2f82694, type: 3}
+  openMats:
+  - {fileID: 2100000, guid: f3600aba658bf114fa704a03009e72da, type: 2}
+  - {fileID: 2100000, guid: 206a2326285879b4fa8d77cd9282cce7, type: 2}
+  closedMats:
+  - {fileID: 2100000, guid: 5e0821dd4200a844985d4283cddb15bb, type: 2}
+  - {fileID: 2100000, guid: 90fd9566232bfbe4aa3ce49125d58eb8, type: 2}
+  openCol: {fileID: 1141114733643449405}
+  closeCol: {fileID: 1593792138956745369}
+--- !u!65 &1141114733643449405
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4376028370150818235}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.043984264, y: 0.030129032, z: 0.004088646}
+  m_Center: {x: 0.0021489672, y: 0.000000006519259, z: -0.00028320818}

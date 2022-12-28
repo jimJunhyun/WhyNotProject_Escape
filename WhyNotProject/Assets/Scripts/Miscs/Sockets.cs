@@ -7,6 +7,7 @@ public class Sockets : MonoBehaviour
 {
 	public List<Holdable> keys = new List<Holdable>(); //소켓에 들어갈 수 있는 물체들
 	public UnityEvent OnMatched;
+	public UnityEvent OnExit;
 	public bool activated = true;
 
 	Holdable keyInfo;
@@ -19,14 +20,22 @@ public class Sockets : MonoBehaviour
 
 	private void OnTriggerStay(Collider collision)
 	{
-		if(!collision.gameObject.TryGetComponent(out keyInfo))
-		{
-			Debug.Log(collision.name + " detected at " + collision.ClosestPointOnBounds(transform.position));
-		}
-		else if (keys.Contains(keyInfo) && !keyInfo.isHeld && !keyInfo.isPlaced && activated)
+
+		if ((keyInfo= collision.GetComponent<Holdable>())&& keys.Contains(keyInfo) && !keyInfo.isHeld && !keyInfo.isPlaced && activated)
 		{
 			keyInfo.Place(transform.position);
 			OnMatched.Invoke();
+			Debug.Log("?????");
+		}
+	}
+	private void OnTriggerExit(Collider other)
+	{
+		Debug.Log("EXIT");
+		if (keys.Contains(keyInfo) && activated && keyInfo.isHeld )
+		{
+			OnExit.Invoke();
+			keyInfo = null;
+			Debug.Log("!!!0");
 		}
 	}
 

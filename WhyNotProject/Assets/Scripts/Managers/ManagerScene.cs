@@ -13,6 +13,7 @@ public class ManagerScene : MonoBehaviour
 	IEnumerator Delay(float time, string name)
 	{
 		yield return new WaitForSeconds(time);
+
 		Change(name);
 	}
 
