@@ -64,23 +64,59 @@ public class CCManager : MonoBehaviour
 
     private IEnumerator CCOutputDelay()
     {
-        for (int i = 1; ; i++)
+        int index = 1;
+
+        if (!ccDictionary.ContainsKey(currentCondition))
         {
-            if (ccDictionary.ContainsKey($"{currentCondition}_{i}"))
+            if (ccDictionary.ContainsKey($"{currentCondition}_1_1"))
             {
-                ccText.text = ccDictionary[$"{currentCondition}_{i}"].captionText;
+                for (; ; index++)
+                {
+                    if (ccDictionary.ContainsKey($"{currentCondition}_1_{index}"))
+                    {
+                        ccText.text = ccDictionary[$"{currentCondition}_1_{index}"].captionText;
 
-                yield return new WaitForSecondsRealtime(ccDictionary[$"{currentCondition}_{i}"].outputTime);
+                        yield return new WaitForSecondsRealtime(ccDictionary[$"{currentCondition}_1_{index}"].outputTime);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
             }
-            else
+            else if (ccDictionary.ContainsKey($"{currentCondition}_2_1"))
             {
-                ccText.text = null;
+                for (; ; index++)
+                {
+                    if (ccDictionary.ContainsKey($"{currentCondition}_2_{index}"))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
 
-                break;
+                ccText.text = ccDictionary[$"{currentCondition}_2_{UnityEngine.Random.Range(1, index)}"].captionText;
+
+                yield return new WaitForSecondsRealtime(ccDictionary[$"{currentCondition}_2_{UnityEngine.Random.Range(1, index)}"].outputTime);
             }
+
+            ccText.text = null;
+
+            yield return null;
         }
+        else
+        {
+            ccText.text = ccDictionary[currentCondition].captionText;
 
-        yield return null;
+            yield return new WaitForSecondsRealtime(ccDictionary[currentCondition].outputTime);
+
+            ccText.text = null;
+
+            yield return null;
+        }
 
         StopCoroutine("CCOutputDelay");
     }
