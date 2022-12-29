@@ -212,13 +212,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191564094979903148}
-  m_LocalRotation: {x: -0.53729963, y: 0, z: 0, w: 0.8433914}
+  m_LocalRotation: {x: 0.53729963, y: 0, z: 0, w: 0.8433915}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5963653566744851540}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -65, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
 --- !u!33 &1532653550446722705
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -323,6 +323,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Up
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   pressDelayTime: 0.5
@@ -439,6 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef8115784f682949b7b5ac8990a2af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageLight: {fileID: 0}
 --- !u!1 &4470242807922806388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,7 +1648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05e3d3205901364e95ec838c89c8c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Key: 142
+  Key: 0106
   OnMatched:
     m_PersistentCalls:
       m_Calls:
@@ -7401,8 +7414,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3298337, y: 0.6484053, z: 0.06914586}
-  m_Center: {x: -0.14564341, y: -0.0045782328, z: 0.010523051}
+  m_Size: {x: 0.3298337, y: 0.6484053, z: 0.048873127}
+  m_Center: {x: -0.14564341, y: -0.0045782328, z: 0.00038668513}
 --- !u!95 &3623069125703437484
 Animator:
   serializedVersion: 3
