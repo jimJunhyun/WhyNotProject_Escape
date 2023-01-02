@@ -4,11 +4,61 @@ using UnityEngine;
 
 public class SunRotation : MonoBehaviour
 {
+    [SerializeField] private List<string> timeFlags;
     [SerializeField] private Light[] nightLight;
     [SerializeField] private Material[] lightMaterial;
     [SerializeField] private float dayMinute;
     private Light sunLight;
-    private int passedDay;
+    private float passedDay;
+    public float PassedDay
+    {
+        get { return passedDay; }
+        set
+        {
+            passedDay = value;
+
+            switch (passedDay)
+            {
+                case 0.5f:
+                    if (!GameManager.instance.flags["InputCoin"])
+                    {
+                        CCManager.instance.CurrentCondition = timeFlags[0];
+                    }
+
+                    break;
+                case 1f:
+                    CCManager.instance.CurrentCondition = timeFlags[1];
+
+                    break;
+                case 1.5f:
+                    CCManager.instance.CurrentCondition = timeFlags[2];
+                    
+                    break;
+                case 2.5f:
+                    CCManager.instance.CurrentCondition = timeFlags[3];
+                    
+                    break;
+                case 3.5f:
+                    CCManager.instance.CurrentCondition = timeFlags[4];
+                    
+                    break;
+                case 5f:
+                    CCManager.instance.CurrentCondition = timeFlags[5];
+                    
+                    break;
+                case 6f:
+                    CCManager.instance.CurrentCondition = timeFlags[6];
+                    
+                    break;
+                case 7.5f:
+                    CCManager.instance.CurrentCondition = timeFlags[7];
+                    
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
     private float rotateAngle;
     private bool isNight;
     public bool IsNight => isNight;
@@ -16,6 +66,7 @@ public class SunRotation : MonoBehaviour
     void Start()
     {
         sunLight = GetComponent<Light>();
+
         StartCoroutine(DayPass());
     }
 
@@ -68,8 +119,9 @@ public class SunRotation : MonoBehaviour
     {
         while (true)
         {
-            passedDay++;
-            yield return new WaitForSeconds(dayMinute * 60);
+            yield return new WaitForSeconds(dayMinute * 15);
+
+            PassedDay += 0.5f;
         }
     }
 }

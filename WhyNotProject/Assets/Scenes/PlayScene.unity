@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!108 &97777327 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 3731605699341955795, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
-  m_PrefabInstance: {fileID: 350507183}
-  m_PrefabAsset: {fileID: 0}
 --- !u!108 &111731722 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 111731722, guid: e4f650542d21a764da5294505a6bb94c, type: 3}
@@ -150,6 +145,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 350507185, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1817524247}
+    - target: {fileID: 2778597538612373714, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1817524247}
+    - target: {fileID: 5301842011573747274, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 1817524247}
     - target: {fileID: 5301842011573747275, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -170,10 +177,14 @@ PrefabInstance:
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
       objectReference: {fileID: 1629391749}
-    - target: {fileID: 7441648640836205402, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 5301842011573747275, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 1817524247}
+    - target: {fileID: 8497178038930811753, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 1817524247}
     - target: {fileID: 8497178039252185402, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
       propertyPath: m_Name
       value: BoothWithSockets
@@ -222,8 +233,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9141106653213126807, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1817524247}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+--- !u!108 &350507186 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1999358513241689577, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+  m_PrefabInstance: {fileID: 350507183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &575633874
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +670,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f117285802e11543a1431b3371fe0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeFlags:
+  - CoinInduce
+  - FirstLightOn
+  - 3minAgo
+  - 5minAgo
+  - 7minAgo
+  - 10minAgo
+  - 12minAgo
+  - 15minAgo
   nightLight:
   - {fileID: 1029778192}
   - {fileID: 1182561006}
@@ -661,14 +690,14 @@ MonoBehaviour:
   - {fileID: 1732541485}
   - {fileID: 834929889}
   - {fileID: 195880097}
-  - {fileID: 97777327}
+  - {fileID: 350507186}
   - {fileID: 314152120}
   - {fileID: 111731722}
   lightMaterial:
   - {fileID: 2100000, guid: 15321fae88bbe8647a5fc884ea59893d, type: 2}
   - {fileID: 2100000, guid: 635728c1c672967439a1bbf99b093be2, type: 2}
-  - {fileID: 2100000, guid: 9a4104678d737d54e8a94311e7431025, type: 2}
-  dayMinute: 1
+  - {fileID: 2100000, guid: c8bdf0b57b2a93e4ba5dfaeb8582595f, type: 2}
+  dayMinute: 2
 --- !u!1 &731637644
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,6 +964,60 @@ Light:
   m_CorrespondingSourceObject: {fileID: 4176600813483502373, guid: e4f650542d21a764da5294505a6bb94c, type: 3}
   m_PrefabInstance: {fileID: 1955272954867831155}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1817524246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1817524248}
+  - component: {fileID: 1817524247}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1817524247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817524246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7031b0562c9894d47bf424ec5518d5f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagNames:
+  - InputCoin
+  - FindPaper
+  - HoldPaper
+  - EnterCode
+  - FindLever
+  - ClearLever
+  - OpenCoinBox
+  - PutCoinMailBox
+  - HoldMail
+  - End
+--- !u!4 &1817524248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817524246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1867086447 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 8592825842718459917, guid: e4f650542d21a764da5294505a6bb94c, type: 3}

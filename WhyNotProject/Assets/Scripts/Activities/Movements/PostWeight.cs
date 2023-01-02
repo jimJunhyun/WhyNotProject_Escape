@@ -84,6 +84,8 @@ public class PostWeight : MonoBehaviour
 	private void OnWeightMax()
 	{
 		OnTriggered?.Invoke();
+
+		enabled = false;
 	}
 
 	private void OnDrawGizmos()
