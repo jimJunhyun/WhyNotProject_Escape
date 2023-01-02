@@ -13,6 +13,7 @@ ScriptsOnlyBuild:
     - GlowComposite
     - GlowController
     - GlowObjectCmd
+    - GlowOff
     - HintAppear
     - HoldManager
     - Holdable
@@ -54,13 +55,13 @@ ScriptsOnlyBuild:
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshPro
     - TMPro.TextMeshProUGUI
-    Unity.Timeline.Editor.dll:
-    - TimelineProjectSettings
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -103,31 +104,31 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1560}
+      Script: {instanceID: 1564}
     - Class: 114
-      Script: {instanceID: 1804}
+      Script: {instanceID: 1808}
     - Class: 114
-      Script: {instanceID: 2206}
+      Script: {instanceID: 2210}
     - Class: 114
-      Script: {instanceID: 2714}
+      Script: {instanceID: 2718}
     - Class: 114
-      Script: {instanceID: 2894}
+      Script: {instanceID: 2898}
     - Class: 114
-      Script: {instanceID: 2942}
+      Script: {instanceID: 2946}
     - Class: 114
-      Script: {instanceID: 3116}
+      Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3124}
+      Script: {instanceID: 3128}
     - Class: 114
-      Script: {instanceID: 3388}
+      Script: {instanceID: 3392}
     - Class: 114
-      Script: {instanceID: 3396}
+      Script: {instanceID: 3400}
     - Class: 114
-      Script: {instanceID: 3644}
+      Script: {instanceID: 3648}
     - Class: 114
-      Script: {instanceID: 4414}
+      Script: {instanceID: 4418}
     - Class: 114
-      Script: {instanceID: 5126}
+      Script: {instanceID: 5132}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 143
@@ -190,87 +191,89 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1528}
+      Script: {instanceID: 1532}
     - Class: 114
-      Script: {instanceID: 1560}
+      Script: {instanceID: 1564}
     - Class: 114
-      Script: {instanceID: 1706}
+      Script: {instanceID: 1710}
     - Class: 114
-      Script: {instanceID: 1712}
+      Script: {instanceID: 1716}
     - Class: 114
-      Script: {instanceID: 1804}
+      Script: {instanceID: 1808}
     - Class: 114
-      Script: {instanceID: 1826}
+      Script: {instanceID: 1830}
     - Class: 114
-      Script: {instanceID: 1878}
+      Script: {instanceID: 1882}
     - Class: 114
-      Script: {instanceID: 1956}
+      Script: {instanceID: 1960}
     - Class: 114
-      Script: {instanceID: 2090}
+      Script: {instanceID: 2094}
     - Class: 114
-      Script: {instanceID: 2206}
+      Script: {instanceID: 2210}
     - Class: 114
-      Script: {instanceID: 2220}
+      Script: {instanceID: 2224}
     - Class: 114
-      Script: {instanceID: 2494}
+      Script: {instanceID: 2498}
     - Class: 114
-      Script: {instanceID: 2504}
+      Script: {instanceID: 2508}
     - Class: 114
-      Script: {instanceID: 2528}
+      Script: {instanceID: 2532}
     - Class: 114
-      Script: {instanceID: 2640}
+      Script: {instanceID: 2644}
     - Class: 114
-      Script: {instanceID: 2714}
+      Script: {instanceID: 2718}
     - Class: 114
-      Script: {instanceID: 2754}
+      Script: {instanceID: 2758}
     - Class: 114
-      Script: {instanceID: 2800}
+      Script: {instanceID: 2804}
     - Class: 114
-      Script: {instanceID: 2894}
+      Script: {instanceID: 2898}
     - Class: 114
-      Script: {instanceID: 2942}
+      Script: {instanceID: 2946}
     - Class: 114
-      Script: {instanceID: 2974}
+      Script: {instanceID: 2978}
     - Class: 114
-      Script: {instanceID: 3038}
+      Script: {instanceID: 3042}
     - Class: 114
-      Script: {instanceID: 3116}
+      Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3124}
+      Script: {instanceID: 3128}
     - Class: 114
-      Script: {instanceID: 3364}
+      Script: {instanceID: 3368}
     - Class: 114
-      Script: {instanceID: 3388}
+      Script: {instanceID: 3392}
     - Class: 114
-      Script: {instanceID: 3396}
+      Script: {instanceID: 3400}
     - Class: 114
-      Script: {instanceID: 4060}
+      Script: {instanceID: 4064}
     - Class: 114
-      Script: {instanceID: 4334}
+      Script: {instanceID: 4338}
     - Class: 114
-      Script: {instanceID: 4344}
+      Script: {instanceID: 4348}
     - Class: 114
-      Script: {instanceID: 4346}
+      Script: {instanceID: 4350}
     - Class: 114
-      Script: {instanceID: 4414}
+      Script: {instanceID: 4418}
     - Class: 114
-      Script: {instanceID: 4478}
+      Script: {instanceID: 4482}
     - Class: 114
-      Script: {instanceID: 4732}
+      Script: {instanceID: 4736}
     - Class: 114
-      Script: {instanceID: 4828}
+      Script: {instanceID: 4832}
     - Class: 114
-      Script: {instanceID: 4850}
+      Script: {instanceID: 4854}
     - Class: 114
-      Script: {instanceID: 5064}
+      Script: {instanceID: 5070}
     - Class: 114
-      Script: {instanceID: 5074}
+      Script: {instanceID: 5080}
     - Class: 114
-      Script: {instanceID: 5126}
+      Script: {instanceID: 5132}
     - Class: 114
-      Script: {instanceID: 5174}
+      Script: {instanceID: 5180}
     - Class: 114
-      Script: {instanceID: 5572}
+      Script: {instanceID: 5578}
+    - Class: 114
+      Script: {instanceID: 90854}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 134
@@ -325,43 +328,43 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1560}
+      Script: {instanceID: 1564}
     - Class: 114
-      Script: {instanceID: 1764}
+      Script: {instanceID: 1768}
     - Class: 114
-      Script: {instanceID: 1878}
+      Script: {instanceID: 1882}
     - Class: 114
-      Script: {instanceID: 2110}
+      Script: {instanceID: 2114}
     - Class: 114
-      Script: {instanceID: 2232}
+      Script: {instanceID: 2236}
     - Class: 114
-      Script: {instanceID: 2276}
+      Script: {instanceID: 2280}
     - Class: 114
-      Script: {instanceID: 2426}
+      Script: {instanceID: 2430}
     - Class: 114
-      Script: {instanceID: 2650}
+      Script: {instanceID: 2654}
     - Class: 114
-      Script: {instanceID: 2714}
+      Script: {instanceID: 2718}
     - Class: 114
-      Script: {instanceID: 2894}
+      Script: {instanceID: 2898}
     - Class: 114
-      Script: {instanceID: 2948}
+      Script: {instanceID: 2952}
     - Class: 114
-      Script: {instanceID: 3124}
+      Script: {instanceID: 3128}
     - Class: 114
-      Script: {instanceID: 3396}
+      Script: {instanceID: 3400}
     - Class: 114
-      Script: {instanceID: 3512}
+      Script: {instanceID: 3516}
     - Class: 114
-      Script: {instanceID: 3758}
+      Script: {instanceID: 3762}
     - Class: 114
-      Script: {instanceID: 3936}
+      Script: {instanceID: 3940}
     - Class: 114
-      Script: {instanceID: 4836}
+      Script: {instanceID: 4840}
     - Class: 114
-      Script: {instanceID: 5214}
+      Script: {instanceID: 4856}
     - Class: 114
-      Script: {instanceID: 43928}
+      Script: {instanceID: 5220}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1156,6 +1159,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ExitManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UniHumanoid.dll
     namespaceName: UniHumanoid
     className: MuscleInspector
@@ -1320,7 +1329,7 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: ExitManager
+    className: GlowOff
   platform: 19
   scenePathNames:
   - Assets/Scenes/StartScene.unity
