@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!108 &97777327 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 3731605699341955795, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
-  m_PrefabInstance: {fileID: 350507183}
-  m_PrefabAsset: {fileID: 0}
 --- !u!108 &111731722 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 111731722, guid: e4f650542d21a764da5294505a6bb94c, type: 3}
@@ -202,6 +197,10 @@ PrefabInstance:
       propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 283635442}
+    - target: {fileID: 5301842011573747274, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 8944952297045503199}
     - target: {fileID: 5301842011573747275, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -222,6 +221,14 @@ PrefabInstance:
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
       objectReference: {fileID: 1629391749}
+    - target: {fileID: 5301842011573747275, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 8944952297045503199}
+    - target: {fileID: 8497178038930811753, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 8944952297045503199}
     - target: {fileID: 8497178039252185402, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
       propertyPath: m_Name
       value: BoothWithSockets
@@ -270,8 +277,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8630036277017763200, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8944952297045503199}
+    - target: {fileID: 9141106653213126807, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8944952297045503199}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+--- !u!108 &350507187 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 805115778684820278, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+  m_PrefabInstance: {fileID: 350507183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &575633874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,7 +1043,7 @@ PrefabInstance:
     - target: {fileID: 1466733403559975626, guid: 0e2d4db5623de0a4fa5165fd11069732, type: 3}
       propertyPath: nightLight.Array.data[10]
       value: 
-      objectReference: {fileID: 97777327}
+      objectReference: {fileID: 350507187}
     - target: {fileID: 1466733403559975626, guid: 0e2d4db5623de0a4fa5165fd11069732, type: 3}
       propertyPath: nightLight.Array.data[11]
       value: 
@@ -1408,3 +1428,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61d59c0f479798a44a51a652ed01fa9d, type: 3}
+--- !u!114 &8944952297045503199 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8944952297473906029, guid: 61d59c0f479798a44a51a652ed01fa9d, type: 3}
+  m_PrefabInstance: {fileID: 8944952297045503198}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7031b0562c9894d47bf424ec5518d5f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
