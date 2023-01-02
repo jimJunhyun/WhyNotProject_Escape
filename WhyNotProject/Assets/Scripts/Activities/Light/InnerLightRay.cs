@@ -33,11 +33,11 @@ public class InnerLightRay : MonoBehaviour
 
         if (paperHit.collider && paperHit.collider.CompareTag("Paper"))
         {
-            paperMaterial.color = new Color(0f, 0f, 0f, 155f / 255f);
+            paperMaterial.color = new Color(paperMaterial.color.r, paperMaterial.color.g, paperMaterial.color.b, 155f / 255f);
         }
         else if (!paperHit.collider)
         {
-            paperMaterial.color = new Color(0f, 0f, 0f, 1f);
+            paperMaterial.color = new Color(paperMaterial.color.r, paperMaterial.color.g, paperMaterial.color.b, 1f);
         }
     }
 }

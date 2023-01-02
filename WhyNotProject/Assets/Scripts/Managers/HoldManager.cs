@@ -56,6 +56,42 @@ public class HoldManager : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         bool isHit = Physics.Raycast(ray, out hit, holdLimit);
         Debug.DrawLine(ray.origin, hit.point, Color.cyan);
+
+        if (hit.collider)
+        {
+            switch (hit.collider.name)
+            {
+                case "PostIt":
+                    if (currentHolding == null)
+                    {
+                        GameManager.instance.FindPaper();
+                    }
+                    else
+                    {
+                        GameManager.instance.HoldPaper();
+                    }
+
+                    break;
+                case "RefinedCoin (1)":
+                case "RefinedCoin (2)":
+                case "RefinedCoin (3)":
+                case "RefinedCoin (4)":
+                case "RefinedCoin (5)":
+                    GameManager.instance.OpenCoinBox();
+
+                    break;
+                case "Letter":
+                    if (currentHolding != null)
+                    {
+                        GameManager.instance.HoldMail();
+                    }
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
         return isHit;
 	}
 }
