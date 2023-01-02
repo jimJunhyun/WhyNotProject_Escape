@@ -90,6 +90,7 @@ public class Holdable : MonoBehaviour, IInteractable
 	}
 	void Init()
 	{
+		gameObject.layer = LayerMask.NameToLayer("Holdable");
 		myGlow = GetComponent<GlowObjectCmd>();
 		myCol = GetComponent<Collider>();
 		myRen = GetComponent<Renderer>();

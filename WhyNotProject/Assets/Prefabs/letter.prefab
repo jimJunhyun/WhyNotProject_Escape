@@ -210,7 +210,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.19430435, y: 0.006275177, z: 0.34430313}
-  m_Center: {x: 0.67525285, y: 3.2167373, z: 7.02757}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4834976972765553476
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -241,6 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bufferArea: 0
   holdRot: {x: 0, y: 0, z: 0}
+  isLookAt: 0
   isReusable: 0
   placedRot: {x: 0, y: 0, z: 0}
   animLen: 0
