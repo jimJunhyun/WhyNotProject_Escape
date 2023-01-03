@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ExitManager : MonoBehaviour
 {
@@ -10,8 +12,7 @@ public class ExitManager : MonoBehaviour
 	}
 	private void Update()
 	{
-		Debug.Log($"Quit {transform.name}");
-		if (Input.GetKeyDown(KeyCode.Escape))
+		if (Input.GetKey(KeyCode.Escape) && (Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift)))
 		{
 			Application.Quit();
 		}

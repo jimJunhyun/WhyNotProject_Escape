@@ -10,6 +10,7 @@ public class ClosedCaption
     public string conditionNumber = "";
     public string captionText = "";
     public float outputTime = 3f;
+    public float blankOutputTime = 1.5f;
 }
 
 public class ClosedCaptionList
@@ -67,26 +68,16 @@ public class CCManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "StartScene")
-        {
-            ccText.text = OptionUI.instance.optionOpened ? "자막은 이렇게 표시됩니다." : "";
-        }
-    }
-
     private IEnumerator CCOutputDelay()
     {
-        
-
         int index = 1;
-
-        yield return new WaitForSeconds(1.5f);
 
         if (!ccDictionary.ContainsKey(currentCondition))
         {
             if (ccDictionary.ContainsKey($"{currentCondition}_1_1"))
             {
+                yield return new WaitForSeconds(ccDictionary[$"{currentCondition}_1_1"].blankOutputTime);
+
                 for (; ; index++)
                 {
                     if (ccDictionary.ContainsKey($"{currentCondition}_1_{index}"))
@@ -103,6 +94,8 @@ public class CCManager : MonoBehaviour
             }
             else if (ccDictionary.ContainsKey($"{currentCondition}_2_1"))
             {
+                yield return new WaitForSeconds(ccDictionary[$"{currentCondition}_2_1"].blankOutputTime);
+
                 for (; ; index++)
                 {
                     if (ccDictionary.ContainsKey($"{currentCondition}_2_{index}"))
@@ -124,6 +117,8 @@ public class CCManager : MonoBehaviour
         }
         else
         {
+            yield return new WaitForSeconds(ccDictionary[currentCondition].blankOutputTime);
+
             ccText.text = ccDictionary[currentCondition].captionText;
 
             yield return new WaitForSecondsRealtime(ccDictionary[currentCondition].outputTime);
@@ -132,6 +127,7 @@ public class CCManager : MonoBehaviour
         }
 
         ccCoroutine = null;
+
         StopCoroutine("CCOutputDelay");
     }
 }

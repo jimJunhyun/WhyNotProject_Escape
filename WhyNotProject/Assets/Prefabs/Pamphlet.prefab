@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 833527658715125011}
   - component: {fileID: 833527658715125010}
   - component: {fileID: 6873829784361366110}
-  - component: {fileID: 2189531952733319741}
   - component: {fileID: 6414925267833951802}
   - component: {fileID: 3581920706130832584}
+  - component: {fileID: 3820615931207423471}
   m_Layer: 0
   m_Name: Pamphlet
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 833527658715125021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 11.6}
-  m_LocalScale: {x: 12.464625, y: 12.464627, z: 12.464627}
+  m_LocalScale: {x: 0.39596, y: 0.39596, z: 0.39596}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833527658715125021}
-  m_Mesh: {fileID: -854439606283144705, guid: e4dc29942c8a42d46bceb12335a3816b, type: 3}
+  m_Mesh: {fileID: -5523007248744219995, guid: 39e58c9a55913f249a00e225f5441301, type: 3}
 --- !u!23 &833527658715125010
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 577b04883f9e7db4cb06c69848339284, type: 2}
+  - {fileID: 2100000, guid: 83d2d24e11a7c6d4f9d2cb71199c243d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -101,19 +101,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &2189531952733319741
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 833527658715125021}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.022286722, y: 0.011159154, z: 0.0043776305}
-  m_Center: {x: 0.00003649527, y: 4.7138876e-10, z: 0.0001921834}
 --- !u!114 &6414925267833951802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,3 +134,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0, g: 1, b: 0.10002494, a: 0}
   LerpFactor: 10
+--- !u!65 &3820615931207423471
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833527658715125021}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9673337, y: 0.27731273, z: 0.16351846}
+  m_Center: {x: 0.00025756657, y: 0, z: 0.0003635548}

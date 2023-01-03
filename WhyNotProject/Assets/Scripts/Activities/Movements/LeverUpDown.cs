@@ -5,7 +5,8 @@ using UnityEngine;
 public class LeverUpDown : MonoBehaviour
 {
 	public Light stageLight;
-    int state = 2;
+	public Material lightMat;
+    bool state = true;
 	bool isActive = false;
 	Animator anim;
 	private void Awake()
@@ -16,21 +17,19 @@ public class LeverUpDown : MonoBehaviour
 	{
 		if (isActive)
 		{
-			state += 1;
-			state %= 3;
-			anim.SetInteger("State", state);
-			if(state == 0)
+			if (state)
 			{
+				anim.SetBool("Up", true);
 				stageLight.gameObject.SetActive(false);
-			}
-			else if(state == 1)
-			{
-				stageLight.gameObject.SetActive(true);
+				lightMat.DisableKeyword("_EMISSION");
+				state = false;
 			}
 			else
 			{
+				anim.SetBool("Up", false);
 				stageLight.gameObject.SetActive(true);
-				stageLight.enabled = true;
+				lightMat.EnableKeyword("_EMISSION");
+				state = true;
 			}
 		}
 		
