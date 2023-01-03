@@ -10,15 +10,12 @@ public class GlowOff : MonoBehaviour
 		glow = GetComponent<GlowObjectCmd>();
 	}
 
-	public void Off(float animLeng)
+	public void On()
 	{
-		StartCoroutine(ContinuousOff(animLeng));
+		glow.GlowColor = Color.green;
 	}
-
-	IEnumerator ContinuousOff(float animLen)
-	{ 
-		yield return new WaitForSeconds(animLen);
-		glow.enabled = false;
-		
+	public void Off()
+	{
+		glow.GlowColor = Color.black;
 	}
 }
