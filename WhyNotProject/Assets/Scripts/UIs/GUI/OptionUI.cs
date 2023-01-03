@@ -71,7 +71,7 @@ public class OptionUI : MonoBehaviour
                 }
                 else if (sceneBuildIndex == 0 && Input.anyKeyDown)
                 {
-                    SceneManager.LoadScene(sceneBuildIndex + 1);
+                    FindObjectOfType<StartManager>().StartGame();
                 }
             }
         }
