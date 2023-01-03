@@ -29,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6261012697975656933}
-  m_LocalRotation: {x: -0, y: -0, z: -0.04294219, w: 0.99907756}
+  m_LocalRotation: {x: 0, y: 0, z: -0.042939372, w: 0.9990777}
   m_LocalPosition: {x: -0.681, y: 2.932, z: -0.712}
   m_LocalScale: {x: 0.5, y: 0.4, z: 0.5}
   m_Children: []
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlowColor: {r: 0, g: 1, b: 0.1952455, a: 0}
+  GlowColor: {r: 0, g: 1, b: 0.049105644, a: 0}
   LerpFactor: 10
 --- !u!114 &3725204156165415898
 MonoBehaviour:
@@ -145,7 +145,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bufferArea: 0
   holdRot: {x: 0, y: 0, z: -4}
+  isLookAt: 0
   isReusable: 1
   placedRot: {x: 0, y: 0, z: 0}
   animLen: 0.4
-  objWeight: 0
+  objWeight: 5

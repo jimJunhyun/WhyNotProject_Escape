@@ -123,8 +123,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 1.8, z: 1.6}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.79827607, y: 1.7936249, z: 3.8528798}
+  m_Center: {x: 0.029755235, y: 0.0031875074, z: -1.1264389}
 --- !u!1 &1384497244882491524
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,8 +167,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 1.25, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.5, y: 1.25, z: 0.40788025}
+  m_Center: {x: 0, y: 0, z: 0.015289821}
 --- !u!1 &1384497245493667695
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384497245493667695}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: -0.22, z: -1.125}
+  m_LocalPosition: {x: 0, y: -0.22, z: -1.393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3207320978174148701}
@@ -211,7 +211,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 0.5, z: 0.5}
+  m_Size: {x: 2.5, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1384497245763926875
 GameObject:
@@ -255,8 +255,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.59, y: 0.45, z: 1.57}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.1150436, y: 1.1515906, z: 1.9221269}
+  m_Center: {x: 0.2625215, y: -0.35079533, z: -0.15143052}
 --- !u!1 &1384497245870269104
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,8 +299,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.07, y: 0.25, z: 1.89}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.07, y: 0.4386387, z: 2.677401}
+  m_Center: {x: 0, y: 0.094319835, z: -0.3461933}
 --- !u!1 &1384497245911520930
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,8 +343,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 1.8, z: 1.6}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.6410205, y: 1.8, z: 3.2414782}
+  m_Center: {x: 0.095509924, y: 0, z: -0.6921613}
 --- !u!1 &1384497246301324980
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,8 +387,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2.01, z: 0.3}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5.376115, y: 2.0668592, z: 2.2325795}
+  m_Center: {x: 0.5906664, y: 0.028429627, z: -0.9662899}
 --- !u!1 &2866930129455209191
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 3207320978174148701}
   - component: {fileID: 2866930129455209190}
   - component: {fileID: 2866930129455209185}
+  - component: {fileID: 8630036277862275861}
   m_Layer: 0
   m_Name: MailBox
   m_TagString: Untagged
@@ -446,11 +447,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726bc9c5dbe784e45af7929057dba34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxWeight: 2
+  maxWeight: 25
   objCount: 0
   currentWeight: 0
-  boxCastSize: {x: 0.48, y: 0.02, z: 0.29}
-  boxPosition: {x: 0, y: -0.16, z: -0.077}
+  boxCastSize: {x: 0.48, y: 0.25, z: 0.29}
+  boxPosition: {x: 0, y: -0.07, z: -0.077}
   coinLayer: 0
   moveEase: 27
   moveTime: 2
@@ -481,6 +482,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SecondEndManager, Assembly-CSharp
+        m_MethodName: DisableCondition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &2866930129455209185
 Animator:
   serializedVersion: 3
@@ -500,6 +513,41 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8630036277862275861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2866930129455209191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726bc9c5dbe784e45af7929057dba34b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxWeight: 5
+  objCount: 0
+  currentWeight: 0
+  boxCastSize: {x: 0.48, y: 0.16, z: 0.29}
+  boxPosition: {x: 0, y: -0.1, z: -0.077}
+  coinLayer: 0
+  moveEase: 27
+  moveTime: 2
+  OnTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PutCoinMailBox
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3773960548063870973
 GameObject:
   m_ObjectHideFlags: 0

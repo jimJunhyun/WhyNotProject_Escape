@@ -23,8 +23,9 @@ public class CCManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI ccText;
     [SerializeField] private TextAsset ccJSONFile;
-    private ClosedCaptionList ccList;
     private Dictionary<string, ClosedCaption> ccDictionary = new Dictionary<string, ClosedCaption>();
+    private Coroutine ccCoroutine;
+    private ClosedCaptionList ccList;
     private string currentCondition;
     public string CurrentCondition
     {
@@ -33,7 +34,12 @@ public class CCManager : MonoBehaviour
         {
             currentCondition = value;
 
-            StartCoroutine("CCOutputDelay");
+            if (ccCoroutine != null)
+            {
+                StopCoroutine(ccCoroutine);
+            }
+
+            ccCoroutine = StartCoroutine(CCOutputDelay());
         }
     }
 
@@ -53,7 +59,6 @@ public class CCManager : MonoBehaviour
 
     private void Start()
     {
-        ccText.text = "";
         ccList = JsonUtility.FromJson<ClosedCaptionList>(ccJSONFile.text);
 
         foreach (ClosedCaption cc in ccList.captions)
@@ -62,9 +67,21 @@ public class CCManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "StartScene")
+        {
+            ccText.text = OptionUI.instance.optionOpened ? "자막은 이렇게 표시됩니다." : "";
+        }
+    }
+
     private IEnumerator CCOutputDelay()
     {
+        
+
         int index = 1;
+
+        yield return new WaitForSeconds(1.5f);
 
         if (!ccDictionary.ContainsKey(currentCondition))
         {
@@ -104,8 +121,6 @@ public class CCManager : MonoBehaviour
             }
 
             ccText.text = null;
-
-            yield return null;
         }
         else
         {
@@ -114,10 +129,9 @@ public class CCManager : MonoBehaviour
             yield return new WaitForSecondsRealtime(ccDictionary[currentCondition].outputTime);
 
             ccText.text = null;
-
-            yield return null;
         }
 
+        ccCoroutine = null;
         StopCoroutine("CCOutputDelay");
     }
 }

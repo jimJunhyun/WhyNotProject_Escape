@@ -33,6 +33,6 @@ public class PressKeyRecorder : MonoBehaviour
 	}
 	public void UseCoin()
 	{
-		++coinNum;
+		--coinNum;
 	}
 }
