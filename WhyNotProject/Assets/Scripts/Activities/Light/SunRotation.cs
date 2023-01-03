@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SunRotation : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class SunRotation : MonoBehaviour
     [SerializeField] private Material[] lightMaterial;
     [SerializeField] private float dayMinute;
     private Light sunLight;
+    private InnerLight innerLight;
     private float passedDay;
     public float PassedDay
     {
@@ -22,36 +24,17 @@ public class SunRotation : MonoBehaviour
                 case 0.5f:
                     if (!GameManager.instance.flags["InputCoin"])
                     {
-                        CCManager.instance.CurrentCondition = timeFlags[0];
+                        CCManager.instance.CurrentCondition = timeFlags[timeFlags.IndexOf("CoinInduce")];
                     }
 
                     break;
-                case 1f:
-                    CCManager.instance.CurrentCondition = timeFlags[1];
-
-                    break;
                 case 1.5f:
-                    CCManager.instance.CurrentCondition = timeFlags[2];
-                    
-                    break;
                 case 2.5f:
-                    CCManager.instance.CurrentCondition = timeFlags[3];
-                    
-                    break;
                 case 3.5f:
-                    CCManager.instance.CurrentCondition = timeFlags[4];
-                    
-                    break;
                 case 5f:
-                    CCManager.instance.CurrentCondition = timeFlags[5];
-                    
-                    break;
                 case 6f:
-                    CCManager.instance.CurrentCondition = timeFlags[6];
-                    
-                    break;
                 case 7.5f:
-                    CCManager.instance.CurrentCondition = timeFlags[7];
+                    CCManager.instance.CurrentCondition = timeFlags[timeFlags.IndexOf($"{passedDay * dayMinute}minAgo")];
                     
                     break;
                 default:
@@ -61,16 +44,26 @@ public class SunRotation : MonoBehaviour
     }
     private float rotateAngle;
     private bool isNight;
-    public bool IsNight => isNight;
+    public bool IsNight
+    {
+        get { return isNight; }
+        set
+        {
+            isNight = value;
 
-    void Start()
+            innerLight.LightOnOff();
+        }
+    }
+
+    private void Start()
     {
         sunLight = GetComponent<Light>();
+        innerLight = FindObjectOfType<InnerLight>();
 
         StartCoroutine(DayPass());
     }
 
-    void Update()
+    private void Update()
     {
         LightRotate();
     }
@@ -83,39 +76,49 @@ public class SunRotation : MonoBehaviour
 
         if (transform.eulerAngles.x >= 170)
         {
-            isNight = true;
-
-            for (int i = 0; i < nightLight.Length; i++)
+            if (!isNight && sunLight.intensity != 0)
             {
-                nightLight[i].enabled = true;
-            }
+                print("นใ ตส");
 
-            for (int i = 0; i < lightMaterial.Length; i++)
-            {
-                lightMaterial[i].SetColor("_EmissionColor", Color.white);
-            }
+                IsNight = true;
 
-            sunLight.intensity = 0;
+                for (int i = 0; i < nightLight.Length; i++)
+                {
+                    nightLight[i].enabled = true;
+                }
+
+                for (int i = 0; i < lightMaterial.Length; i++)
+                {
+                    lightMaterial[i].SetColor("_EmissionColor", Color.white);
+                }
+
+                sunLight.intensity = 0;
+            }
         }
         else if (transform.eulerAngles.x <= 10)
         {
-            isNight = false;
-
-            for (int i = 0; i < nightLight.Length; i++)
+            if (isNight && sunLight.intensity == 0)
             {
-                nightLight[i].enabled = false;
-            }
+                print("ณท ตส");
 
-            for (int i = 0; i < lightMaterial.Length; i++)
-            {
-                lightMaterial[i].SetColor("_EmissionColor", Color.black);
-            }
+                IsNight = false;
 
-            sunLight.intensity = 1;
+                for (int i = 0; i < nightLight.Length; i++)
+                {
+                    nightLight[i].enabled = false;
+                }
+
+                for (int i = 0; i < lightMaterial.Length; i++)
+                {
+                    lightMaterial[i].SetColor("_EmissionColor", Color.black);
+                }
+
+                sunLight.intensity = 1;
+            }
         }
     }
 
-    IEnumerator DayPass()
+    private IEnumerator DayPass()
     {
         while (true)
         {

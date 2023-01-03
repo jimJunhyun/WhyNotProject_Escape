@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LeverUpDown : MonoBehaviour
 {
-	public Light stageLight;
     bool state = true;
 	bool isActive = false;
 	Animator anim;
@@ -19,13 +18,11 @@ public class LeverUpDown : MonoBehaviour
 			if (state)
 			{
 				anim.SetBool("Up", true);
-				stageLight.gameObject.SetActive(false);
 				state = false;
 			}
 			else
 			{
 				anim.SetBool("Up", false);
-				stageLight.gameObject.SetActive(true);
 				state = true;
 			}
 		}

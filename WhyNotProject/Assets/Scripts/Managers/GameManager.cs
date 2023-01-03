@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -24,122 +25,99 @@ public class GameManager : MonoBehaviour
         CCManager.instance.CurrentCondition = "Start";
     }
 
+    public void FirstLightOn()
+    {
+        int index = flagNames.IndexOf("FirstLightOn");
+
+        ConditionChange(index);
+    }
+
     public void InputCoin()
     {
-        if (flags.ContainsKey(flagNames[0]))
-        {
-            if (!flags[flagNames[0]])
-            {
-                CCManager.instance.CurrentCondition = flagNames[0];
-                flags[flagNames[0]] = true;
-            }
-        }
+        int index = flagNames.IndexOf("InputCoin");
+
+        ConditionChange(index);
     }
 
     public void FindPaper()
     {
-        if (flags.ContainsKey(flagNames[1]))
-        {
-            if (!flags[flagNames[1]])
-            {
-                CCManager.instance.CurrentCondition = flagNames[1];
-                flags[flagNames[1]] = true;
-            }
-        }
+        int index = flagNames.IndexOf("FindPaper");
+
+        ConditionChange(index);
     }
 
     public void HoldPaper()
     {
-        if (flags.ContainsKey(flagNames[2]))
-        {
-            if (!flags[flagNames[2]])
-            {
-                CCManager.instance.CurrentCondition = flagNames[2];
-                flags[flagNames[2]] = true;
-            }
-        }
+        int index = flagNames.IndexOf("HoldPaper");
+
+        ConditionChange(index);
     }
 
     public void EnterCode()
     {
-        if (flags.ContainsKey(flagNames[3]))
+        int index = flagNames.IndexOf("EnterCode");
+
+        for (int i = 0; i < index; i++)
         {
-            if (!flags[flagNames[3]])
+            if (!flags[flagNames[i]])
             {
-                CCManager.instance.CurrentCondition = flagNames[3];
-                flags[flagNames[3]] = true;
+                flags[flagNames[i]] = true;
             }
         }
+
+        ConditionChange(index);
     }
 
     public void FindLever()
     {
-        if (flags.ContainsKey(flagNames[4]))
-        {
-            if (!flags[flagNames[4]])
-            {
-                CCManager.instance.CurrentCondition = flagNames[4];
-                flags[flagNames[4]] = true;
-            }
-        }
+        int index = flagNames.IndexOf("FindLever");
+
+        ConditionChange(index);
     }
 
     public void ClearLever()
     {
-        if (flags.ContainsKey(flagNames[5]))
-        {
-            if (!flags[flagNames[5]])
-            {
-                CCManager.instance.CurrentCondition = flagNames[5];
-                flags[flagNames[5]] = true;
-            }
-        }
+        int index = flagNames.IndexOf("ClearLever");
+
+        ConditionChange(index);
     }
 
     public void OpenCoinBox()
     {
-        if (flags.ContainsKey(flagNames[6]))
-        {
-            if (!flags[flagNames[6]])
-            {
-                CCManager.instance.CurrentCondition = flagNames[6];
-                flags[flagNames[6]] = true;
-            }
-        }
+        int index = flagNames.IndexOf("OpenCoinBox");
+
+        ConditionChange(index);
     }
 
     public void PutCoinMailBox()
     {
-        if (flags.ContainsKey(flagNames[7]))
-        {
-            if (!flags[flagNames[7]])
-            {
-                CCManager.instance.CurrentCondition = flagNames[7];
-                flags[flagNames[7]] = true;
-            }
-        }
+        int index = flagNames.IndexOf("PutCoinMailBox");
+
+        ConditionChange(index);
     }
 
     public void HoldMail()
     {
-        if (flags.ContainsKey(flagNames[8]))
-        {
-            if (!flags[flagNames[8]])
-            {
-                CCManager.instance.CurrentCondition = flagNames[8];
-                flags[flagNames[8]] = true;
-            }
-        }
+        int index = flagNames.IndexOf("HoldMail");
+
+        ConditionChange(index);
     }
     
     public void End()
     {
-        if (flags.ContainsKey(flagNames[9]))
+        int index = flagNames.IndexOf("End");
+
+        ConditionChange(index);
+    }
+
+    private void ConditionChange(int index)
+    {
+        if (flags.ContainsKey(flagNames[index]))
         {
-            if (!flags[flagNames[9]])
+            if (!flags[flagNames[index]])
             {
-                CCManager.instance.CurrentCondition = flagNames[9];
-                flags[flagNames[9]] = true;
+                CCManager.instance.CurrentCondition = flagNames[index];
+                flags[flagNames[index]] = true;
             }
         }
     }

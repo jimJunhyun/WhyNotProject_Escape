@@ -10,22 +10,20 @@ public class OptionUI : MonoBehaviour
 {
     public static OptionUI instance;
 
+    [SerializeField] private GameObject page1;
+    [SerializeField] private GameObject page2;
     [SerializeField] private RectTransform rectTransform;
-    [SerializeField] private RectTransform helpImageTransform;
     [SerializeField] private Slider bgmToggle;
     [SerializeField] private Slider bgmVolumeSlider;
     public Slider BGMVolumeSlider => bgmVolumeSlider;
     [SerializeField] private Slider sfxToggle;
     [SerializeField] private Slider sfxVolumeSlider;
     public Slider SFXVolumeSlider => sfxVolumeSlider;
-    [SerializeField] private Slider ccToggle;
     [SerializeField] private TextMeshProUGUI bgmCurrentVolume;
     [SerializeField] private TextMeshProUGUI sfxCurrentVolume;
-    [SerializeField] private TextMeshProUGUI ccText;
     public bool optionOpened;
     private bool toggleChanged;
     private bool sliderChanged;
-    private bool helpImageOpened;
 
     private void Awake()
     {
@@ -47,7 +45,6 @@ public class OptionUI : MonoBehaviour
         bgmToggle.value = Mathf.Ceil(bgmVolumeSlider.value);
         sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 100);
         sfxToggle.value = Mathf.Ceil(sfxVolumeSlider.value);
-        ccToggle.value = PlayerPrefs.GetFloat("CCToggle", 1);
     }
 
     private void Update()
@@ -76,7 +73,6 @@ public class OptionUI : MonoBehaviour
             }
         }
 
-        ccText.gameObject.SetActive(ccToggle.value != 0);
         OptionOpenClose();
         TextUI();
     }
@@ -93,12 +89,6 @@ public class OptionUI : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.O) && optionOpened == true)
         {
-            if (helpImageOpened == true)
-            {
-                helpImageOpened = false;
-
-                helpImageTransform.DOScale(new Vector2(0, 0), 1f).SetUpdate(true);
-            }
 
             optionOpened = false;
 
@@ -154,11 +144,6 @@ public class OptionUI : MonoBehaviour
         toggleChanged = false;
     }
 
-    public void CCToggleChange()
-    {
-        PlayerPrefs.SetFloat("CCToggle", ccToggle.value);
-    }
-
     public void BGMSliderChange()
     {
         sliderChanged = true;
@@ -187,20 +172,6 @@ public class OptionUI : MonoBehaviour
         sliderChanged = false;
     }
 
-    public void HelpImagePopup()
-    {
-        if (helpImageOpened == false)
-        {
-            helpImageOpened = true;
-            helpImageTransform.DOScale(new Vector2(1, 1), 1f).SetUpdate(true);
-        }
-        else
-        {
-            helpImageOpened = false;
-            helpImageTransform.DOScale(new Vector2(0, 0), 1f).SetUpdate(true);
-        }
-    }
-
     public bool IsPointerOverUIObject()
     {
         PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
@@ -210,5 +181,19 @@ public class OptionUI : MonoBehaviour
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
 
         return results.Count > 0;
+    }
+
+    public void PageChange()
+    {
+        if (page1.activeInHierarchy)
+        {
+            page2.SetActive(true);
+            page1.SetActive(false);
+        }
+        else
+        {
+            page1.SetActive(true);
+            page2.SetActive(false);
+        }
     }
 }
