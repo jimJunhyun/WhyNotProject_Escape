@@ -193,26 +193,6 @@ PrefabInstance:
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 283635442}
-    - target: {fileID: 951511473, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.7265
-      objectReference: {fileID: 0}
-    - target: {fileID: 951511473, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.9031
-      objectReference: {fileID: 0}
-    - target: {fileID: 805115778684820278, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1728527708704875100, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
-      propertyPath: lightMat
-      value: 
-      objectReference: {fileID: 2100000, guid: c8bdf0b57b2a93e4ba5dfaeb8582595f, type: 2}
-    - target: {fileID: 1728527708704875100, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
-      propertyPath: stageLight
-      value: 
-      objectReference: {fileID: 350507187}
     - target: {fileID: 2866930128697236595, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
       propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -245,6 +225,14 @@ PrefabInstance:
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
       objectReference: {fileID: 8944952297045503199}
+    - target: {fileID: 6796678568649321835, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: m_Size.z
+      value: 0.084056616
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796678568649321835, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: m_Center.z
+      value: -0.041947186
+      objectReference: {fileID: 0}
     - target: {fileID: 8497178038930811753, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
@@ -301,17 +289,37 @@ PrefabInstance:
       propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8944952297045503199}
+    - target: {fileID: 8654949609170827590, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 350507185}
     - target: {fileID: 9141106653213126807, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 8944952297045503199}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4099695218031594948, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
---- !u!108 &350507187 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 805115778684820278, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+--- !u!1 &350507184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5973431458187199120, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
   m_PrefabInstance: {fileID: 350507183}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &350507185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350507184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f023361b136a14e48baafb60a9bab8d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightMaterial: {fileID: 2100000, guid: c8bdf0b57b2a93e4ba5dfaeb8582595f, type: 2}
+  paperMaterial: {fileID: 2100000, guid: 8f49498e009d5a843a6a8033e0d49059, type: 2}
+  isLightOn: 0
 --- !u!1 &575633874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,6 +1029,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1466733403559975626, guid: 0e2d4db5623de0a4fa5165fd11069732, type: 3}
+      propertyPath: nightLight.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466733403559975626, guid: 0e2d4db5623de0a4fa5165fd11069732, type: 3}
+      propertyPath: lightMaterial.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466733403559975626, guid: 0e2d4db5623de0a4fa5165fd11069732, type: 3}
       propertyPath: nightLight.Array.data[0]
       value: 
       objectReference: {fileID: 1029778192}
@@ -1063,11 +1079,11 @@ PrefabInstance:
     - target: {fileID: 1466733403559975626, guid: 0e2d4db5623de0a4fa5165fd11069732, type: 3}
       propertyPath: nightLight.Array.data[10]
       value: 
-      objectReference: {fileID: 350507187}
+      objectReference: {fileID: 314152120}
     - target: {fileID: 1466733403559975626, guid: 0e2d4db5623de0a4fa5165fd11069732, type: 3}
       propertyPath: nightLight.Array.data[11]
       value: 
-      objectReference: {fileID: 314152120}
+      objectReference: {fileID: 111731722}
     - target: {fileID: 1466733403559975626, guid: 0e2d4db5623de0a4fa5165fd11069732, type: 3}
       propertyPath: nightLight.Array.data[12]
       value: 
@@ -1225,6 +1241,10 @@ PrefabInstance:
     - target: {fileID: 669007810364202048, guid: e4f650542d21a764da5294505a6bb94c, type: 3}
       propertyPath: m_Intensity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955272954677438036, guid: e4f650542d21a764da5294505a6bb94c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.54
       objectReference: {fileID: 0}
     - target: {fileID: 1955272954958318082, guid: e4f650542d21a764da5294505a6bb94c, type: 3}
       propertyPath: m_LocalPosition.x
