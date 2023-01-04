@@ -69,10 +69,29 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateMouseLook()
     {
-        if (Input.GetKeyDown(KeyCode.O))
+        if (OptionUI.instance.optionOpened)
         {
-            canCamera = !canCamera;
-            cursor.Esc = !canCamera;
+            if (OptionUI.instance.logOpened)
+            {
+                if (Input.GetKeyDown(KeyCode.L))
+                {
+                    canCamera = !canCamera;
+                    cursor.Esc = !canCamera;
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.O))
+            {
+                canCamera = !canCamera;
+                cursor.Esc = !canCamera;
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.O) || Input.GetKeyDown(KeyCode.L))
+            {
+                canCamera = !canCamera;
+                cursor.Esc = !canCamera;
+            }
         }
 
         if (canCamera != false)

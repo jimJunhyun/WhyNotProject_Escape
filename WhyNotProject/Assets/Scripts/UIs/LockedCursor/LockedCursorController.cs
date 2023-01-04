@@ -23,7 +23,7 @@ public class LockedCursorController : MonoBehaviour
     {
         Cursor.lockState = OptionUI.instance.optionOpened || InspectManager.Instance.InspectingNum >= 1 ? CursorLockMode.None : CursorLockMode.Locked;
 
-        if (!(OptionUI.instance.optionOpened || OptionUI.instance.logOpened || InspectManager.Instance.InspectingNum >= 1))
+        if (!(OptionUI.instance.optionOpened || InspectManager.Instance.InspectingNum >= 1))
         {
             Debug.Log("화면 고정 안 됨");
             rectTrans.transform.position = new Vector2(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2);
