@@ -6,7 +6,7 @@ public class LeverUpDown : MonoBehaviour
 {
 	public Light stageLight;
 	public Material lightMat;
-    int state = 2;
+    int state = 1;
 	bool isActive = false;
 	Animator anim;
 	private void Awake()
