@@ -6,30 +6,34 @@ public class LeverUpDown : MonoBehaviour
 {
 	public Light stageLight;
 	public Material lightMat;
-    bool state = true;
+    int state = 1;
 	bool isActive = false;
 	Animator anim;
 	private void Awake()
 	{
 		anim = GetComponent<Animator>();
+		anim.SetInteger("State", state);
 	}
 	public void Trigger()
 	{
 		if (isActive)
 		{
-			if (state)
+			state += 1;
+			state %= 3;
+			anim.SetInteger("State", state);
+			if(state == 2)
 			{
-				anim.SetBool("Up", true);
-				stageLight.gameObject.SetActive(false);
-				lightMat.DisableKeyword("_EMISSION");
-				state = false;
-			}
-			else
-			{
-				anim.SetBool("Up", false);
 				stageLight.gameObject.SetActive(true);
-				lightMat.EnableKeyword("_EMISSION");
-				state = true;
+				stageLight.enabled = true;
+			}
+			if(state == 1)
+			{
+				stageLight.gameObject.SetActive(true);
+			}
+			if(state == 0)
+			{
+				stageLight.gameObject.SetActive(false);
+				
 			}
 		}
 		
