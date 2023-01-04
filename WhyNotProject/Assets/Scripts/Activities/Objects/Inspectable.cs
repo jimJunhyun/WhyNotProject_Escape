@@ -29,7 +29,7 @@ public class Inspectable : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetMouseButtonDown(0) && HoldManager.Instance.MouseCursorDetect(out hit))
+		if (Input.GetMouseButtonDown(0) && HoldManager.Instance.MouseCursorDetect(out hit) && !OptionUI.instance.optionOpened)
 		{
 			for (int i = 0; i < myColsArr.Length; i++)
 			{
@@ -46,7 +46,7 @@ public class Inspectable : MonoBehaviour
 			}
 			
 		}
-		else if(Input.GetMouseButtonDown(1) && HoldManager.Instance.MouseCursorDetect(out hit))
+		else if(Input.GetMouseButtonDown(1) && HoldManager.Instance.MouseCursorDetect(out hit) && !OptionUI.instance.optionOpened)
 		{
 			Debug.Log(!OptionUI.instance.IsPointerOverUIObject());
 			if (currentInspected && !OptionUI.instance.IsPointerOverUIObject())
