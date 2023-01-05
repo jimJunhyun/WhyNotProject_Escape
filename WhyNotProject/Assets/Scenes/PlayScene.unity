@@ -197,6 +197,10 @@ PrefabInstance:
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 8944952297045503199}
+    - target: {fileID: 1728527708704875100, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: stageLight
+      value: 
+      objectReference: {fileID: 350507184}
     - target: {fileID: 2866930128697236595, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
       propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -291,6 +295,11 @@ PrefabInstance:
       objectReference: {fileID: 8944952297045503199}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+--- !u!108 &350507184 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 805115778684820278, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+  m_PrefabInstance: {fileID: 350507183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &575633874
 GameObject:
   m_ObjectHideFlags: 0

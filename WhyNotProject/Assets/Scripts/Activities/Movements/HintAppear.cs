@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HintAppear : MonoBehaviour
 {
-    bool lightState = true;
+    public bool lightState = true;
     SunRotation sunState;
 	MeshRenderer rend;
 	private void Awake()
@@ -22,9 +22,5 @@ public class HintAppear : MonoBehaviour
 		{
 			rend.enabled = false;
 		}
-	}
-	public void PowerSwitch()
-	{
-		lightState = !lightState;
 	}
 }
