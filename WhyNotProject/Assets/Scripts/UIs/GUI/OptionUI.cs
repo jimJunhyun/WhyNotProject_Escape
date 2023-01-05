@@ -16,6 +16,7 @@ public class OptionUI : MonoBehaviour
     [SerializeField] private GameObject logTextPrefab;
     [SerializeField] private RectTransform rectTransform;
     [SerializeField] private RectTransform logRectTransform;
+    [SerializeField] private RectTransform logContent;
     [SerializeField] private Slider bgmToggle;
     [SerializeField] private Slider bgmVolumeSlider;
     public Slider BGMVolumeSlider => bgmVolumeSlider;
@@ -58,6 +59,16 @@ public class OptionUI : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name == "StartScene")
             {
+                if (logCount > 0)
+                {
+                    for (; logCount > 0; logCount--)
+                    {
+                        Destroy(logContent.GetChild(logCount - 1).gameObject);
+                    }
+
+                    CCManager.instance.outputCaptions.Clear();
+                }
+
                 if (Input.anyKeyDown)
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -92,7 +103,7 @@ public class OptionUI : MonoBehaviour
                 {
                     GameObject logText = Instantiate(logTextPrefab);
 
-                    logText.transform.SetParent(logRectTransform.transform.GetChild(0).GetChild(0));
+                    logText.transform.SetParent(logContent);
 
                     logText.transform.localScale = Vector3.one;
                     logText.GetComponent<TextMeshProUGUI>().text = CCManager.instance.outputCaptions[i];
