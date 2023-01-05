@@ -193,14 +193,10 @@ PrefabInstance:
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 283635442}
-    - target: {fileID: 951511475, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+    - target: {fileID: 2778597538612373714, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 8944952297045503199}
-    - target: {fileID: 1728527708704875100, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
-      propertyPath: stageLight
-      value: 
-      objectReference: {fileID: 350507184}
     - target: {fileID: 2866930128697236595, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
       propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -295,11 +291,6 @@ PrefabInstance:
       objectReference: {fileID: 8944952297045503199}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
---- !u!108 &350507184 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 805115778684820278, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
-  m_PrefabInstance: {fileID: 350507183}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &575633874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,7 +1118,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1643004427034845720, guid: ea79f2ae851cdd343ac8176b36974cfd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6666666
+      value: 1.6666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643004427034845720, guid: ea79f2ae851cdd343ac8176b36974cfd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.22100002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643004427034845727, guid: ea79f2ae851cdd343ac8176b36974cfd, type: 3}
+      propertyPath: field of view
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643004427034845727, guid: ea79f2ae851cdd343ac8176b36974cfd, type: 3}
+      propertyPath: far clip plane
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643004427034845727, guid: ea79f2ae851cdd343ac8176b36974cfd, type: 3}
+      propertyPath: near clip plane
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1643004427468006101, guid: ea79f2ae851cdd343ac8176b36974cfd, type: 3}
       propertyPath: panel
@@ -1188,6 +1195,10 @@ PrefabInstance:
     - target: {fileID: 1643004427785222767, guid: ea79f2ae851cdd343ac8176b36974cfd, type: 3}
       propertyPath: m_Center.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6505030633852061863, guid: ea79f2ae851cdd343ac8176b36974cfd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea79f2ae851cdd343ac8176b36974cfd, type: 3}

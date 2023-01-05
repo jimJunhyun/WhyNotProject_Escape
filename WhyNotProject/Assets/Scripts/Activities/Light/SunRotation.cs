@@ -11,7 +11,7 @@ public class SunRotation : MonoBehaviour
     [SerializeField] private float dayMinute;
     private Light sunLight;
     private InnerLight innerLight;
-    private float passedDay;
+    public static float passedDay;
     public float PassedDay
     {
         get { return passedDay; }
@@ -78,8 +78,6 @@ public class SunRotation : MonoBehaviour
         {
             if (!isNight && sunLight.intensity != 0)
             {
-                print("นใ ตส");
-
                 IsNight = true;
 
                 for (int i = 0; i < nightLight.Length; i++)
@@ -99,8 +97,6 @@ public class SunRotation : MonoBehaviour
         {
             if (isNight && sunLight.intensity == 0)
             {
-                print("ณท ตส");
-
                 IsNight = false;
 
                 for (int i = 0; i < nightLight.Length; i++)

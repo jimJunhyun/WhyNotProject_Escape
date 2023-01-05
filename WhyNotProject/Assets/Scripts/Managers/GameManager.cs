@@ -57,14 +57,7 @@ public class GameManager : MonoBehaviour
     {
         int index = flagNames.IndexOf("EnterCode");
 
-        for (int i = 0; i < index; i++)
-        {
-            if (!flags[flagNames[i]])
-            {
-                flags[flagNames[i]] = true;
-            }
-        }
-
+        ConditionSkip(index);
         ConditionChange(index);
     }
 
@@ -107,7 +100,19 @@ public class GameManager : MonoBehaviour
     {
         int index = flagNames.IndexOf("End");
 
+        ConditionSkip(index);
         ConditionChange(index);
+    }
+
+    private void ConditionSkip(int index)
+    {
+        for (int i = 0; i < index; i++)
+        {
+            if (!flags[flagNames[i]])
+            {
+                flags[flagNames[i]] = true;
+            }
+        }
     }
 
     private void ConditionChange(int index)
