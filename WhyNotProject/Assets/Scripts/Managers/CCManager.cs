@@ -24,7 +24,7 @@ public class CCManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI ccText;
     [SerializeField] private TextAsset ccJSONFile;
-    public List<string> outputCaptions = new List<string>();
+    [HideInInspector] public List<string> outputCaptions = new List<string>();
     private Dictionary<string, ClosedCaption> ccDictionary = new Dictionary<string, ClosedCaption>();
     private Coroutine ccCoroutine;
     private ClosedCaptionList ccList;
