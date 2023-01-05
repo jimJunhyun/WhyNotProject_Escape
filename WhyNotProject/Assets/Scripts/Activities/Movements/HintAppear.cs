@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HintAppear : MonoBehaviour
 {
-    public bool lightState = true;
+	[SerializeField] private InnerLight innerLight;
     SunRotation sunState;
 	MeshRenderer rend;
 	private void Awake()
@@ -14,7 +14,7 @@ public class HintAppear : MonoBehaviour
 	}
 	private void Update()
 	{
-		if(sunState.IsNight && !lightState)
+		if(sunState.IsNight && !innerLight.isLightOn)
 		{
 			rend.enabled = true;
 		}

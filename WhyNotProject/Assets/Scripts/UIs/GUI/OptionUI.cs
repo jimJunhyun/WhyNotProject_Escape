@@ -27,6 +27,8 @@ public class OptionUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI sfxCurrentVolume;
     public bool optionOpened;
     public bool logOpened;
+    public bool onCredit;
+    public float playTime;
     private bool toggleChanged;
     private bool sliderChanged;
     private int logCount;
@@ -55,6 +57,11 @@ public class OptionUI : MonoBehaviour
 
     private void Update()
     {
+        if (SceneManager.GetActiveScene().name == "PlayScene")
+        {
+            playTime += Time.deltaTime;
+        }
+
         if (!Input.GetKeyDown(KeyCode.O) && !optionOpened)
         {
             if (SceneManager.GetActiveScene().name == "StartScene")
@@ -76,7 +83,11 @@ public class OptionUI : MonoBehaviour
             }
         }
 
-        OptionOpenClose();
+        if (!onCredit)
+        {
+            OptionOpenClose();
+        }
+
         TextUI();
     }
 

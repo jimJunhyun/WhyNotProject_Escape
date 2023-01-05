@@ -25,12 +25,10 @@ public class LockedCursorController : MonoBehaviour
 
         if (!(OptionUI.instance.optionOpened || InspectManager.Instance.InspectingNum >= 1))
         {
-            Debug.Log("화면 고정 안 됨");
             rectTrans.transform.position = new Vector2(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2);
         }
         else
         {
-            Debug.Log("화면 고정 됨");
             rectTrans.transform.position = Input.mousePosition;
         }
     }
