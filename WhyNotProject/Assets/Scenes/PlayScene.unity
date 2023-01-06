@@ -164,6 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressKeyChecker: {fileID: 350507184}
   weightedCoins: 5
+  insertedWeightedCoins: 0
+  isChecking: 1
 --- !u!4 &283635443
 Transform:
   m_ObjectHideFlags: 0
@@ -222,6 +224,22 @@ PrefabInstance:
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 8944952297045503199}
+    - target: {fileID: 4224977858209143670, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224977858209143670, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: m_Size.z
+      value: 0.03218972
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224977858209143670, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: m_Center.y
+      value: -1.0054599e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224977858209143670, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: m_Center.z
+      value: -0.014946707
+      objectReference: {fileID: 0}
     - target: {fileID: 5301842011165543845, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -266,6 +284,22 @@ PrefabInstance:
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 8944952297045503199}
+    - target: {fileID: 7992861267279998839, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992861267279998839, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: m_Size.z
+      value: 0.020322932
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992861267279998839, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: m_Center.y
+      value: -1.4738539e-18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992861267279998839, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
+      propertyPath: m_Center.z
+      value: -0.009013312
+      objectReference: {fileID: 0}
     - target: {fileID: 8497178038930811753, guid: ca1d7ecc848018b4db52a486cecdb92c, type: 3}
       propertyPath: OnMatched.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
