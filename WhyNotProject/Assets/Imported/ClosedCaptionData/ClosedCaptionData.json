@@ -43,7 +43,7 @@
     },
     {
       "conditionNumber": "10minAgo_1_1",
-      "captionText": "왜 안되는거야?",
+      "captionText": "왜 내가 갇힌거지?",
       "outputTime": 3
     },
     {
@@ -52,18 +52,38 @@
       "outputTime": 2
     },
     {
-      "conditionNumber": "12minAgo",
-      "captionText": "내가 도대체 뭘 잘못했는데!",
-      "outputTime": 3
-    },
-    {
-      "conditionNumber": "15minAgo_1_1",
+      "conditionNumber": "13minAgo_1_1",
       "captionText": "무서워! 무섭다고...",
       "outputTime": 2
     },
     {
-      "conditionNumber": "15minAgo_1_2",
+      "conditionNumber": "13minAgo_1_2",
       "captionText": "나, 나갈 수 있을까?",
+      "outputTime": 2
+    },
+    {
+      "conditionNumber": "15minAgo_1_1",
+      "captionText": "점점 정신이 몽롱해지고 있어...",
+      "outputTime": 2
+    },
+    {
+      "conditionNumber": "15minAgo_1_2",
+      "captionText": "안 되지, 정신 차리자!",
+      "outputTime": 2
+    },
+    {
+      "conditionNumber": "17minAgo",
+      "captionText": "꿈을 꾸는 기분이야...",
+      "outputTime": 2
+    },
+    {
+      "conditionNumber": "20minAgo_1_1",
+      "captionText": "시간이 얼마나 흐른 거지..?",
+      "outputTime": 2
+    },
+    {
+      "conditionNumber": "20minAgo_1_2",
+      "captionText": "이제 기억이 나지 않아...",
       "outputTime": 2
     },
     {
@@ -122,18 +142,24 @@
       "outputTime": 2
     },
     {
-      "conditionNumber": "HoldPen",
+      "conditionNumber": "HoldPen_2_1",
       "captionText": "메모 하는 용도겠지..?",
       "outputTime": 2
     },
     {
-      "conditionNumber": "SolvePaper",
-      "captionText": "이런 흔적을 남기다니...",
+      "conditionNumber": "HoldPen_2_2",
+      "captionText": "어디 메모지 없으려나?",
       "outputTime": 2
     },
     {
+      "conditionNumber": "SolvePaper",
+      "captionText": "이런 흔적이 남아 있었구나...",
+      "outputTime": 2,
+      "blankOutputTime": 2
+    },
+    {
       "conditionNumber": "FindLock_2_1",
-      "captionText": "4자리 숫자가 필요하겠어.",
+      "captionText": "4자리 숫자가 필요 하겠어.",
       "outputTime": 2
     },
     {
@@ -197,9 +223,34 @@
       "outputTime": 2
     },
     {
-      "conditionNumber": "CallFail",
-      "captionText": "못 받은...건가?",
-      "outputTime": 2
+      "conditionNumber": "CallFail1",
+      "captionText": "아무도 못 받은 건가?",
+      "outputTime": 2,
+      "blankOutputTime": 23
+    },
+    {
+      "conditionNumber": "CallFail2",
+      "captionText": "왜 전화를 안 받지?",
+      "outputTime": 2,
+      "blankOutputTime": 23
+    },
+    {
+      "conditionNumber": "CallFail3",
+      "captionText": "왜 그냥 끊어지는 거야!",
+      "outputTime": 2,
+      "blankOutputTime": 23
+    },
+    {
+      "conditionNumber": "CallFail4",
+      "captionText": "다들 나한테 왜 그래..?",
+      "outputTime": 2,
+      "blankOutputTime": 23
+    },
+    {
+      "conditionNumber": "CallFail5",
+      "captionText": "이게 마지막이었는데...",
+      "outputTime": 2,
+      "blankOutputTime": 23
     },
     {
       "conditionNumber": "PutCoinMailBox",
@@ -207,18 +258,18 @@
       "outputTime": 3
     },
     {
-      "conditionNumber": "HoldMail_1_1",
-      "captionText": "안에 뭔가 느껴져...",
+      "conditionNumber": "LastCoinRemain",
+      "captionText": "이제 이거 하나 남았네...",
       "outputTime": 2
+    },
+    {
+      "conditionNumber": "HoldMail_1_1",
+      "captionText": "안에 뭔가 들어있어... 꼭 성적표 봉투 같은걸?",
+      "outputTime": 4
     },
     {
       "conditionNumber": "HoldMail_1_2",
-      "captionText": "뭔가 들어있는건가?",
-      "outputTime": 2
-    },
-    {
-      "conditionNumber": "HoldMail_1_3",
-      "captionText": "내용물을 볼 수 있는 방법이 없을까?",
+      "captionText": "성적표가 나오면 꼭 조명에 비춰 봤었지.",
       "outputTime": 3
     },
     {
@@ -233,23 +284,72 @@
     },
     {
       "conditionNumber": "End_2_3",
-      "captionText": "힘들었어...",
+      "captionText": "드디어! 힘들었어...",
       "outputTime": 2
     },
     {
-      "conditionNumber": "SceneTrans_1_1",
-      "captionText": "여기는...",
-      "outputTime": 2
+      "conditionNumber": "HappyEnding_1_1",
+      "captionText": "역시 내가 맞았어!",
+      "outputTime": 5,
+      "blankOutputTime": 2
     },
     {
-      "conditionNumber": "SceneTrans_1_2",
-      "captionText": "우리 학교였잖아?",
-      "outputTime": 2
+      "conditionNumber": "HappyEnding_1_2",
+      "captionText": "나는 항상 문제를 피해 왔지만, 도망치는 게 해결책은 아니었어.",
+      "outputTime": 5
     },
     {
-      "conditionNumber": "SceneTrans_1_3",
-      "captionText": "도망치고싶었어...",
-      "outputTime": 3
+      "conditionNumber": "HappyEnding_1_3",
+      "captionText": "나 스스로 극복할 수 있다는 걸 깨달으니 마음이 편해지는 걸?",
+      "outputTime": 5
+    },
+    {
+      "conditionNumber": "HappyEnding_1_4",
+      "captionText": "아 그래, 그러고보니 내 캐비닛이 전화부스 같은 붉은 색이었지...",
+      "outputTime": 5
+    },
+    {
+      "conditionNumber": "HappyEndingCredit_1_1",
+      "captionText": "이제 더 이상 도망칠 곳은 없어.",
+      "outputTime": 4,
+      "blankOutputTime": 2
+    },
+    {
+      "conditionNumber": "HappyEndingCredit_1_2",
+      "captionText": "이제는 공포를 마주할 때야!",
+      "outputTime": 4
+    },
+    {
+      "conditionNumber": "BadEnding_1_1",
+      "captionText": "왜 아무도 내 전화를 받아 주지 않지?",
+      "outputTime": 5,
+      "blankOutputTime": 2
+    },
+    {
+      "conditionNumber": "BadEnding_1_2",
+      "captionText": "도대체 나한테 왜 그러는 거야..?",
+      "outputTime": 5
+    },
+    {
+      "conditionNumber": "BadEnding_1_3",
+      "captionText": "아... 나는 또 혼자인 거구나?",
+      "outputTime": 5
+    },
+    {
+      "conditionNumber": "BadEnding_1_4",
+      "captionText": "... 너무 외로워...",
+      "outputTime": 5
+    },
+    {
+      "conditionNumber": "BadEndingCredit_1_1",
+      "captionText": "나에게는 이 붉은 캐비닛이 가장 익숙하고 편안해...",
+      "outputTime": 4,
+      "blankOutputTime": 2
+    },
+    {
+      "conditionNumber": "BadEndingCredit_1_2",
+      "captionText": "이제는 그냥 포기 하고 쉬고 싶어...",
+      "outputTime": 4
     }
   ]
 }

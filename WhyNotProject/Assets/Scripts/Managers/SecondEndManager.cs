@@ -6,9 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class SecondEndManager : MonoBehaviour
 {
+	public static SecondEndManager instance;
+
+	[SerializeField] private PressKeyChecker pressKeyChecker;
     public int weightedCoins = 5;
-    int insertedWeightedCoins = 0;
-    bool isChecking = true;
+    [HideInInspector] public int insertedWeightedCoins = 0;
+    [HideInInspector] public bool isChecking = true;
+
+    private void Awake()
+    {
+		instance = this;
+    }
 
     public void WeightCoinInserted()
 	{
@@ -17,7 +25,9 @@ public class SecondEndManager : MonoBehaviour
 		{
 			if (weightedCoins == insertedWeightedCoins)
 			{
-				SceneManager.LoadScene("EndScene");
+				OptionUI.instance.isHappyEnd = false;
+
+				pressKeyChecker.OnMatched?.Invoke();
 			}
 		}
         

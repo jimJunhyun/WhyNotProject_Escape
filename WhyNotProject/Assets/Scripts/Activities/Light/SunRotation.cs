@@ -21,7 +21,7 @@ public class SunRotation : MonoBehaviour
 
             switch (passedDay)
             {
-                case 0.5f:
+                case 0.25f:
                     if (!GameManager.instance.flags["InputCoin"])
                     {
                         CCManager.instance.CurrentCondition = timeFlags[timeFlags.IndexOf("CoinInduce")];
@@ -32,9 +32,14 @@ public class SunRotation : MonoBehaviour
                 case 2.5f:
                 case 3.5f:
                 case 5f:
-                case 6f:
+                case 6.5f:
                 case 7.5f:
-                    CCManager.instance.CurrentCondition = timeFlags[timeFlags.IndexOf($"{passedDay * dayMinute}minAgo")];
+                case 8.5f:
+                case 10f:
+                    if (!GameManager.instance.flags["End"])
+                    {
+                        CCManager.instance.CurrentCondition = timeFlags[timeFlags.IndexOf($"{passedDay * dayMinute}minAgo")];
+                    }
                     
                     break;
                 default:
@@ -57,6 +62,7 @@ public class SunRotation : MonoBehaviour
 
     private void Start()
     {
+        passedDay = 0f;
         sunLight = GetComponent<Light>();
         innerLight = FindObjectOfType<InnerLight>();
 
@@ -118,9 +124,9 @@ public class SunRotation : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(dayMinute * 15);
+            yield return new WaitForSeconds(dayMinute * 15f);
 
-            PassedDay += 0.5f;
+            PassedDay += 0.25f;
         }
     }
 }
