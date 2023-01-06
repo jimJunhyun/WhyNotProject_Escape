@@ -407,8 +407,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: HintAppear, Assembly-CSharp
-        m_MethodName: PowerSwitch
+        m_TargetAssemblyTypeName: InnerLight, Assembly-CSharp
+        m_MethodName: LightOnOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -533,8 +533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef8115784f682949b7b5ac8990a2af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageLight: {fileID: 0}
-  lightMat: {fileID: 2100000, guid: c8bdf0b57b2a93e4ba5dfaeb8582595f, type: 2}
+  state: 1
+  isActive: 0
 --- !u!1 &4470242807922806388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,6 +1697,7 @@ GameObject:
   - component: {fileID: 9211806053069916152}
   - component: {fileID: 9211806053069916158}
   - component: {fileID: 9211806053069916153}
+  - component: {fileID: 2846193331817706083}
   m_Layer: 0
   m_Name: plate.001
   m_TagString: Untagged
@@ -1768,6 +1769,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2846193331817706083
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9211806053069916155}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019999998, y: 0.02, z: 0.0016231221}
+  m_Center: {x: 0, y: 0, z: 0.00033659276}
 --- !u!1 &9211806053231466078
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,6 +2030,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: End
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   isCommand: 1
   checking: 0
 --- !u!114 &222290782
@@ -2097,6 +2123,18 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Sockets, Assembly-CSharp
         m_MethodName: DisActivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: EnterCode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6898,6 +6936,18 @@ MonoBehaviour:
           m_StringArgument: Open
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ClearLever
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   isCommand: 1
   checking: 1
 --- !u!114 &5812516417866308764
@@ -7692,6 +7742,7 @@ GameObject:
   - component: {fileID: 9211806054742072445}
   - component: {fileID: 9211806054742072451}
   - component: {fileID: 9211806054742072450}
+  - component: {fileID: 8300644021162067554}
   m_Layer: 0
   m_Name: plate.002
   m_TagString: Untagged
@@ -7763,6 +7814,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8300644021162067554
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9211806054742072444}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019999998, y: 0.02, z: 0.0016231221}
+  m_Center: {x: 0, y: 0, z: 0.00033659276}
 --- !u!1 &9211806054752184277
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -12,7 +13,10 @@ public class OptionUI : MonoBehaviour
 
     [SerializeField] private GameObject page1;
     [SerializeField] private GameObject page2;
+    [SerializeField] private GameObject logTextPrefab;
     [SerializeField] private RectTransform rectTransform;
+    [SerializeField] private RectTransform logRectTransform;
+    [SerializeField] private RectTransform logContent;
     [SerializeField] private Slider bgmToggle;
     [SerializeField] private Slider bgmVolumeSlider;
     public Slider BGMVolumeSlider => bgmVolumeSlider;
@@ -21,9 +25,14 @@ public class OptionUI : MonoBehaviour
     public Slider SFXVolumeSlider => sfxVolumeSlider;
     [SerializeField] private TextMeshProUGUI bgmCurrentVolume;
     [SerializeField] private TextMeshProUGUI sfxCurrentVolume;
-    public bool optionOpened;
+    [HideInInspector] public bool optionOpened;
+    [HideInInspector] public bool logOpened;
+    [HideInInspector] public bool onCredit;
+    [HideInInspector] public bool isHappyEnd = true;
+    [HideInInspector] public float playTime;
     private bool toggleChanged;
     private bool sliderChanged;
+    private int logCount;
 
     private void Awake()
     {
@@ -49,52 +58,98 @@ public class OptionUI : MonoBehaviour
 
     private void Update()
     {
+        if (SceneManager.GetActiveScene().name == "StartScene")
+        {
+            playTime = 0f;
+            isHappyEnd = true;
+        }
+        else if (SceneManager.GetActiveScene().name == "PlayScene")
+        {
+            playTime += Time.deltaTime;
+        }
+
         if (!Input.GetKeyDown(KeyCode.O) && !optionOpened)
         {
-            if (SceneManager.GetActiveScene().name != "PlayScene")
+            if (SceneManager.GetActiveScene().name == "StartScene")
             {
-                int sceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
+                if (logCount > 0)
+                {
+                    for (; logCount > 0; logCount--)
+                    {
+                        Destroy(logContent.GetChild(logCount - 1).gameObject);
+                    }
 
-                if (sceneBuildIndex == 2)
-                {
-                    if (Input.GetKeyDown(KeyCode.R))
-                    {
-                        SceneManager.LoadScene(sceneBuildIndex - 1);
-                    }
-                    else if (Input.GetKeyDown(KeyCode.H))
-                    {
-                        SceneManager.LoadScene(sceneBuildIndex - 2);
-                    }
+                    CCManager.instance.outputCaptions.Clear();
                 }
-                else if (sceneBuildIndex == 0 && Input.anyKeyDown)
+
+                if (Input.anyKeyDown)
                 {
-                    FindObjectOfType<StartManager>().StartGame();
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 }
             }
         }
 
-        OptionOpenClose();
+        if (!onCredit)
+        {
+            OptionOpenClose();
+        }
+
         TextUI();
     }
 
     private void OptionOpenClose()
     {
-        if (Input.GetKeyDown(KeyCode.O) && optionOpened == false)
+        if (!optionOpened && !logOpened)
         {
-            optionOpened = true;
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                optionOpened = true;
 
-            rectTransform.DOAnchorPosY(0, 1f).SetUpdate(true);
+                rectTransform.DOAnchorPosY(0, 1f).SetUpdate(true);
 
-            Time.timeScale = 0.0f;
+                Time.timeScale = 0.0f;
+            }
+            else if (Input.GetKeyDown(KeyCode.L) && SceneManager.GetActiveScene().name != "StartScene")
+            {
+                optionOpened = true;
+                logOpened = true;
+
+                logRectTransform.DOAnchorPosY(0, 1f).SetUpdate(true);
+
+                for (int i = logCount; i < CCManager.instance.outputCaptions.Count; i++)
+                {
+                    GameObject logText = Instantiate(logTextPrefab);
+
+                    logText.transform.SetParent(logContent);
+
+                    logText.transform.localScale = Vector3.one;
+                    logText.GetComponent<TextMeshProUGUI>().text = CCManager.instance.outputCaptions[i];
+                }
+
+                logCount = CCManager.instance.outputCaptions.Count;
+
+                Time.timeScale = 0.0f;
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.O) && optionOpened == true)
+        else if (optionOpened)
         {
+            if (Input.GetKeyDown(KeyCode.O) && !logOpened)
+            {
+                optionOpened = false;
 
-            optionOpened = false;
+                rectTransform.DOAnchorPosY(450, 1f).SetUpdate(true);
 
-            rectTransform.DOAnchorPosY(450, 1f).SetUpdate(true);
+                Time.timeScale = 1.0f;
+            }
+            else if (Input.GetKeyDown(KeyCode.L) && logOpened)
+            {
+                optionOpened = false;
+                logOpened = false;
 
-            Time.timeScale = 1.0f;
+                logRectTransform.DOAnchorPosY(450, 1f).SetUpdate(true);
+
+                Time.timeScale = 1.0f;
+            }
         }
     }
 

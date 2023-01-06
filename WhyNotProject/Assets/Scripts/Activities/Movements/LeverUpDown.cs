@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class LeverUpDown : MonoBehaviour
 {
-	public Light stageLight;
-	public Material lightMat;
-    int state = 1;
-	bool isActive = false;
+    [HideInInspector] public int state = 1;
+	[HideInInspector] public bool isActive = false;
 	Animator anim;
 	private void Awake()
 	{
@@ -21,22 +19,7 @@ public class LeverUpDown : MonoBehaviour
 			state += 1;
 			state %= 3;
 			anim.SetInteger("State", state);
-			if(state == 2)
-			{
-				stageLight.gameObject.SetActive(true);
-				stageLight.enabled = true;
-			}
-			if(state == 1)
-			{
-				stageLight.gameObject.SetActive(true);
-			}
-			if(state == 0)
-			{
-				stageLight.gameObject.SetActive(false);
-				
-			}
-		}
-		
+        }
 	}
 	public void Disactivate()
 	{

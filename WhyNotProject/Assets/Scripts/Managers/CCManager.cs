@@ -24,6 +24,7 @@ public class CCManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI ccText;
     [SerializeField] private TextAsset ccJSONFile;
+    [HideInInspector] public List<string> outputCaptions = new List<string>();
     private Dictionary<string, ClosedCaption> ccDictionary = new Dictionary<string, ClosedCaption>();
     private Coroutine ccCoroutine;
     private ClosedCaptionList ccList;
@@ -84,7 +85,9 @@ public class CCManager : MonoBehaviour
                     {
                         ccText.text = ccDictionary[$"{currentCondition}_1_{index}"].captionText;
 
-                        yield return new WaitForSecondsRealtime(ccDictionary[$"{currentCondition}_1_{index}"].outputTime);
+                        outputCaptions.Add(ccText.text);
+
+                        yield return new WaitForSeconds(ccDictionary[$"{currentCondition}_1_{index}"].outputTime);
                     }
                     else
                     {
@@ -110,7 +113,9 @@ public class CCManager : MonoBehaviour
 
                 ccText.text = ccDictionary[$"{currentCondition}_2_{UnityEngine.Random.Range(1, index)}"].captionText;
 
-                yield return new WaitForSecondsRealtime(ccDictionary[$"{currentCondition}_2_{UnityEngine.Random.Range(1, index)}"].outputTime);
+                outputCaptions.Add(ccText.text);
+
+                yield return new WaitForSeconds(ccDictionary[$"{currentCondition}_2_{UnityEngine.Random.Range(1, index)}"].outputTime);
             }
 
             ccText.text = null;
@@ -121,7 +126,9 @@ public class CCManager : MonoBehaviour
 
             ccText.text = ccDictionary[currentCondition].captionText;
 
-            yield return new WaitForSecondsRealtime(ccDictionary[currentCondition].outputTime);
+            outputCaptions.Add(ccText.text);
+
+            yield return new WaitForSeconds(ccDictionary[currentCondition].outputTime);
 
             ccText.text = null;
         }
