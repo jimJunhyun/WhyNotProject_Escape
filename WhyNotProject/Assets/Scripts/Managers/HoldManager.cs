@@ -79,6 +79,31 @@ public class HoldManager : MonoBehaviour
                 case "RefinedCoin (5)":
                     GameManager.instance.OpenCoinBox();
 
+                    if (SecondEndManager.instance.insertedWeightedCoins == 4 && SecondEndManager.instance.isChecking)
+                    {
+                        GameManager.instance.LastCoinRemain();
+                    }
+
+                    break;
+                case "RefinedPen":
+                    if (currentHolding != null)
+                    {
+                        GameManager.instance.HoldPen();
+                    }
+
+                    break;
+                case "Lock_1":
+                case "Lock_2":
+                case "Lock_3":
+                case "Lock_4":
+                case "lock_frame":
+                case "lock_ring":
+                    GameManager.instance.FindLock();
+
+                    break;
+                case "Lever":
+                    GameManager.instance.FindPower();
+                    
                     break;
                 case "Letter":
                     if (currentHolding != null)

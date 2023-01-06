@@ -25,10 +25,11 @@ public class OptionUI : MonoBehaviour
     public Slider SFXVolumeSlider => sfxVolumeSlider;
     [SerializeField] private TextMeshProUGUI bgmCurrentVolume;
     [SerializeField] private TextMeshProUGUI sfxCurrentVolume;
-    public bool optionOpened;
-    public bool logOpened;
-    public bool onCredit;
-    public float playTime;
+    [HideInInspector] public bool optionOpened;
+    [HideInInspector] public bool logOpened;
+    [HideInInspector] public bool onCredit;
+    [HideInInspector] public bool isHappyEnd = true;
+    [HideInInspector] public float playTime;
     private bool toggleChanged;
     private bool sliderChanged;
     private int logCount;
@@ -57,7 +58,12 @@ public class OptionUI : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name == "PlayScene")
+        if (SceneManager.GetActiveScene().name == "StartScene")
+        {
+            playTime = 0f;
+            isHappyEnd = true;
+        }
+        else if (SceneManager.GetActiveScene().name == "PlayScene")
         {
             playTime += Time.deltaTime;
         }
