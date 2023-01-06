@@ -39,8 +39,7 @@ public class ResetManager : MonoBehaviour
 
         lockedCursor.SetActive(false);
 
-        if (OptionUI.instance.isHappyEnd) GameManager.instance.HappyEnding();
-        else GameManager.instance.BadEnding();
+        Invoke("Test", 0f);
 
         Sequence ending = DOTween.Sequence();
 
@@ -52,6 +51,12 @@ public class ResetManager : MonoBehaviour
 
                 lockedCursor.SetActive(true);
             });
+    }
+
+    private void Test()
+    {
+        if (OptionUI.instance.isHappyEnd) GameManager.instance.HappyEnding();
+        else GameManager.instance.BadEnding();
     }
 
     private void Update()
